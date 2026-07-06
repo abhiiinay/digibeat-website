@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Digibeat — Design Tokens
+   ========================================================================== */
+:root {
+  --db-bg-dark: #0a0e17;
+  --db-panel: #0d1424;
+  --db-panel-2: #0f1830;
+  --db-ink: #f2f4f9;
+  --db-muted: #8992a8;
+  --db-line: rgba(255, 255, 255, 0.08);
+  --db-accent: #46e0c9;      /* pulse teal */
+  --db-accent-2: #5b7bff;    /* signal blue */
+  --db-accent-soft: rgba(70, 224, 201, 0.12);
+
+  --db-font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --db-font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --db-radius: 8px;
+  --db-header-h: 78px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--db-font-body);
+  background: var(--db-bg-dark);
+  color: var(--db-ink);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.db-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: var(--db-header-h);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #ececef;
+  color: #111319;
+}
+
+.db-header__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.db-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--db-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.db-logo__img {
+  display: block;
+  height: 34px;   /* adjust to fit your logo's proportions */
+  width: auto;
+}
+
+/* Nav */
+.db-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.db-nav__item {
+  position: relative;
+}
+
+.db-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111319;
+  border-radius: var(--db-radius);
+  transition: color 0.15s ease;
+}
+
+.db-nav__link:hover,
+.db-nav__item.is-open .db-nav__link {
+  color: #0e9484;
+}
+
+.db-nav__caret {
+  width: 9px;
+  height: 9px;
+  transition: transform 0.2s ease;
+}
+
+.db-nav__item.is-open .db-nav__caret {
+  transform: rotate(180deg);
+}
+
+/* active underline pulse */
+.db-nav__link.is-active {
+  color: #111319;
+  position: relative;
+}
+.db-nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--db-accent), var(--db-accent-2));
+}
+
+/* Right side actions */
+.db-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.db-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  color: #111319;
+  background: transparent;
+}
+
+.db-icon-btn:hover {
+  border-color: #ececef;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.db-icon-btn svg { width: 18px; height: 18px; }
+
+.db-cta {
+  margin-left: 6px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--db-accent);
+  color: #061410;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.db-cta:hover {
+  background: #5cf0d8;
+  transform: translateY(-1px);
+}
+
+.db-burger {
+  display: none;
+}
+
+/* ==========================================================================
+   Mega menu (Services)
+   ========================================================================== */
+.db-mega {
+  position: fixed;
+  top: var(--db-header-h);
+  left: 0;
+  width: 100vw;
+  background:
+    radial-gradient(560px 420px at 88% 100%, rgba(70, 90, 224, 0.35), transparent 70%),
+    var(--db-bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 80px min(8vw, 140px);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.db-nav__item.is-open .db-mega {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.db-mega__intro h3 {
+  font-family: var(--db-font-display);
+  font-weight: 400;
+  font-size: clamp(32px, 3.4vw, 46px);
+  line-height: 1.15;
+  color: var(--db-ink);
+  margin: 0 0 28px;
+}
+
+.db-mega__intro a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: var(--db-muted);
+}
+.db-mega__intro a:hover { color: var(--db-accent); }
+
+.db-mega__col h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--db-font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--db-ink);
+  margin: 0 0 20px;
+}
+
+.db-mega__col ul li {
+  margin-bottom: 14px;
+}
+
+.db-mega__col ul li a {
+  font-size: 15.5px;
+  color: var(--db-muted);
+  transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.db-mega__col ul li a:hover {
+  color: var(--db-ink);
+  padding-left: 4px;
+}
+
+/* ==========================================================================
+   Services section (page content)
+   ========================================================================== */
+.db-services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 32px 120px;
+}
+
+.db-services__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--db-accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+
+.db-services__eyebrow .db-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--db-accent);
+  box-shadow: 0 0 0 4px var(--db-accent-soft);
+}
+
+.db-services__title {
+  font-family: var(--db-font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  max-width: 720px;
+  margin: 0 0 16px;
+}
+
+.db-services__subtitle {
+  color: var(--db-muted);
+  font-size: 16px;
+  max-width: 560px;
+  margin: 0 0 56px;
+  line-height: 1.6;
+}
+
+.db-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.db-service-card {
+  background: var(--db-panel);
+  border: 1px solid var(--db-line);
+  border-radius: 16px;
+  padding: 30px 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.db-service-card:hover {
+  border-color: rgba(70, 224, 201, 0.4);
+  transform: translateY(-4px);
+  background: var(--db-panel-2);
+}
+
+.db-service-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--db-accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.db-service-card__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--db-accent);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.db-service-card h3 {
+  font-family: var(--db-font-display);
+  font-size: 19px;
+  margin: 0;
+}
+
+.db-service-card p {
+  color: var(--db-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.db-service-card__link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--db-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 960px) {
+  .db-nav, .db-actions .db-icon-btn:not(.db-burger) { display: none; }
+  .db-burger { display: flex; }
+  .db-services__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .db-header__inner { padding: 0 18px; }
+  .db-services { padding: 64px 18px 80px; }
+  .db-services__grid { grid-template-columns: 1fr; }
+}
