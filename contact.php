@@ -114,8 +114,8 @@ function render_icon($name) {
     --error:         #d6403f;
     --success:       #1f9d55;
 
-    --font-display: 'Space Grotesk', 'Inter', sans-serif;
-    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display:  'Inter', sans-serif;
+    --font-body:    'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono:    'JetBrains Mono', 'Courier New', monospace;
   }
 

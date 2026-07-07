@@ -19,9 +19,19 @@ function db_is_active($page, $active) {
 ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/digibeat/assets/css/style.css">
 
 <style>
+  :root {
+    --font-body: 'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  body {
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
   /* ---- Logo size ---- */
   .db-header .db-logo__img {
     height: 42px !important;
@@ -165,8 +175,8 @@ function db_is_active($page, $active) {
   <div class="db-header__inner">
 
     <!-- Logo: swap the file below for your actual logo image -->
-    <a href="/" class="db-logo" aria-label="Digibeat home">
-      <img src="assets/logoff.png" alt="Digibeat" class="db-logo__img">
+    <a href="index" class="db-logo" aria-label="Digibeat home">
+      <img src="/digibeat/assets/logoff.png" alt="Digibeat" class="db-logo__img">
     </a>
 
     <!-- Primary nav -->
@@ -174,7 +184,7 @@ function db_is_active($page, $active) {
       <ul style="display:flex; align-items:center; gap:4px;">
 
         <li class="db-nav__item" data-menu="services">
-          <a href="/services.php" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
+          <a href="services" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
             Services
             <svg class="db-nav__caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -183,7 +193,7 @@ function db_is_active($page, $active) {
           <div class="db-mega">
             <div class="db-mega__intro">
               <h3>Building Strong<br>Capabilities to<br>Empower Your<br>Brand</h3>
-              <a href="/services.php">Go to overview →</a>
+              <a href="services">Go to overview →</a>
             </div>
 
             <div class="db-mega__col">
@@ -203,14 +213,14 @@ function db_is_active($page, $active) {
             </div>
 
             <div class="db-mega__col">
-              <h4>Web Development<svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></h4>
-              <ul>
-                <li><a href="custom-web-development">Custom Web Application </a></li>
-                <li><a href="/services/devops.php">Web Design Service</a></li>
-                <li><a href="/services/data-analytics.php">E-commerce Solutions</a></li>
-                <li><a href="/services/web-development.php">Website Development</a></li>
-              </ul>
-            </div>
+            <h4>Web Development</h4>
+            <ul>
+              <li><a href="/digibeat/services/custom-web-development">Custom Web Application</a></li>
+              <li><a href="/digibeat/services/web-development.php?service=web-design-service">Web Design Service</a></li>
+              <li><a href="/digibeat/services/ecommerce-solutions">E-commerce Solutions</a></li>
+              <li><a href="/digibeat/services/website-development">Website Development</a></li>
+            </ul>
+          </div>
 
             <div class="db-mega__col">
               <h4>Digital Marketing <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></h4>
@@ -226,20 +236,17 @@ function db_is_active($page, $active) {
         </li>
 
         <li class="db-nav__item">
-          <a href="case-studies" class="db-nav__link<?php echo db_is_active('case-studies', $active_page); ?>">Case Studies</a>
-        </li>
-        <li class="db-nav__item">
-          <a href="industries" class="db-nav__link<?php echo db_is_active('industries', $active_page); ?>">Industries</a>
-        </li>
-        <li class="db-nav__item">
-          <a href="/works.php" class="db-nav__link<?php echo db_is_active('works', $active_page); ?>">Works</a>
-        </li>
-        <li class="db-nav__item">
-          <a href="about" class="db-nav__link<?php echo db_is_active('about', $active_page); ?>">About</a>
-        </li>
-        <li class="db-nav__item">
-          <a href="careers" class="db-nav__link<?php echo db_is_active('careers', $active_page); ?>">Careers</a>
-        </li>
+            <a href="/digibeat/case-studies" class="db-nav__link<?php echo db_is_active('case-studies', $active_page); ?>">Case Studies</a>
+          </li>
+          <li class="db-nav__item">
+            <a href="/digibeat/industries" class="db-nav__link<?php echo db_is_active('industries', $active_page); ?>">Industries</a>
+          </li>
+          <li class="db-nav__item">
+            <a href="/digibeat/about" class="db-nav__link<?php echo db_is_active('about', $active_page); ?>">About</a>
+          </li>
+          <li class="db-nav__item">
+            <a href="/digibeat/careers" class="db-nav__link<?php echo db_is_active('careers', $active_page); ?>">Careers</a>
+          </li>
       </ul>
 
       <!-- Shown only on mobile, pinned below the list -->

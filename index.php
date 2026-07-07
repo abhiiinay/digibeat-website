@@ -136,30 +136,34 @@ $testimonials = [
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
+    :root {
+      --font-body: 'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
     body {
-      background-color: #ffffff;
-      color: #111318;
+      background-color: #ececf0;
+      color: #e4e1ea;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-body);
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #0284c7 0%, #111318 50%, #a855f7 100%);
+      background: linear-gradient(135deg, #4cd6ff 0%, #ffffff 50%, #ecb2ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.6);
+      background: rgba(31, 31, 38, 0.4);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .glass-card:hover {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: rgba(76, 154, 255, 0.3);
+      background: rgba(31, 31, 38, 0.6);
+      border-color: rgba(76, 214, 255, 0.3);
       transform: translateX(8px);
     }
 
@@ -170,28 +174,28 @@ $testimonials = [
     }
 
     .nav-link {
-      @apply text-sm font-medium text-black/60 hover:text-black transition-colors;
+      @apply text-sm font-medium text-white/70 hover:text-white transition-colors;
     }
 
     .nav-link.active {
-      @apply text-sm font-semibold text-black;
+      @apply text-sm font-semibold text-white;
     }
 
     .nav-icon {
-      @apply text-black text-[1.15rem] leading-none;
+      @apply text-white text-[1.15rem] leading-none;
     }
 
     .nav-action {
-      @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent text-black/90 transition-all hover:text-black hover:bg-black/5;
+      @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-transparent text-white/90 transition-all hover:text-white hover:bg-white/5;
     }
 
     .nav-action:hover .nav-icon {
-      color: #000000;
+      color: #ffffff;
     }
 
     .icon-container {
-      background: rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .vertical-text {
@@ -199,7 +203,7 @@ $testimonials = [
       text-transform: uppercase;
       letter-spacing: 0.2em;
       transform: rotate(180deg);
-      color: #999;
+      color: #666;
       font-size: 0.75rem;
       font-weight: 600;
     }
@@ -217,7 +221,7 @@ $testimonials = [
       padding: 2px;
       border-radius: 12px;
       background: conic-gradient(from 180deg, #ff5f6d, #ffc371, #4cd6ff, #a855f7, #ec4899, #ff5f6d);
-      box-shadow: 0 0 18px rgba(168,85,247,0.25), 0 0 30px rgba(76,214,255,0.2);
+      box-shadow: 0 0 18px rgba(168,85,247,0.45), 0 0 30px rgba(76,214,255,0.3);
       flex-shrink: 0;
     }
     .logo-chip-inner {
@@ -228,7 +232,7 @@ $testimonials = [
     .hero-block {
       min-height: 100svh;
       margin-bottom: 60px;
-      background-color: #ffffff;
+      background-color: #0e0e14;
     }
     #hero-fade-wrap {
       will-change: opacity, transform;
@@ -245,20 +249,19 @@ $testimonials = [
        here leaks into the rest of the Digibeat page.
        ============================================================ */
     .strata-services{
-      --st-black:#ffffff;
-      --st-line:rgba(0,0,0,0.09);
-      --st-line-strong:rgba(0,0,0,0.22);
-      --st-gray:#4b4b4b;
-      --st-gray-dim:#6b6b6b;
+      --st-black:#000000;
+      --st-line:rgba(255,255,255,0.09);
+      --st-line-strong:rgba(255,255,255,0.22);
+      --st-gray:#bfbfbf;
+      --st-gray-dim:#7a7a7a;
       --st-accent:#4d7fff;
-      --st-accent-soft:rgba(77,127,255,0.10);
-      --st-display:'Space Grotesk', sans-serif;
-      --st-body:'Inter', sans-serif;
+      --st-accent-soft:rgba(77,127,255,0.14);
+      --st-display:'Inter', sans-serif;
+      --st-body:var(--font-body);
       --st-mono:'JetBrains Mono', monospace;
       --st-ease:cubic-bezier(.16,.84,.44,1);
       position:relative;
       padding:180px 0 120px;
-      background:#ffffff;
     }
     /* Orbit ("What we do") and Capabilities are now two separate
        <section> elements — tune their own top/bottom spacing so
@@ -267,7 +270,6 @@ $testimonials = [
        section needs enough top padding to clear it). */
     .strata-services#services{
       padding:180px 0 80px;
-      background:#ffffff;
     }
     .strata-services#capabilities{
       padding:100px 0 140px;
@@ -294,7 +296,7 @@ $testimonials = [
     .strata-services .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--st-accent);}
     .strata-services h2.big{
       font-family:var(--st-display);font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.05;letter-spacing:-0.01em;
-      color:#111318;
+      color:#fff;
     }
 
     .strata-services .orbit-section-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
@@ -306,7 +308,7 @@ $testimonials = [
       display:flex;justify-content:space-between;align-items:center;transition:color .3s;background:none;border-left:none;border-right:none;border-bottom:none;cursor:pointer;
     }
     .strata-services .orbit-list button:last-child{border-bottom:1px solid var(--st-line);}
-    .strata-services .orbit-list button.active{color:#111318;}
+    .strata-services .orbit-list button.active{color:#fff;}
     .strata-services .orbit-list button .idx{font-size:11px;opacity:.6;}
 
     .strata-services .orbit-stage{
@@ -316,16 +318,16 @@ $testimonials = [
     .strata-services .orbit-stage svg{width:100%;height:100%;overflow:visible;cursor:grab;}
     .strata-services .orbit-stage svg:active{cursor:grabbing;}
     .strata-services .orbit-ring-static{fill:none;stroke:var(--st-line);stroke-width:1;}
-    .strata-services .orbit-ring-progress{fill:none;stroke:#111318;stroke-width:1;stroke-linecap:round;transition:stroke-dashoffset .1s linear;}
-    .strata-services .orbit-dot{fill:#111318;transition:fill .3s,r .3s;cursor:pointer;}
+    .strata-services .orbit-ring-progress{fill:none;stroke:#fff;stroke-width:1;stroke-linecap:round;transition:stroke-dashoffset .1s linear;}
+    .strata-services .orbit-dot{fill:#fff;transition:fill .3s,r .3s;cursor:pointer;}
     .strata-services .orbit-dot.active{fill:var(--st-accent);}
     .strata-services .orbit-center{
       position:absolute;text-align:center;pointer-events:none;
       width:60%;
     }
     .strata-services .orbit-icon{width:52px;height:52px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;}
-    .strata-services .orbit-icon svg{width:100%;height:100%;stroke:#111318;fill:none;stroke-width:1.2;}
-    .strata-services .orbit-title{font-family:var(--st-display);font-size:24px;font-weight:600;margin-bottom:10px;color:#111318;}
+    .strata-services .orbit-icon svg{width:100%;height:100%;stroke:#fff;fill:none;stroke-width:1.2;}
+    .strata-services .orbit-title{font-family:var(--st-display);font-size:24px;font-weight:600;margin-bottom:10px;color:#fff;}
     .strata-services .orbit-desc{font-family:var(--st-body);font-size:13px;color:var(--st-gray-dim);line-height:1.6;}
     .strata-services .orbit-count{position:absolute;bottom:-40px;left:0;font-family:var(--st-mono);font-size:12px;color:var(--st-gray-dim);letter-spacing:.1em;}
 
@@ -336,7 +338,7 @@ $testimonials = [
 
     .strata-services .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--st-line);border:1px solid var(--st-line);margin-top:60px;}
     .strata-services .svc-card{
-      background:#ffffff;padding:44px 30px;position:relative;overflow:hidden;
+      background:#000;padding:44px 30px;position:relative;overflow:hidden;
       transition:transform .5s var(--st-ease),background .5s var(--st-ease);
     }
     .strata-services .svc-card::before{
@@ -345,10 +347,10 @@ $testimonials = [
       opacity:0;transition:opacity .4s ease;pointer-events:none;
     }
     .strata-services .svc-card:hover::before{opacity:1;}
-    .strata-services .svc-card:hover{transform:translateY(-6px);background:#fafbff;}
+    .strata-services .svc-card:hover{transform:translateY(-6px);background:#050505;}
     .strata-services .svc-num{font-family:var(--st-mono);font-size:12px;color:var(--st-gray-dim);}
-    .strata-services .svc-icon{width:36px;height:36px;margin:24px 0;stroke:#111318;fill:none;stroke-width:1.1;}
-    .strata-services .svc-card h3{font-family:var(--st-display);font-size:20px;font-weight:600;margin-bottom:12px;color:#111318;}
+    .strata-services .svc-icon{width:36px;height:36px;margin:24px 0;stroke:#fff;fill:none;stroke-width:1.1;}
+    .strata-services .svc-card h3{font-family:var(--st-display);font-size:20px;font-weight:600;margin-bottom:12px;color:#fff;}
     .strata-services .svc-card p{color:var(--st-gray-dim);font-size:14px;line-height:1.7;font-family:var(--st-body);}
     @media (max-width:900px){.strata-services .svc-grid{grid-template-columns:1fr;}}
 
@@ -358,14 +360,14 @@ $testimonials = [
        above it. Uses plain CSS grid (no Bootstrap dependency).
        ============================================================ */
     .about-section {
-      --about-bg: #ffffff;
-      --about-white: #111318;
-      --about-text-secondary: #5b5c63;
+      --about-bg: #050505;
+      --about-white: #ffffff;
+      --about-text-secondary: #bfbfbf;
       --about-accent: #4F46FF;
-      --about-accent-soft: rgba(79, 70, 255, 0.10);
-      --about-border: rgba(0, 0, 0, 0.10);
-      --about-display: 'Space Grotesk', sans-serif;
-      --about-body: 'Inter', sans-serif;
+      --about-accent-soft: rgba(79, 70, 255, 0.16);
+      --about-border: rgba(255, 255, 255, 0.12);
+      --about-display: 'Inter', sans-serif;
+      --about-body: var(--font-body);
       --about-mono: 'JetBrains Mono', monospace;
       --about-ease: cubic-bezier(.16, .84, .44, 1);
 
@@ -375,7 +377,7 @@ $testimonials = [
       background: var(--about-bg);
       background-image: radial-gradient(
         ellipse 900px 600px at 78% 30%,
-        rgba(79, 70, 255, 0.06),
+        rgba(79, 70, 255, 0.10),
         transparent 65%
       );
       padding: 140px 0;
@@ -415,7 +417,7 @@ $testimonials = [
       position: absolute; top: 8%; right: 4%; display: grid;
       grid-template-columns: repeat(3, 1fr); gap: 6px;
     }
-    .about-bg__dotgrid span { width: 3px; height: 3px; border-radius: 50%; background: rgba(0,0,0,.25); }
+    .about-bg__dotgrid span { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.35); }
 
     /* diagonal "speed line" clusters, top-right and bottom-right */
     .about-corner-lines { position: absolute; display: flex; gap: 8px; }
@@ -428,7 +430,7 @@ $testimonials = [
 
     /* three-dot pagination, bottom-right of the section */
     .about-pagination { position: absolute; bottom: 6%; right: 6%; display: flex; align-items: center; gap: 7px; }
-    .about-pagination span { width: 5px; height: 5px; border-radius: 50%; background: rgba(0,0,0,.2); }
+    .about-pagination span { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.3); }
     .about-pagination span:last-child { background: var(--about-accent); box-shadow: 0 0 8px 2px var(--about-accent-soft); }
 
     /* ---------------- Left column: copy ---------------- */
@@ -436,13 +438,13 @@ $testimonials = [
       display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
     }
     .about-eyebrow__line {
-      height: 1px; background: rgba(0,0,0,.22); flex-shrink: 0;
+      height: 1px; background: rgba(255,255,255,.32); flex-shrink: 0;
     }
     .about-eyebrow__line--left { width: 34px; }
-    .about-eyebrow__line--right { width: 100px; background: linear-gradient(90deg, rgba(0,0,0,.22), transparent); }
+    .about-eyebrow__line--right { width: 100px; background: linear-gradient(90deg, rgba(255,255,255,.32), transparent); }
     .about-eyebrow__text {
       font-family: var(--about-mono); font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
-      color: rgba(0,0,0,.7); white-space: nowrap;
+      color: rgba(255,255,255,.8); white-space: nowrap;
     }
 
     .about-heading {
@@ -467,7 +469,7 @@ $testimonials = [
 
     .about-cta {
       position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 18px 30px;
-      border: 1.5px solid rgba(79, 70, 255, 0.35); border-radius: 999px; color: var(--about-white);
+      border: 1.5px solid rgba(124, 109, 255, 0.5); border-radius: 999px; color: var(--about-white);
       font-family: var(--about-body); font-weight: 600; font-size: 15px; text-decoration: none; overflow: hidden;
       transition: border-color .4s var(--about-ease), box-shadow .4s var(--about-ease), transform .3s var(--about-ease);
     }
@@ -476,7 +478,7 @@ $testimonials = [
       opacity: 0; transition: opacity .4s var(--about-ease); z-index: -1;
     }
     .about-cta__icon { width: 15px; height: 15px; transition: transform .4s var(--about-ease); }
-    .about-cta:hover { border-color: rgba(79, 70, 255, 0.7); box-shadow: 0 0 26px rgba(79, 70, 255, 0.18); transform: translateY(-2px); color: var(--about-white); }
+    .about-cta:hover { border-color: rgba(124, 109, 255, 0.9); box-shadow: 0 0 26px rgba(79, 70, 255, 0.32); transform: translateY(-2px); color: var(--about-white); }
     .about-cta:hover::before { opacity: 1; }
     .about-cta:hover .about-cta__icon { transform: translate(3px, -3px); }
 
@@ -491,15 +493,15 @@ $testimonials = [
     /* rotated diamond peeking out behind the photo top-right and bottom-right, for layered depth */
     .about-visual__diamond {
       position: absolute; width: 74%; height: 74%; right: -10%; bottom: -8%;
-      border: 1px solid var(--about-border); background: rgba(0,0,0,0.02);
+      border: 1px solid var(--about-border); background: rgba(255,255,255,0.02);
       transform: rotate(45deg); border-radius: 22px; z-index: 1;
     }
 
     /* thick offset "donut" ring — sits behind/left of the photo so only a bold crescent shows */
     .about-visual__ring-thick {
       position: absolute; left: -7%; top: -3%; width: 90%; height: 90%;
-      border-radius: 50%; border: 26px solid rgba(0,0,0,0.035);
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
+      border-radius: 50%; border: 26px solid rgba(255,255,255,0.045);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14), 0 0 0 1px rgba(255,255,255,0.05);
       z-index: 2;
     }
 
@@ -507,7 +509,7 @@ $testimonials = [
     .about-ring circle { fill: none; }
 
     /* thin static outline ring, full circle, sits just outside the photo */
-    .about-ring--static circle { stroke: rgba(0, 0, 0, 0.14); stroke-width: 1; }
+    .about-ring--static circle { stroke: rgba(255, 255, 255, 0.18); stroke-width: 1; }
 
     /* blue progress-style arc, full sweep, slightly larger than the photo, peeking on the right/bottom */
     .about-ring--progress circle {
@@ -520,20 +522,20 @@ $testimonials = [
 
     .about-visual__dot {
       position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--about-white);
-      box-shadow: 0 0 8px 2px rgba(0,0,0,.15); transform: translate(-50%, -50%); z-index: 5;
+      box-shadow: 0 0 8px 2px rgba(255,255,255,.25); transform: translate(-50%, -50%); z-index: 5;
     }
     .about-visual__dot--accent { background: var(--about-accent); box-shadow: 0 0 10px 3px var(--about-accent-soft); }
 
     .about-photo {
       position: absolute; inset: 16%; border-radius: 50%; overflow: hidden; border: 1px solid var(--about-border);
-      box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 25px 70px rgba(0,0,0,0.18); z-index: 3;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.4), 0 25px 70px rgba(0,0,0,0.55); z-index: 3;
     }
     .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; transition: transform .6s var(--about-ease); }
     .about-photo:hover img { transform: scale(1.03); }
 
     /* Graceful degradation if the photo fails to load (missing/corrupt file) */
     .about-photo--fallback {
-      background: radial-gradient(circle at 35% 30%, rgba(79,70,255,0.14), #f4f4f8 70%);
+      background: radial-gradient(circle at 35% 30%, rgba(79,70,255,0.35), #0e0e14 70%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -544,7 +546,7 @@ $testimonials = [
       font-size: 48px;
       font-weight: 600;
       letter-spacing: .05em;
-      color: rgba(0,0,0,0.25);
+      color: rgba(255,255,255,0.35);
     }
 
     /* diagonal line cluster tucked into the visual's own top-right corner */
@@ -561,7 +563,7 @@ $testimonials = [
       position: absolute; top: -6%; right: -2%; display: grid;
       grid-template-columns: repeat(3, 1fr); gap: 6px;
     }
-    .about-visual__dotgrid span { width: 3px; height: 3px; border-radius: 50%; background: rgba(0,0,0,.3); }
+    .about-visual__dotgrid span { width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.4); }
 
     .about-reveal { opacity: 0; transform: translateY(28px); }
 
@@ -591,16 +593,18 @@ $testimonials = [
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col relative overflow-x-hidden bg-white">
+
+<body class="min-h-screen flex flex-col relative overflow-x-hidden bg-[#0e0e14]">
+  <div id="cr-header-wrap"><?php include 'header.php'; ?></div>
 
 <main class="flex-1 relative z-10">
 <div class="hero-block relative w-full overflow-hidden flex flex-col" id="hero-fade-wrap">
 <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
 <video autoplay muted loop playsinline class="w-full h-full object-cover">
-<source src="assets/bg-video3.mp4" type="video/mp4">
+<source src="assets/bg-video2.mp4" type="video/mp4">
 </video>
-<div class="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-white/10"></div>
-<div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10"></div>
+<div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#0e0e14]"></div>
 </div>
 <section class="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 pb-16 sm:pb-20 relative z-10 flex-1 flex items-center" style="padding-top: max(120px, 15vh);">
 <div class="max-w-3xl space-y-6 sm:space-y-8">
@@ -811,9 +815,9 @@ $testimonials = [
       --ts-mint: #34D399;
       --ts-mint-soft: rgba(52, 211, 153, 0.16);
       --ts-gold: #F5B301;
-      --ts-display: 'Space Grotesk', sans-serif;
+      --ts-display: 'Inter', sans-serif;
       --ts-script: 'Sora', cursive;
-      --ts-body-font: 'Inter', sans-serif;
+      --ts-body-font: var(--font-body);
       --ts-label: 'Poppins', sans-serif;
       --ts-ease: cubic-bezier(.16,.84,.44,1);
  
@@ -1172,47 +1176,75 @@ function digibeat_icon(string $key): string
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><?php echo htmlspecialchars($pageTitle); ?></title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 (grid / utilities only) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
     /* ============================
        ROOT VARIABLES
     ============================ */
     :root{
-        --bg: #ffffff;
-        --card-bg: #f7f7f9;
-        --card-bg-alt: #f7f7f9;
+        --bg: #050505;
+        --card-bg: #111111;
+        --card-bg-alt: #101010;
         --blue: #4361FF;
         --blue-soft: #6a82ff;
-        --glow: rgba(67,97,255,.35);
-        --text: #111318;
-        --para: #5b5c63;
-        --border: rgba(0,0,0,.08);
-        --border-soft: rgba(0,0,0,.06);
+        --glow: rgba(67,97,255,.55);
+        --text: #FFFFFF;
+        --para: #B5B5B5;
+        --border: rgba(255,255,255,.08);
+        --border-soft: rgba(255,255,255,.06);
         --container-max: 1400px;
         --pad-desktop: 80px;
         --pad-tablet: 40px;
         --pad-mobile: 20px;
         --transition: .35s ease;
+        --font-body: 'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
-    .difference-section *{ box-sizing: border-box; }
+    *{ box-sizing: border-box; }
 
-    .difference-section{
-        background: #ffffff;
+    html, body{
+        background: var(--bg);
         color: var(--text);
-        font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+        font-family: var(--font-body);
         overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    body{
+        position: relative;
+        background:
+            radial-gradient(ellipse 900px 600px at 10% 85%, rgba(67,97,255,.10), transparent 60%),
+            radial-gradient(ellipse 700px 500px at 90% 15%, rgba(67,97,255,.05), transparent 60%),
+            linear-gradient(180deg, #060606 0%, #050505 100%);
+    }
+
+    a{ text-decoration: none; }
+
+    /* ============================
+       SECTION / CONTAINER
+    ============================ */
+    .difference-section{
         position: relative;
         padding-top: 120px;
         padding-bottom: 120px;
         padding-left: var(--pad-desktop);
         padding-right: var(--pad-desktop);
-        background:
-            radial-gradient(ellipse 900px 600px at 10% 85%, rgba(67,97,255,.06), transparent 60%),
-            radial-gradient(ellipse 700px 500px at 90% 15%, rgba(67,97,255,.03), transparent 60%),
-            #ffffff;
+        overflow: hidden;
     }
-
-    .difference-section a{ text-decoration: none; }
 
     .difference-container{
         max-width: var(--container-max);
@@ -1221,12 +1253,12 @@ function digibeat_icon(string $key): string
         z-index: 2;
     }
 
-    .difference-section .fade-up{
+    .fade-up{
         opacity: 0;
         transform: translateY(40px);
         transition: opacity .9s ease, transform .9s ease;
     }
-    .difference-section .fade-up.in-view{
+    .fade-up.in-view{
         opacity: 1;
         transform: translateY(0);
     }
@@ -1253,7 +1285,7 @@ function digibeat_icon(string $key): string
         width: 460px;
         height: 460px;
         border-radius: 50%;
-        background: radial-gradient(circle at 40% 35%, rgba(90,110,255,.25), rgba(67,97,255,.08) 55%, transparent 75%);
+        background: radial-gradient(circle at 40% 35%, rgba(90,110,255,.55), rgba(67,97,255,.12) 55%, transparent 75%);
         filter: blur(2px);
         animation: pulseGlow 7s ease-in-out infinite;
     }
@@ -1262,13 +1294,13 @@ function digibeat_icon(string $key): string
     .radar-ring{
         position: absolute;
         border-radius: 50%;
-        border: 1px solid rgba(67,97,255,.16);
+        border: 1px solid rgba(67,97,255,.22);
         left: -160px;
         animation: pulseGlow 6s ease-in-out infinite;
     }
-    .radar-ring.r1{ width: 420px;  height: 420px;  bottom: -140px; border-color: rgba(120,140,255,.25); }
-    .radar-ring.r2{ width: 640px;  height: 640px;  bottom: -230px; border-color: rgba(67,97,255,.14); animation-delay: .6s; }
-    .radar-ring.r3{ width: 300px;  height: 300px;  top: 90px; left: -80px; border-color: rgba(67,97,255,.20); animation-delay: 1s; }
+    .radar-ring.r1{ width: 420px;  height: 420px;  bottom: -140px; border-color: rgba(120,140,255,.35); }
+    .radar-ring.r2{ width: 640px;  height: 640px;  bottom: -230px; border-color: rgba(67,97,255,.20); animation-delay: .6s; }
+    .radar-ring.r3{ width: 300px;  height: 300px;  top: 90px; left: -80px; border-color: rgba(67,97,255,.28); animation-delay: 1s; }
 
     @keyframes pulseGlow{
         0%, 100%{ opacity: .6; }
@@ -1282,7 +1314,7 @@ function digibeat_icon(string $key): string
         left: 4px;
         width: 130px;
         height: 90px;
-        background-image: radial-gradient(rgba(0,0,0,.22) 1.4px, transparent 1.4px);
+        background-image: radial-gradient(rgba(255,255,255,.35) 1.4px, transparent 1.4px);
         background-size: 18px 18px;
         z-index: 1;
     }
@@ -1306,14 +1338,13 @@ function digibeat_icon(string $key): string
     }
 
     .heading-large{
+        font-family: 'Inter', sans-serif;
         font-weight: 800;
         font-size: 68px;
         line-height: 1.08;
         letter-spacing: -1.5px;
         margin-bottom: 26px;
         color: var(--text);
-        font-family: 'Space Grotesk', sans-serif;
-        letter-spacing: -0.02em;
     }
 
     .heading-large span{
@@ -1349,13 +1380,13 @@ function digibeat_icon(string $key): string
         margin-top: 22px;
         padding: 14px 12px 14px 28px;
         border-radius: 50px;
-        background: #ffffff;
+        background: rgba(5,5,8,.6);
         border: 1.5px solid var(--blue);
         color: var(--text);
         font-weight: 700;
         font-size: 15px;
         letter-spacing: .3px;
-        box-shadow: 0 0 22px rgba(67,97,255,.14);
+        box-shadow: 0 0 22px rgba(67,97,255,.28);
         transition: var(--transition);
         cursor: pointer;
     }
@@ -1363,7 +1394,7 @@ function digibeat_icon(string $key): string
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: rgba(67,97,255,.12);
+        background: rgba(67,97,255,.18);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -1372,7 +1403,7 @@ function digibeat_icon(string $key): string
     .cta-btn:hover{
         background: var(--blue);
         color: #fff;
-        box-shadow: 0 0 40px var(--glow), 0 8px 24px rgba(67,97,255,.25);
+        box-shadow: 0 0 40px var(--glow), 0 8px 24px rgba(67,97,255,.35);
         transform: translateY(-4px);
     }
     .cta-btn:hover .arrow-circle{
@@ -1399,7 +1430,7 @@ function digibeat_icon(string $key): string
         top: 36px;
         bottom: 36px;
         width: 1.5px;
-        background: linear-gradient(180deg, rgba(120,140,255,0) 0%, rgba(120,140,255,.5) 10%, rgba(120,140,255,.5) 90%, rgba(120,140,255,0) 100%);
+        background: linear-gradient(180deg, rgba(120,140,255,0) 0%, rgba(120,140,255,.6) 10%, rgba(120,140,255,.6) 90%, rgba(120,140,255,0) 100%);
     }
 
     .timeline-dot{
@@ -1408,7 +1439,7 @@ function digibeat_icon(string $key): string
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: #ffffff;
+        background: #0d0d14;
         border: 1.5px solid var(--blue-soft);
         box-shadow: 0 0 10px var(--glow);
         animation: dotPulse 2.4s ease-in-out infinite;
@@ -1451,8 +1482,8 @@ function digibeat_icon(string $key): string
 
     .feature-card-wrap:hover .feature-card{
         transform: translateY(-6px);
-        box-shadow: 0 14px 34px rgba(67,97,255,.10);
-        border-color: rgba(67,97,255,.28);
+        box-shadow: 0 14px 34px rgba(67,97,255,.16);
+        border-color: rgba(67,97,255,.35);
     }
 
     /* Protruding arrow tip — double-triangle trick for a hollow blue chevron */
@@ -1469,8 +1500,8 @@ function digibeat_icon(string $key): string
         transform: translateY(-50%);
         border-top: 37px solid transparent;
         border-bottom: 37px solid transparent;
-        border-left: 30px solid rgba(120,140,255,.45);
-        filter: drop-shadow(0 0 8px rgba(67,97,255,.30));
+        border-left: 30px solid rgba(120,140,255,.55);
+        filter: drop-shadow(0 0 8px rgba(67,97,255,.45));
     }
     .card-arrow .inner{
         position: absolute;
@@ -1504,16 +1535,16 @@ function digibeat_icon(string $key): string
         overflow: visible;
     }
     .hex-icon .hex-shape{
-        fill: rgba(67,97,255,.05);
-        stroke: rgba(67,97,255,.55);
+        fill: rgba(67,97,255,.06);
+        stroke: rgba(120,140,255,.7);
         stroke-width: 1.4;
-        filter: drop-shadow(0 0 8px rgba(67,97,255,.20));
+        filter: drop-shadow(0 0 8px rgba(67,97,255,.35));
     }
     .hex-icon .icon-inner{
         position: relative;
         width: 26px;
         height: 26px;
-        color: var(--text);
+        color: #fff;
         z-index: 1;
         transition: var(--transition);
     }
@@ -1524,12 +1555,12 @@ function digibeat_icon(string $key): string
     }
 
     .card-content h3{
+        font-family: 'Inter', sans-serif;
         font-size: 19px;
         font-weight: 700;
         margin-bottom: 8px;
         letter-spacing: .1px;
         color: var(--text);
-        font-family: 'Space Grotesk', sans-serif;
     }
 
     .card-content p{
@@ -1578,7 +1609,14 @@ function digibeat_icon(string $key): string
         .cta-btn{ width: 100%; justify-content: center; }
         .dot-pattern{ display: none; }
     }
+
+    ::selection{
+        background: var(--blue);
+        color: #fff;
+    }
 </style>
+</head>
+<body>
 
 <!-- =========================================================
      THE DIGIBEAT DIFFERENCE SECTION
@@ -1699,29 +1737,49 @@ function e($str) {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digibeat — Redesign</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-  .signal-section{
-    --sg-bg:#ffffff;
-    --sg-ink:#0b0b10;
-    --sg-ink-soft:#5b5c63;
-    --sg-hairline:#e7e7ec;
-    --sg-cyan:#00c2ff;
-    --sg-magenta:#ff2e92;
+  :root{
+    --bg:#ffffff;
+    --ink:#0b0b10;
+    --ink-soft:#5b5c63;
+    --hairline:#e7e7ec;
+    --cyan:#00c2ff;
+    --magenta:#ff2e92;
+    --card:#0b0b10;
+    --font-body: 'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
-  .signal-section .mono{
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{
+    background:#ffffff;
+  }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{
     font-family:'IBM Plex Mono', monospace;
     letter-spacing:.14em;
     text-transform:uppercase;
     font-size:12px;
     font-weight:500;
   }
-  .signal-section h1{
-    font-family:'Space Grotesk', sans-serif;
+  h1,h2{
+    font-family:'Inter', sans-serif;
     letter-spacing:-0.02em;
   }
 
-  /* ================= SECTION : PULSE / MAP ================= */
-  .signal-section.hero{
+  /* ================= SECTION 1 : PULSE / MAP ================= */
+  .hero{
     background:#ffffff;
     display:grid;
     grid-template-columns: 1fr 1.2fr;
@@ -1731,44 +1789,43 @@ function e($str) {
     padding:110px 40px 130px;
     align-items:center;
   }
-  .signal-section .eyebrow{
+  .eyebrow{
     display:flex;
     align-items:center;
     gap:9px;
-    color:var(--sg-ink);
+    color:var(--ink);
     margin-bottom:22px;
   }
-  .signal-section .dot-pulse{
+  .dot-pulse{
     width:7px; height:7px; border-radius:50%;
-    background: linear-gradient(135deg,var(--sg-cyan),var(--sg-magenta));
-    animation: sg-beat 1.15s ease-in-out infinite;
+    background: linear-gradient(135deg,var(--cyan),var(--magenta));
+    animation: beat 1.15s ease-in-out infinite;
     flex-shrink:0;
   }
-  @keyframes sg-beat{
+  @keyframes beat{
     0%,100%{ transform:scale(1); opacity:1; }
     45%{ transform:scale(1.9); opacity:.55; }
   }
-  .signal-section h1{
+  .hero h1{
     font-size:56px;
     line-height:1.04;
     font-weight:700;
     margin-bottom:28px;
-    color: var(--sg-ink);
   }
-  .signal-section h1 .grad{
-    background:linear-gradient(100deg,var(--sg-cyan),var(--sg-magenta));
+  .hero h1 .grad{
+    background:linear-gradient(100deg,var(--cyan),var(--magenta));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
   }
-  .signal-section p{
+  .hero p{
     font-size:16.5px;
     line-height:1.68;
-    color:var(--sg-ink-soft);
+    color:var(--ink-soft);
     max-width:480px;
     margin-bottom:20px;
   }
-  .signal-section .cta{
+  .cta{
     display:inline-flex;
     align-items:center;
     gap:8px;
@@ -1776,37 +1833,37 @@ function e($str) {
     font-family:'Space Grotesk', sans-serif;
     font-weight:600;
     font-size:15px;
-    color:var(--sg-ink);
+    color:var(--ink);
     text-decoration:none;
     position:relative;
     padding-bottom:3px;
   }
-  .signal-section .cta::after{
+  .cta::after{
     content:"";
     position:absolute;
     left:0; bottom:0;
     width:100%; height:2px;
-    background:linear-gradient(90deg,var(--sg-cyan),var(--sg-magenta));
+    background:linear-gradient(90deg,var(--cyan),var(--magenta));
     transform-origin:left;
     transition:transform .35s ease;
   }
-  .signal-section .cta:hover::after{ transform:scaleX(1.15); }
-  .signal-section .cta svg{ transition:transform .3s ease; }
-  .signal-section .cta:hover svg{ transform:translateX(4px); }
+  .cta:hover::after{ transform:scaleX(1.15); }
+  .cta svg{ transition:transform .3s ease; }
+  .cta:hover svg{ transform:translateX(4px); }
 
   /* map */
-  .signal-section .map-wrap{
+  .map-wrap{
     position:relative;
     width:100%;
     background:
       radial-gradient(circle at 50% 45%, rgba(0,194,255,.05), transparent 60%);
   }
-  .signal-section .map-canvas{
+  .map-canvas{
     position:relative;
     width:100%;
     aspect-ratio: 784.077 / 458.627;
   }
-  .signal-section .world-dots{
+  .world-dots{
     position:absolute;
     inset:0;
     width:100%;
@@ -1814,11 +1871,11 @@ function e($str) {
     display:block;
   }
 
-  .signal-section .pin{
+  .pin{
     position:absolute;
     display:flex; align-items:center; gap:7px;
     background:#fff;
-    border:1px solid var(--sg-hairline);
+    border:1px solid var(--hairline);
     padding:7px 12px 7px 10px;
     border-radius:999px;
     font-family:'Space Grotesk', sans-serif;
@@ -1828,29 +1885,29 @@ function e($str) {
     white-space:nowrap;
     z-index:3;
   }
-  .signal-section .pin .flag{ font-size:15px; line-height:1; }
+  .pin .flag{ font-size:15px; line-height:1; }
 
-  .signal-section .anchor{
+  .anchor{
     position:absolute;
     width:8px; height:8px;
     border-radius:50%;
-    background:var(--sg-ink);
+    background:var(--ink);
     z-index:3;
   }
-  .signal-section .anchor::before{
+  .anchor::before{
     content:"";
     position:absolute;
     inset:-8px;
     border-radius:50%;
-    border:1.4px solid var(--sg-magenta);
-    animation: sg-ring 1.9s ease-out infinite;
+    border:1.4px solid var(--magenta);
+    animation: ring 1.9s ease-out infinite;
   }
-  @keyframes sg-ring{
+  @keyframes ring{
     0%{ transform:scale(.4); opacity:.9; }
     100%{ transform:scale(2.3); opacity:0; }
   }
 
-  .signal-section .pulse-line{
+  .pulse-line{
     position:absolute;
     width:34%;
     height:26%;
@@ -1858,26 +1915,28 @@ function e($str) {
     overflow:visible;
     pointer-events:none;
   }
-  .signal-section .pulse-line path{
+  .pulse-line path{
     fill:none;
     stroke:url(#lineGrad);
     stroke-width:1.8;
     stroke-linecap:round;
     stroke-linejoin:round;
     stroke-dasharray: 6 7;
-    animation: sg-travel 3s linear infinite;
+    animation: travel 3s linear infinite;
     opacity:.9;
   }
-  @keyframes sg-travel{ to{ stroke-dashoffset:-260; } }
+  @keyframes travel{ to{ stroke-dashoffset:-260; } }
 
   @media (max-width: 980px){
-    .signal-section.hero{ grid-template-columns:1fr; padding:70px 24px; }
-    .signal-section h1{ font-size:38px; }
+    .hero{ grid-template-columns:1fr; padding:70px 24px; }
+    .hero h1{ font-size:38px; }
   }
 </style>
+</head>
+<body>
 
-<!-- ============ SIGNAL / MAP SECTION ============ -->
-<section class="signal-section hero">
+<!-- ============ SECTION 1 ============ -->
+<section class="hero">
   <div>
     <div class="eyebrow">
       <span class="dot-pulse"></span>
@@ -1910,6 +1969,34 @@ function e($str) {
     </div>
   </div>
 </section>
+
+</body>
+</html>
+
+<!-- Bootstrap JS (grid/utilities only) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Scroll-triggered fade / slide animations (Vanilla JS, no jQuery)
+    document.addEventListener('DOMContentLoaded', function () {
+        const observerOptions = { root: null, rootMargin: '0px 0px -80px 0px', threshold: 0.15 };
+
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(function (el) { revealObserver.observe(el); });
+        document.querySelectorAll('.feature-card-wrap').forEach(function (card) { revealObserver.observe(card); });
+    });
+</script>
+
+</body>
+</html>
 
 </main>
 
