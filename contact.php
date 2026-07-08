@@ -9,13 +9,110 @@
  */
 
 // ===================== CONFIG =====================
-$RECIPIENT_EMAIL = "hello@yourcompany.com"; // <-- change this
+$RECIPIENT_EMAIL = "hello@digibeat.in"; // <-- change this
 $COMPANY_NAME    = "Digibeat"; // <-- change this
 $SITE_NAME       = "digibeat.in";
+
+// ---- Mail sending method ----
+// "mail"  = PHP's built-in mail() function (needs a working local MTA / sendmail on the server)
+// "smtp"  = send via an SMTP account using PHPMailer (recommended — works on almost every host)
+$MAIL_METHOD = "smtp"; // <-- "mail" or "smtp"
+
+// ---- SMTP settings (only used when $MAIL_METHOD = "smtp") ----
+// Using Gmail SMTP. Setup:
+//   1. Turn on 2-Step Verification: https://myaccount.google.com/security
+//   2. Create an App Password:      https://myaccount.google.com/apppasswords
+//   3. Paste your Gmail address + the 16-character app password below
+//      (NOT your normal Gmail login password).
+$SMTP_HOST     = "smtp.gmail.com";
+$SMTP_PORT     = 587;                        // 587 = TLS (used below)
+$SMTP_SECURE   = "tls";
+$SMTP_USERNAME = "hello@digibeat.in";    // <-- your Gmail address
+$SMTP_PASSWORD = "your16charapppassword";    // <-- app password, no spaces. Better: load via getenv('SMTP_PASSWORD')
 // ====================================================
 
 $errors  = [];
 $success = false;
+
+/**
+ * Strip anything that could be used for header injection
+ * (newlines, carriage returns) from a value before it's placed
+ * inside an email header such as Reply-To / From.
+ */
+function clean_header_value($value) {
+    return trim(preg_replace('/[\r\n]+/', ' ', (string) $value));
+}
+
+/**
+ * Send mail using PHP's built-in mail() function.
+ * Returns [bool $sent, string $error]
+ */
+function send_via_php_mail($to, $subject, $body, $replyToEmail, $fromHost) {
+    $headers  = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "From: no-reply@" . $fromHost . "\r\n";
+    $headers .= "Reply-To: " . clean_header_value($replyToEmail) . "\r\n";
+
+    // Don't suppress errors — capture what actually happened.
+    $sent = mail($to, $subject, $body, $headers);
+
+    if (!$sent) {
+        $lastError = error_get_last();
+        $reason = $lastError['message'] ?? 'mail() returned false with no PHP error (this usually means no MTA/sendmail is configured on this server).';
+        error_log("Contact form mail() failed: " . $reason);
+        return [false, $reason];
+    }
+    return [true, ""];
+}
+
+/**
+ * Send mail via SMTP using PHPMailer.
+ * Requires PHPMailer installed, e.g.: composer require phpmailer/phpmailer
+ * Returns [bool $sent, string $error]
+ */
+function send_via_smtp($to, $subject, $body, $replyToEmail, $replyToName, $smtp) {
+    // Adjust this path/require to match how you installed PHPMailer
+    // (Composer autoload is the easiest way).
+    static $loaded = false;
+    if (!$loaded) {
+        $autoload = __DIR__ . '/vendor/autoload.php';
+        if (file_exists($autoload)) {
+            require_once $autoload;
+        }
+        $loaded = true;
+    }
+
+    if (!class_exists('PHPMailer\PHPMailer\PHPMailer')) {
+        return [false, "PHPMailer is not installed. Run: composer require phpmailer/phpmailer"];
+    }
+
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host       = $smtp['host'];
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $smtp['username'];
+        $mail->Password   = $smtp['password'];
+        $mail->SMTPSecure = $smtp['secure'] === 'ssl'
+            ? PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS
+            : PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = $smtp['port'];
+
+        $mail->setFrom($smtp['username'], 'Website Contact Form');
+        $mail->addAddress($to);
+        $mail->addReplyTo(clean_header_value($replyToEmail), clean_header_value($replyToName));
+
+        $mail->isHTML(false);
+        $mail->Subject = $subject;
+        $mail->Body    = $body;
+
+        $mail->send();
+        return [true, ""];
+    } catch (Exception $e) {
+        error_log("Contact form SMTP mail failed: " . $mail->ErrorInfo);
+        return [false, $mail->ErrorInfo];
+    }
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -43,17 +140,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $body .= "Phone: $phone\n\n";
         $body .= "Message:\n$message\n";
 
-        $headers = "From: no-reply@" . preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? 'localhost') . "\r\n";
-        $headers .= "Reply-To: $email\r\n";
+        $fromHost = preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? 'localhost');
 
-        // mail() requires a properly configured mail server on the host.
-        $sent = @mail($RECIPIENT_EMAIL, $subject, $body, $headers);
+        if ($MAIL_METHOD === "smtp") {
+            [$sent, $mailError] = send_via_smtp(
+                $RECIPIENT_EMAIL,
+                $subject,
+                $body,
+                $email,
+                "$first_name $last_name",
+                [
+                    'host'     => $SMTP_HOST,
+                    'port'     => $SMTP_PORT,
+                    'secure'   => $SMTP_SECURE,
+                    'username' => $SMTP_USERNAME,
+                    'password' => $SMTP_PASSWORD,
+                ]
+            );
+        } else {
+            [$sent, $mailError] = send_via_php_mail($RECIPIENT_EMAIL, $subject, $body, $email, $fromHost);
+        }
 
         if ($sent) {
             $success = true;
             $first_name = $last_name = $email = $company = $phone = $message = "";
         } else {
-            $errors[] = "Something went wrong sending your message. Please try again.";
+            // Show a friendly message to the visitor...
+            $errors[] = "Something went wrong sending your message. Please try again, or email us directly.";
+            // ...but log the real reason so you (the site owner) can fix it.
+            error_log("[Contact Form] Mail send failed via '$MAIL_METHOD': $mailError");
         }
     }
 }
@@ -180,7 +295,6 @@ function render_icon($name) {
     margin-bottom: 46px;
   }
 
-  /* ---- reasons list: fills the left column to the card's height ---- */
   .reasons{
     display:flex;
     flex-direction: column;
@@ -244,7 +358,6 @@ function render_icon($name) {
   }
   .quick-chip .icon{ color: var(--accent); display:flex; }
 
-  /* ---- form card ---- */
   .card{
     background: var(--panel);
     border: 1px solid var(--panel-border);
@@ -346,11 +459,6 @@ function render_icon($name) {
     .row{ grid-template-columns: 1fr; }
   }
 
-  /* =========================================================
-     OUR LOCATIONS — same white canvas as the page above; kept
-     distinct through a top rule, spacing, and a display-serif-
-     free modern heading rather than a color block.
-  ========================================================= */
   .locations{
     background: var(--bg);
     color: var(--text-primary);
@@ -433,7 +541,6 @@ function render_icon($name) {
   }
   .loc-map:hover{ color: var(--accent); border-color: var(--accent); }
 
-  /* ---- single enquiry card: the visual counterweight to the photo ---- */
   .enquiry-card{
     position: relative;
     background: var(--text-primary);
@@ -553,7 +660,6 @@ function render_icon($name) {
   <div class="eyebrow">Get in touch</div>
 
   <div class="grid">
-    <!-- LEFT: copy -->
     <div>
       <h1>Let's talk about<br>your next project.</h1>
       <p class="lede">
@@ -600,7 +706,6 @@ function render_icon($name) {
       </div>
     </div>
 
-    <!-- RIGHT: form -->
     <div class="card">
       <h2>Send us a message</h2>
 
@@ -720,6 +825,7 @@ function render_icon($name) {
     <?php endforeach; ?>
   </div>
 </section>
-
+<?php include 'footer.php'; ?>
 </body>
+
 </html>

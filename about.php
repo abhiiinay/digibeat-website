@@ -78,22 +78,67 @@ $founder_social = [
 <title><?php echo htmlspecialchars($pageTitle); ?></title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /*
+   * Hellix is a commercial font (not hosted on Google Fonts), so it's
+   * loaded via @font-face. Drop your licensed font files into an
+   * "assets/fonts/" folder next to this page (or update the src paths
+   * below) — filenames/weights are just examples, adjust to match what
+   * you were given. Until those files are in place, the browser will
+   * fall back to the sans-serif stack for body copy.
+   */
+  @font-face {
+    font-family: 'Hellix';
+    src: url('assets/fonts/Hellix-Regular.woff2') format('woff2'),
+         url('assets/fonts/Hellix-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Hellix';
+    src: url('assets/fonts/Hellix-Medium.woff2') format('woff2'),
+         url('assets/fonts/Hellix-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Hellix';
+    src: url('assets/fonts/Hellix-SemiBold.woff2') format('woff2'),
+         url('assets/fonts/Hellix-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Hellix';
+    src: url('assets/fonts/Hellix-Bold.woff2') format('woff2'),
+         url('assets/fonts/Hellix-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root{
     --ink:#0b0b0e;
     --ink-soft:#4a4a52;
     --paper:#ffffff;
-    --paper-soft:#f6f6f9;
+    --paper-soft:#ffffff;
     --line:#e6e6ec;
     --blue:#5546e8;
     --blue-deep:#3d32b0;
     --pass:#00b57a;
     --pass-soft:#e5f8f1;
     --radius:14px;
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'Inter', sans-serif;
+    --display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --body: 'Hellix', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
+  }
+  html, body {
+    background: #ffffff !important;
+    overflow-x: hidden;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -111,6 +156,12 @@ $founder_social = [
 
   :focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
 
+  /* Headings across the page use Inter */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--display);
+    color: #0b0b0e !important;
+  }
+
   /* ---------- HERO ---------- */
   .hero{padding:96px 0 64px;}
   .eyebrow{
@@ -118,11 +169,11 @@ $founder_social = [
     letter-spacing:.14em;text-transform:uppercase;color:var(--blue);
     display:flex;align-items:center;gap:10px;margin-bottom:22px;
   }
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue);display:inline-block;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--blue);display:inline-block;flex-shrink:0;}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;}
   @media (max-width:960px){ .hero-grid{grid-template-columns:1fr;} }
   h1{
-    font-family:var(--display);font-weight:600;
+    font-weight:600;
     font-size:clamp(34px,4.6vw,58px);line-height:1.06;letter-spacing:-.01em;
     margin:0 0 20px;
   }
@@ -133,19 +184,21 @@ $founder_social = [
     background:var(--ink);color:#e8e8ee;border-radius:var(--radius);
     padding:22px 22px 18px;font-family:var(--mono);font-size:13.5px;
     box-shadow:0 24px 60px -30px rgba(11,11,14,.55);
+    max-width:100%;overflow:hidden;
   }
   .console-bar{display:flex;align-items:center;gap:8px;margin-bottom:16px;opacity:.6;}
-  .console-dot{width:9px;height:9px;border-radius:50%;background:#4a4a52;}
-  .console-title{margin-left:8px;font-size:11.5px;letter-spacing:.06em;}
+  .console-dot{width:9px;height:9px;border-radius:50%;background:#4a4a52;flex-shrink:0;}
+  .console-title{margin-left:8px;font-size:11.5px;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .console-line{
     display:flex;justify-content:space-between;gap:14px;
     padding:9px 0;border-top:1px solid rgba(255,255,255,.08);
     opacity:0;transform:translateY(4px);
     animation:consoleIn .45s ease forwards;
+    flex-wrap:wrap;
   }
   .console-line:first-of-type{border-top:none;}
-  .console-line .name{color:#c9c9d4;}
-  .console-line .desc{color:#77778a;flex:1;text-align:left;padding-left:12px;}
+  .console-line .name{color:#c9c9d4;white-space:nowrap;}
+  .console-line .desc{color:#77778a;flex:1;text-align:left;padding-left:12px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .status{
     color:var(--pass);font-weight:500;display:inline-flex;align-items:center;gap:6px;
   }
@@ -163,7 +216,8 @@ $founder_social = [
   /* ---------- PILLAR CARDS ---------- */
   .pillars{padding:24px 0 80px;}
   .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  @media (max-width:900px){ .pillar-grid{grid-template-columns:1fr;} }
+  @media (max-width:900px){ .pillar-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .pillar-grid{grid-template-columns:1fr;} }
   .pillar{
     border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
     background:var(--paper-soft);
@@ -178,20 +232,21 @@ $founder_social = [
     font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
     color:var(--ink-soft);margin-bottom:14px;
   }
-  .pillar-body h3{font-family:var(--display);font-size:21px;margin:0 0 8px;font-weight:600;}
+  .pillar-body h3{font-size:21px;margin:0 0 8px;font-weight:600;}
   .pillar-body p{margin:0;color:var(--ink-soft);font-size:15px;}
 
   /* ---------- VALUES ---------- */
   .values{padding:80px 0;}
   .values-head{max-width:56ch;margin-bottom:40px;}
   .values-head .eyebrow{margin-bottom:14px;}
-  .values-head h2{font-family:var(--display);font-size:30px;font-weight:600;margin:0 0 10px;}
+  .values-head h2{font-size:30px;font-weight:600;margin:0 0 10px;}
   .values-head p{color:var(--ink-soft);margin:0;font-size:15.5px;}
   .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   @media (max-width:900px){ .values-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .values-grid{grid-template-columns:1fr;} }
   .value-card{background:var(--paper);padding:28px 24px;}
   .value-glyph{font-family:var(--mono);color:var(--blue);font-size:13px;margin-bottom:14px;}
-  .value-card h3{font-family:var(--display);font-size:17px;margin:0 0 8px;font-weight:600;}
+  .value-card h3{font-size:17px;margin:0 0 8px;font-weight:600;}
   .value-card p{margin:0;color:var(--ink-soft);font-size:14px;}
 
   /* ---------- FOUNDER ---------- */
@@ -200,6 +255,7 @@ $founder_social = [
   @media (max-width:900px){ .founder-grid{grid-template-columns:1fr;gap:36px;} }
 
   .founder-media{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--paper-soft);}
+  @media (max-width:900px){ .founder-media{max-width:360px;margin:0 auto;} }
   .founder-media > img{width:100%;height:100%;object-fit:cover;}
   .founder-badge{
     position:absolute;left:0;bottom:0;background:var(--paper);
@@ -209,16 +265,18 @@ $founder_social = [
   }
   .founder-badge-logo{height:24px;width:auto;max-width:120px;display:block;}
 
-  .founder-social{display:flex;gap:10px;margin-top:22px;}
+  .founder-social{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+  @media (max-width:900px){ .founder-social{justify-content:center;} }
   .founder-social a{
     width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;color:var(--blue);
     transition:background .15s ease, color .15s ease, border-color .15s ease;
+    flex-shrink:0;
   }
   .founder-social a:hover{background:var(--blue);border-color:var(--blue);color:#fff;}
   .founder-social svg{width:16px;height:16px;fill:currentColor;}
 
-  .founder-name{font-family:var(--display);font-size:29px;font-weight:700;margin:0 0 4px;}
+  .founder-name{font-size:29px;font-weight:700;margin:0 0 4px;}
   .founder-role{font-size:14.5px;color:var(--ink-soft);margin:0 0 26px;}
 
   .founder-quote{
@@ -232,8 +290,11 @@ $founder_social = [
     display:grid;grid-template-columns:74px 1fr;gap:20px;
     padding:22px 0;border-bottom:1px solid var(--line);
   }
+  @media (max-width:480px){
+    .founder-item{grid-template-columns:1fr;gap:6px;}
+  }
   .founder-year{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--blue);}
-  .founder-item h4{margin:0 0 6px;font-family:var(--display);font-size:16.5px;font-weight:600;}
+  .founder-item h4{margin:0 0 6px;font-size:16.5px;font-weight:600;}
   .founder-item p{margin:0;color:var(--ink-soft);font-size:14.5px;max-width:60ch;}
 
 
@@ -244,22 +305,58 @@ $founder_social = [
     border-radius:50%;background:radial-gradient(circle,var(--blue) 0%,transparent 70%);opacity:.5;
   }
   .cta-inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;max-width:1116px;margin:0 auto;}
-  .cta h2{font-family:var(--display);font-size:30px;margin:0;max-width:16ch;font-weight:600;}
+  .cta h2{font-size:30px;margin:0;max-width:16ch;font-weight:600;color:#ffffff !important;}
   .cta-btn{
     background:var(--blue);color:#fff;text-decoration:none;font-weight:600;
     padding:14px 26px;border-radius:999px;font-size:15px;white-space:nowrap;
     transition:background .15s;
   }
   .cta-btn:hover{background:var(--blue-deep);}
-   html, body {
-    background: var(--bg) !important;
-    color: var(--text-primary) !important;
+
+  /* ---------- RESPONSIVE: TABLET ---------- */
+  @media (max-width:960px){
+    .wrap{padding:0 24px;}
+    .hero{padding:72px 0 48px;}
+    .cta{margin:0 24px 72px;padding:44px 36px;}
+  }
+
+  /* ---------- RESPONSIVE: MOBILE ---------- */
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .hero{padding:56px 0 36px;}
+    .hero-grid{gap:36px;}
+    .hero-sub{font-size:15.5px;max-width:none;}
+    .console{padding:18px 16px 16px;font-size:12.5px;}
+
+    .pillars{padding:16px 0 56px;}
+    .pillar-grid{gap:20px;}
+    .pillar-body{padding:18px 18px 22px;}
+    .pillar-body h3{font-size:19px;}
+
+    .values{padding:56px 0;}
+    .values-head{margin-bottom:28px;}
+    .values-head h2{font-size:25px;}
+    .value-card{padding:22px 18px;}
+
+    .founder{padding:24px 0 72px;}
+    .founder-name{font-size:25px;}
+    .founder-quote{font-size:18px;padding-left:18px;margin-bottom:28px;}
+
+    .cta{margin:0 16px 56px;padding:36px 24px;border-radius:16px;}
+    .cta-inner{gap:20px;}
+    .cta h2{font-size:24px;max-width:none;}
+    .cta-btn{padding:12px 22px;font-size:14px;}
+  }
+
+  @media (max-width:380px){
+    .founder-badge{padding:10px 14px 9px 12px;}
+    .founder-badge-logo{height:20px;}
   }
 </style>
 </head>
-<body>
+<body style="background:#ffffff !important;">
 <?php include 'header.php'; ?>
-<main>
+<main style="background:#ffffff;">
   <section class="hero wrap">
     <div class="hero-grid">
       <div>
@@ -371,6 +468,6 @@ $founder_social = [
     </div>
   </section>
 </main>
-
+<?php include 'footer.php'; ?>
 </body>
 </html>

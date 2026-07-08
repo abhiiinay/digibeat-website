@@ -774,5 +774,6 @@ $active_page = 'careers';
   window.addEventListener('load', syncHeaderHeight);
 })();
 </script>
+<?php include 'footer.php'; ?>
 </body>
 </html>

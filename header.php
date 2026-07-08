@@ -38,6 +38,21 @@ function db_is_active($page, $active) {
     width: auto !important;
   }
 
+  /* ---- Make the navbar truly fixed (was position: sticky) ---- */
+  .db-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+  /* Compensate so page content doesn't start underneath the fixed header.
+     --db-header-h is defined in style.css (78px); this keeps it in sync
+     even if that value ever changes there. */
+  body {
+    padding-top: var(--db-header-h, 78px);
+  }
+
   /* ---- Kill the header's bottom separator line entirely ---- */
   .db-header {
     border-bottom: none !important;
@@ -82,6 +97,32 @@ function db_is_active($page, $active) {
   .db-header .db-nav__link::before {
     display: none !important;
     content: none !important;
+  }
+
+  /* ---- Mega menu: guarantee correct light-on-dark text ----
+     Design is a DARK panel (see style.css .db-mega background) with
+     light text — var(--db-ink) for headings, var(--db-muted) for links.
+     Something is overriding these back to a dark color, making them
+     invisible against the dark background. Force the correct values. */
+  .db-header .db-mega {
+    z-index: 60 !important;
+  }
+  .db-header .db-mega__intro h3 {
+    color: var(--db-ink, #f2f4f9) !important;
+    opacity: 1 !important;
+  }
+  .db-header .db-mega__col h4 {
+    color: var(--db-ink, #f2f4f9) !important;
+    opacity: 1 !important;
+  }
+  .db-header .db-mega__col ul li a,
+  .db-header .db-mega__intro a {
+    color: var(--db-muted, #8992a8) !important;
+    opacity: 1 !important;
+  }
+  .db-header .db-mega__col ul li a:hover,
+  .db-header .db-mega__intro a:hover {
+    color: var(--db-ink, #f2f4f9) !important;
   }
 
   /* ---- Responsive navbar ---- */
@@ -184,7 +225,7 @@ function db_is_active($page, $active) {
       <ul style="display:flex; align-items:center; gap:4px;">
 
         <li class="db-nav__item" data-menu="services">
-          <a href="services" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
+          <a href="/digibeat/services" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
             Services
             <svg class="db-nav__caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -193,7 +234,7 @@ function db_is_active($page, $active) {
           <div class="db-mega">
             <div class="db-mega__intro">
               <h3>Building Strong<br>Capabilities to<br>Empower Your<br>Brand</h3>
-              <a href="services">Go to overview →</a>
+              <a href="/digibeat/services">Go to overview →</a>
             </div>
 
             <div class="db-mega__col">
@@ -236,7 +277,7 @@ function db_is_active($page, $active) {
         </li>
 
         <li class="db-nav__item">
-            <a href="/digibeat/case-studies" class="db-nav__link<?php echo db_is_active('case-studies', $active_page); ?>">Case Studies</a>
+            <a href="/digibeat/our-works" class="db-nav__link<?php echo db_is_active('our-works', $active_page); ?>">Our Works</a>
           </li>
           <li class="db-nav__item">
             <a href="/digibeat/industries" class="db-nav__link<?php echo db_is_active('industries', $active_page); ?>">Industries</a>
@@ -266,7 +307,7 @@ function db_is_active($page, $active) {
       <button class="db-icon-btn" aria-label="Saved">
         <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z"/></svg>
       </button>
-      <a href="contact" class="db-cta<?php echo db_is_active('contact', $active_page); ?>">Contact</a>
+      <a href="/digibeat/contact" class="db-cta<?php echo db_is_active('contact', $active_page); ?>">Contact</a>
       <button class="db-icon-btn db-burger" aria-label="Open menu" id="db-burger-btn">
         <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" id="db-burger-icon"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -351,4 +392,4 @@ function db_is_active($page, $active) {
     }
   });
 })();
-</script>
+</script> 

@@ -519,5 +519,6 @@ $sector_count = count($sectors);
   });
 })();
 </script>
+<?php include 'footer.php'; ?>
 </body>
 </html>
