@@ -780,190 +780,117 @@ $view_all_url = '/clients.php';
       .about-pillar-card__icon-wrapper { transition: none; }
     }
 
-  /* ── CLIENTS SECTION — Interactive Kinetic Logo Grid ── */
-  .cl {
-    background: #080b12;
-    color: #fff;
+    .clients-section {
+    background: #ffffff;
+    color: #0e0d0d;
     font-family: 'Inter', sans-serif;
+    width: 100%;
     padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
+}
 
-  /* Premium digital grid texture */
-  .cl::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-    background-size: 32px 32px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.8;
-  }
-
-  .cl-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
+.clients-inner {
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 40px;
-  }
-
-  /* Header area */
-  .cl-head {
-    margin-bottom: 64px;
-    text-align: center;
-  }
-  .cl-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #818cf8;
-    margin-bottom: 12px;
-    display: inline-block;
-  }
-  .cl-title {
-    font-size: clamp(36px, 4.5vw, 54px);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin: 0;
-  }
-  .cl-title span {
-    background: linear-gradient(135deg, #a5b4fc, #6366f1, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Kinetic Logo Grid */
-  .cl-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-    transition: all 0.3s ease;
-  }
-
-  .cl-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 24px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    /* Speed transition for smooth magnetic pull */
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                background 0.3s ease, 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease,
-                opacity 0.3s ease,
-                filter 0.3s ease;
-    z-index: 1;
-  }
-
-  /* Soft neon backing glow on hover */
-  .cl-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle 80px at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.15), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .cl-card img {
-    max-width: 90%;
-    max-height: 48px;
+}
+ 
+    .clients-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+ 
+    .clients-header h2 {
+        font-size: 56px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.1;
+    }
+ 
+    .clients-header p {
+        font-size: 24px;
+        font-weight: 400;
+        max-width: 480px;
+        margin: 0;
+        line-height: 1.4;
+        color: #4a4a4a; 
+    }
+ 
+    .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 32px;
+        column-gap: 20px;
+        margin-bottom: 60px;
+    }
+ 
+    .client-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90px;
+    }
+ 
+   .client-logo img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    opacity: 0.5;
-    mix-blend-mode: screen;
-    /* Magnetic inner translation variable */
-    transform: translate3d(var(--tx, 0), var(--ty, 0), 0) scale(1);
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-  }
+    opacity: 0.9;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
 
-
-  /* Active card highlight details */
-  .cl-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 16px rgba(99, 102, 241, 0.1);
-    transform: scale(1.05) translate3d(var(--tx, 0), var(--ty, 0), 0);
-  }
-
-  .cl-card:hover::after {
+.client-logo img:hover {
     opacity: 1;
-  }
-
-  .cl-card:hover img {
-    opacity: 1;
-    transform: translate3d(var(--tx, 0), var(--ty, 0), 0) scale(1.06);
-  }
-
-  /* CTA Button styling */
-  .cl-cta {
-    display: flex;
-    justify-content: center;
-    margin-top: 56px;
-  }
-  .cl-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    letter-spacing: 0.01em;
-  }
-  .cl-cta-btn:hover {
-    border-color: #818cf8;
-    color: #fff;
-    background: rgba(129, 140, 248, 0.1);
-  }
-  .cl-cta-btn svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.2s;
-  }
-  .cl-cta-btn:hover svg {
-    transform: translateX(4px);
-  }
-
-  @media (max-width: 768px) {
-    .cl-grid {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
+    transform: scale(1.05);
+}
+ 
+    .clients-cta {
+        display: flex;
+        justify-content: center;
     }
-    .cl-card {
-      height: 84px;
-      padding: 12px 16px;
+ 
+    .clients-cta a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #111;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Inter', sans-serif;
+        border: 1px solid #111;
+        padding: 16px 32px;
+        transition: background 0.25s ease, color 0.25s ease;
     }
-  }
-  @media (max-width: 480px) {
-    .cl-container {
-      padding: 0 24px;
+ 
+    .clients-cta a:hover {
+    background: #111;       /* was #fff */
+    color: #fff;             /* was #000 */
+}
+ 
+    .clients-cta a svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.25s ease;
     }
-    .cl-grid {
-      grid-template-columns: repeat(2, 1fr);
+ 
+    .clients-cta a:hover svg {
+        transform: translateX(4px);
     }
-  }
+ 
+    @media (max-width: 992px) {
+        .clients-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+ 
+    @media (max-width: 600px) {
+        .clients-section { padding: 60px 24px; }
+        .clients-header h2 { font-size: 40px; }
+        .clients-header p { font-size: 18px; }
+        .clients-grid { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
+    }
   </style>
 </head>
 
@@ -976,7 +903,7 @@ $view_all_url = '/clients.php';
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-  /* ── Hero Root ── */
+  /* ── Hero root ── */
   .dh {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
@@ -984,567 +911,518 @@ $view_all_url = '/clients.php';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 140px 0 80px;
-    text-align: center;
+    padding: 100px 0 0;
   }
 
-  /* Fullscreen physics sandbox layer */
-  .dh-canvas {
+  /* ── Dot-grid background ── */
+  .dh::before {
+    content: '';
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    cursor: grab;
-  }
-  .dh-canvas:active {
-    cursor: grabbing;
+    background-image: radial-gradient(circle, #d1d5db 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
   }
 
-  .dh-container {
+  /* ── Gradient vignette to fade dots toward centre ── */
+  .dh::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 75% 70% at 50% 50%, #ffffff 35%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── Accent blobs ── */
+  .dh-blobs {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .dh-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.1;
+    animation: blobDrift 20s ease-in-out infinite alternate;
+  }
+  .dh-blob--1 { width: 560px; height: 560px; background: #6366f1; top: -160px; left: -120px; animation-delay: 0s; }
+  .dh-blob--2 { width: 420px; height: 420px; background: #0ea5e9; bottom: -60px; right: -80px; animation-delay: -8s; }
+  .dh-blob--3 { width: 300px; height: 300px; background: #22d3ee; top: 38%; left: 52%; animation-delay: -14s; }
+  @keyframes blobDrift {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(28px, -28px) scale(1.05); }
+    100% { transform: translate(-18px, 18px) scale(0.96); }
+  }
+
+  /* ── Inner wrapper ── */
+  .dh-wrap {
     position: relative;
     z-index: 10;
-    max-width: 1000px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
+    padding: 0 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 64px;
     align-items: center;
-    pointer-events: none; /* Let clicks pass through to physics canvas below */
+    width: 100%;
   }
 
-  /* Cyber Monospace Header */
-  .dh-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #6366f1;
-    background: rgba(99, 102, 241, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.15);
-    padding: 8px 16px;
-    border-radius: 6px;
-    margin-bottom: 32px;
-    font-family: monospace;
-    pointer-events: auto;
+  /* ── LEFT COLUMN ── */
+  .dh-copy { display: flex; flex-direction: column; align-items: flex-start; }
+
+  /* Status pill */
+  .dh-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px 6px 10px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 100px;
+    background: #f9fafb;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.02em;
+    margin-bottom: 36px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    opacity: 0;
+    transform: translateY(12px);
+    animation: dhFadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+  }
+  .dh-pill-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: dhPing 1.8s ease-in-out infinite;
+  }
+  @keyframes dhPing {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+    50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0.05); }
   }
 
-  /* Massive Epic Typography */
+  /* Headline */
   .dh-h1 {
-    font-size: clamp(44px, 8vw, 88px);
-    font-weight: 900;
-    line-height: 1.0;
-    letter-spacing: -0.05em;
+    font-size: clamp(40px, 5.5vw, 74px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
     color: #0f172a;
-    margin: 0 0 28px;
-    text-transform: uppercase;
-    user-select: none;
+    margin: 0 0 26px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: dhFadeUp 0.75s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
   }
-  .dh-h1 span {
-    background: linear-gradient(135deg, #6366f1, #0ea5e9, #22d3ee);
+  .dh-h1 .dh-word--accent {
+    position: relative;
+    display: inline-block;
+  }
+  .dh-h1 .dh-word--accent::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 2px;
+    height: 7px;
+    width: 0;
+    background: linear-gradient(90deg, #818cf8, #22d3ee);
+    border-radius: 4px;
+    z-index: -1;
+    animation: dhLineReveal 0.65s cubic-bezier(0.16,1,0.3,1) 1.1s forwards;
+  }
+  @keyframes dhLineReveal { to { width: 100%; } }
+  .dh-grad {
+    background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 55%, #22d3ee 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* Sub */
   .dh-sub {
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: 18px;
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.75;
     color: #64748b;
-    max-width: 580px;
-    margin: 0 0 40px;
+    max-width: 520px;
+    margin: 0 0 44px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: dhFadeUp 0.65s cubic-bezier(0.16,1,0.3,1) 0.42s forwards;
   }
 
-  /* Actions with interactive brackets */
+  /* CTA row */
   .dh-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: dhFadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.58s forwards;
+  }
+  .dh-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #0f172a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.18);
+  }
+  .dh-btn-primary:hover { background: #1e293b; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(15,23,42,0.22); }
+  .dh-btn-primary svg { width: 16px; height: 16px; transition: transform 0.2s; }
+  .dh-btn-primary:hover svg { transform: translateX(3px); }
+
+  .dh-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: 1.5px solid #e2e8f0;
+    color: #374151;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .dh-btn-ghost:hover { border-color: #6366f1; color: #6366f1; transform: translateY(-2px); }
+
+  /* Client logos row */
+  .dh-clients {
+    margin-top: 52px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: dhFadeUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.78s forwards;
+  }
+  .dh-clients-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+  .dh-clients-logos {
     display: flex;
     align-items: center;
     gap: 28px;
     flex-wrap: wrap;
-    justify-content: center;
-    pointer-events: auto;
   }
-
-  .dh-action-link {
-    display: inline-flex;
-    align-items: center;
-    color: #0f172a;
-    font-size: 14px;
+  .dh-client-logo {
+    font-size: 13px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: -0.01em;
+    color: #cbd5e1;
+    transition: color 0.2s;
+    white-space: nowrap;
     text-decoration: none;
-    font-family: monospace;
-    position: relative;
-    padding: 10px 20px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: 'Inter', sans-serif;
   }
+  .dh-client-logo:hover { color: #94a3b8; }
 
-  .dh-action-link::before,
-  .dh-action-link::after {
+  /* ── RIGHT COLUMN — Visual board ── */
+  .dh-visual {
+    position: relative;
+    opacity: 0;
+    animation: dhFadeIn 1s ease 0.55s forwards;
+  }
+  @keyframes dhFadeIn { to { opacity: 1; } }
+  @keyframes dhFadeUp  { to { opacity: 1; transform: translateY(0); } }
+
+  /* Main card */
+  .dh-card-main {
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.07);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  /* Spinning gradient border */
+  .dh-card-main::before {
     content: '';
     position: absolute;
-    top: 0; bottom: 0;
-    width: 6px;
-    border: 2px solid #cbd5e1;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    inset: -2px;
+    border-radius: 26px;
+    background: conic-gradient(from var(--dh-angle, 0deg), #6366f1, #22d3ee, #6366f1);
+    z-index: -1;
+    animation: dhBorderSpin 5s linear infinite;
   }
-  .dh-action-link::before {
-    left: 0;
-    border-right: none;
-  }
-  .dh-action-link::after {
-    right: 0;
-    border-left: none;
-  }
-
-  /* Hover Bracket expansion */
-  .dh-action-link:hover {
-    color: #6366f1;
-    letter-spacing: 0.18em;
-  }
-  .dh-action-link:hover::before {
-    transform: translateX(-8px);
-    border-color: #6366f1;
-  }
-  .dh-action-link:hover::after {
-    transform: translateX(8px);
-    border-color: #6366f1;
-  }
-
-  /* Physics controller toggle */
-  .dh-physics-toggle {
+  .dh-card-main::after {
+    content: '';
     position: absolute;
-    top: 140px;
-    right: 40px;
-    z-index: 20;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 12px 18px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    inset: 1.5px;
+    border-radius: 22.5px;
+    background: #fff;
+    z-index: -1;
+  }
+  @property --dh-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+  @keyframes dhBorderSpin { to { --dh-angle: 360deg; } }
+
+  .dh-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .dh-card-title { font-size: 13px; font-weight: 700; color: #0f172a; }
+  .dh-card-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600; color: #16a34a;
+    background: #dcfce7; padding: 3px 10px; border-radius: 100px;
+  }
+  .dh-card-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+
+  /* Bar chart */
+  .dh-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 76px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .dh-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    transform-origin: bottom;
+    animation: dhGrowBar 1s cubic-bezier(0.34,1.56,0.64,1) var(--dd) forwards;
+    transform: scaleY(0);
+  }
+  .dh-bar:nth-child(odd)  { background: linear-gradient(180deg, #6366f1, #818cf8); }
+  .dh-bar:nth-child(even) { background: #e8eafd; }
+  @keyframes dhGrowBar { to { transform: scaleY(1); } }
+
+  .dh-card-stat { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+  .dh-stat-num { font-size: 28px; font-weight: 800; color: #0f172a; letter-spacing: -0.04em; line-height: 1; }
+  .dh-stat-sub { font-size: 12px; color: #94a3b8; font-weight: 500; margin-top: 3px; }
+  .dh-stat-delta {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 13px; font-weight: 700; color: #22c55e;
+    background: #dcfce7; padding: 4px 10px; border-radius: 100px;
+  }
+
+  /* Floating metric cards */
+  .dh-metric {
+    position: absolute;
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    z-index: 5;
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: monospace;
-    font-size: 11px;
-    font-weight: 700;
-    color: #475569;
+    white-space: nowrap;
+    animation: dhFloatCard 6s ease-in-out infinite;
   }
+  .dh-metric--1 { top: -32px; left: -44px; animation-delay: 0s; }
+  .dh-metric--2 { bottom: 24px; right: -48px; animation-delay: -3s; }
+  .dh-metric--3 { top: 46%; right: -54px; animation: dhFloatCard3 6.5s ease-in-out infinite; animation-delay: -5s; }
+  @keyframes dhFloatCard  { 0%,100% { transform: translateY(0); }       50% { transform: translateY(-9px); } }
+  @keyframes dhFloatCard3 { 0%,100% { transform: translateY(-50%); }    50% { transform: translateY(calc(-50% - 9px)); } }
 
-  .dh-btn-toggle {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    padding: 6px 12px;
-    border-radius: 6px;
-    color: #0f172a;
-    cursor: pointer;
-    font-weight: 800;
-    transition: all 0.2s ease;
+  .dh-metric-icon {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .dh-btn-toggle:hover {
-    background: #6366f1;
-    color: #ffffff;
-    border-color: #6366f1;
-  }
+  .dh-metric-icon svg { width: 17px; height: 17px; }
+  .dh-metric-icon--purple { background: #ede9fe; color: #7c3aed; }
+  .dh-metric-icon--blue   { background: #e0f2fe; color: #0284c7; }
+  .dh-metric-icon--green  { background: #dcfce7; color: #16a34a; }
+  .dh-metric-num { font-size: 16px; font-weight: 800; color: #0f172a; letter-spacing: -0.03em; line-height: 1; }
+  .dh-metric-lbl { font-size: 11px; font-weight: 500; color: #94a3b8; margin-top: 2px; }
 
-  /* Telemetry Status Bar */
-  .dh-telemetry {
+  /* Scroll cue */
+  .dh-scroll {
     position: absolute;
-    bottom: 32px;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    font-family: monospace;
-    pointer-events: none;
+    gap: 8px;
+    opacity: 0;
+    animation: dhFadeUp 0.5s ease 1.5s forwards;
   }
-  .dh-telemetry-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: #94a3b8;
-    text-transform: uppercase;
-  }
-  .dh-stats {
-    font-size: 11px;
-    color: #6366f1;
-  }
+  .dh-scroll-label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #94a3b8; }
+  .dh-scroll-mouse { width: 22px; height: 34px; border: 2px solid #cbd5e1; border-radius: 12px; display: flex; justify-content: center; padding-top: 5px; }
+  .dh-scroll-wheel { width: 3px; height: 7px; background: #94a3b8; border-radius: 2px; animation: dhScrollWheel 1.6s ease-in-out infinite; }
+  @keyframes dhScrollWheel { 0% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(10px); } }
 
+  /* Ticker tape */
+  .dh-ticker {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+    padding: 14px 0;
+    margin-top: 0;
+  }
+  .dh-ticker-inner { display: flex; width: max-content; animation: dhTicker 30s linear infinite; }
+  .dh-ticker-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 40px;
+    font-size: 12px; font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .dh-ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: #cbd5e1; flex-shrink: 0; }
+  @keyframes dhTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .dh-wrap { grid-template-columns: 1fr; }
+    .dh-visual { display: none; }
+  }
   @media (max-width: 640px) {
-    .dh {
-      padding: 120px 0 60px;
-    }
-    .dh-container {
-      padding: 0 24px;
-    }
-    .dh-actions {
-      flex-direction: column;
-      gap: 16px;
-    }
-    .dh-physics-toggle {
-      position: static;
-      margin-top: 24px;
-      justify-content: center;
-    }
+    .dh-wrap { padding: 0 24px 60px; }
+    .dh-sub { font-size: 16px; }
+    .dh-actions { flex-direction: column; align-items: stretch; }
+    .dh-btn-primary, .dh-btn-ghost { justify-content: center; }
   }
 </style>
-<section class="dh" id="home">
 
-  <!-- Fullscreen Interactive Canvas Sandbox -->
-  <canvas class="dh-canvas" id="sandboxCanvas"></canvas>
+<section class="dh" id="home" aria-labelledby="dh-headline">
 
-
-  <div class="dh-container">
-    
-    <div class="dh-eyebrow">// CORE SYSTEM PROTOCOL : ONLINE</div>
-
-    <h1 class="dh-h1">
-      We engineer products<br>
-      for the <span>next epoch.</span>
-    </h1>
-
-    <p class="dh-sub">
-      A high-performance creative design and engineering studio. We build digital architectures, web interfaces, and growth channels focused on scale.
-    </p>
-
-    <!-- Dynamic Actions -->
-    <div class="dh-actions">
-      <a href="/digibeat/contact" class="dh-action-link">
-        Start Project
-      </a>
-      <a href="/digibeat/our-works" class="dh-action-link">
-        Explore Work
-      </a>
-    </div>
-
+  <div class="dh-blobs" aria-hidden="true">
+    <div class="dh-blob dh-blob--1"></div>
+    <div class="dh-blob dh-blob--2"></div>
+    <div class="dh-blob dh-blob--3"></div>
   </div>
 
-  <!-- Real-time Telemetry Monitor -->
-  <div class="dh-telemetry" aria-hidden="true">
-    <span class="dh-telemetry-label">Telemetry Feed</span>
-    <span class="dh-stats" id="telemetryHUD">GRAVITY: 0.00 / ACTIVE PILLS: 11 / KINETIC ENG: 0.00</span>
+  <div class="dh-wrap">
+
+    <!-- LEFT: COPY -->
+    <div class="dh-copy">
+
+      <div class="dh-pill">
+        <span class="dh-pill-dot"></span>
+        Available for new projects &nbsp;·&nbsp; 2025
+      </div>
+
+      <h1 class="dh-h1" id="dh-headline">
+        We&nbsp;<span class="dh-word--accent">engineer</span>&nbsp;digital<br>
+        products&nbsp;that&nbsp;<span class="dh-grad">grow.</span>
+      </h1>
+
+      <p class="dh-sub">
+        Digibeat is a full-service digital studio — strategy, design, engineering
+        and growth under one roof. No hand-offs, no guesswork, just results.
+      </p>
+
+      <div class="dh-actions">
+        <a href="/digibeat/contact" class="dh-btn-primary">
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/digibeat/our-works" class="dh-btn-ghost">View our work</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: VISUAL -->
+    <div class="dh-visual" aria-hidden="true">
+
+      <div class="dh-metric dh-metric--1">
+        <div class="dh-metric-icon dh-metric-icon--purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V4M16 19v-7M22 19H2"/></svg>
+        </div>
+        <div><div class="dh-metric-num">+184%</div><div class="dh-metric-lbl">Avg. traffic growth</div></div>
+      </div>
+
+      <div class="dh-metric dh-metric--2">
+        <div class="dh-metric-icon dh-metric-icon--green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div><div class="dh-metric-num">120+</div><div class="dh-metric-lbl">Projects shipped</div></div>
+      </div>
+
+      <div class="dh-metric dh-metric--3">
+        <div class="dh-metric-icon dh-metric-icon--blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div><div class="dh-metric-num">9 yrs</div><div class="dh-metric-lbl">In operation</div></div>
+      </div>
+
+      <div class="dh-card-main">
+        <div class="dh-card-top">
+          <div class="dh-card-title">Project performance</div>
+          <div class="dh-card-badge"><span class="dh-card-badge-dot"></span>Live</div>
+        </div>
+        <div class="dh-bars">
+          <div class="dh-bar" style="height:40%;--dd:0.7s"></div>
+          <div class="dh-bar" style="height:65%;--dd:0.8s"></div>
+          <div class="dh-bar" style="height:52%;--dd:0.9s"></div>
+          <div class="dh-bar" style="height:82%;--dd:1.0s"></div>
+          <div class="dh-bar" style="height:55%;--dd:1.1s"></div>
+          <div class="dh-bar" style="height:92%;--dd:1.2s"></div>
+          <div class="dh-bar" style="height:70%;--dd:1.3s"></div>
+          <div class="dh-bar" style="height:100%;--dd:1.4s"></div>
+        </div>
+        <div class="dh-card-stat">
+          <div>
+            <div class="dh-stat-num">98.4%</div>
+            <div class="dh-stat-sub">Client satisfaction</div>
+          </div>
+          <div class="dh-stat-delta">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            +12.3%
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="dh-scroll" aria-hidden="true">
+    <div class="dh-scroll-label">Scroll</div>
+    <div class="dh-scroll-mouse"><div class="dh-scroll-wheel"></div></div>
+  </div>
+
+  <!-- Ticker tape -->
+  <div class="dh-ticker">
+    <div class="dh-ticker-inner">
+      <?php
+      $ticks = ['Web Development','Digital Marketing','Brand Identity','IT Solutions','UX Design','SEO Strategy','E-commerce','Cloud Hosting','Content Marketing','Web Hosting'];
+      $double = array_merge($ticks, $ticks);
+      foreach ($double as $t): ?>
+        <div class="dh-ticker-item"><span class="dh-ticker-dot"></span><?= htmlspecialchars($t) ?></div>
+      <?php endforeach; ?>
+    </div>
   </div>
 
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('sandboxCanvas');
-  const ctx = canvas.getContext('2d');
-  const telemetryHUD = document.getElementById('telemetryHUD');
-  const gravityToggleBtn = document.getElementById('gravityToggleBtn');
-
-  let width = canvas.width = canvas.offsetWidth || window.innerWidth;
-  let height = canvas.height = canvas.offsetHeight || window.innerHeight;
-
-  let gravityY = 0; // Starts in space-drift mode
-  let friction = 0.98;
-  let activeGravity = false;
-
-  // Sound/Click event telemetry variables
-  let totalKineticEnergy = 0;
-
-  // Rounded Pills metadata structure
-  const pillLabels = [
-    'PHP 8.2', 'Next.js', 'MySQL', 'Cloudflare', 'Strategy', 'UI/UX', 
-    'Awwwards', 'Zero Hand-offs', 'SEO 100', 'Tailwind', 'Creative Code'
-  ];
-  
-  const pills = [];
-
-  // Generate physics capsule nodes
-  function initPills() {
-    pills.length = 0;
-    pillLabels.forEach((label, i) => {
-      // Setup text rendering variables to calculate bounding box size
-      ctx.font = 'bold 11px monospace';
-      const textWidth = ctx.measureText(label).width;
-      const paddingX = 20;
-      const paddingY = 10;
-      const pWidth = textWidth + paddingX * 2;
-      const pHeight = 11 + paddingY * 2;
-
-      // Random viewport initial points
-      pills.push({
-        x: Math.random() * (width - pWidth) + pWidth / 2,
-        y: Math.random() * (height - pHeight) + pHeight / 2,
-        vx: (Math.random() - 0.5) * 4,
-        vy: (Math.random() - 0.5) * 4,
-        width: pWidth,
-        height: pHeight,
-        radius: pHeight / 2,
-        label: label,
-        isDragged: false,
-        mass: pWidth * 0.1 // Mass based on capsule size
-      });
-    });
-  }
-
-  // Trigger double-check dimensions after DOM fully initializes
-  setTimeout(() => {
-    width = canvas.width = canvas.offsetWidth || window.innerWidth;
-    height = canvas.height = canvas.offsetHeight || window.innerHeight;
-    initPills();
-  }, 100);
-
-  // Handle Resize
-  window.addEventListener('resize', () => {
-    width = canvas.width = canvas.offsetWidth || window.innerWidth;
-    height = canvas.height = canvas.offsetHeight || window.innerHeight;
-    pills.forEach(p => {
-      if (p.x - p.width / 2 < 0) p.x = p.width / 2;
-      if (p.x + p.width / 2 > width) p.x = width - p.width / 2;
-      if (p.y - p.height / 2 < 0) p.y = p.height / 2;
-      if (p.y + p.height / 2 > height) p.y = height - p.height / 2;
-    });
-  });
-
-  // Mouse drag coordinates tracking states
-  let dragOffset = { x: 0, y: 0 };
-  let activePill = null;
-  let lastMouse = { x: 0, y: 0 };
-  let currentMouse = { x: 0, y: 0 };
-
-  // Helper check if mouse is inside pill boundaries
-  function getPillAt(mx, my) {
-    for (let i = pills.length - 1; i >= 0; i--) {
-      const p = pills[i];
-      const left = p.x - p.width / 2;
-      const right = p.x + p.width / 2;
-      const top = p.y - p.height / 2;
-      const bottom = p.y + p.height / 2;
-
-      if (mx >= left && mx <= right && my >= top && my <= bottom) {
-        return p;
-      }
-    }
-    return null;
-  }
-
-  // Pointer Down Trigger
-  canvas.addEventListener('pointerdown', e => {
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-
-    const hit = getPillAt(mx, my);
-    if (hit) {
-      activePill = hit;
-      hit.isDragged = true;
-      dragOffset.x = mx - hit.x;
-      dragOffset.y = my - hit.y;
-      lastMouse.x = mx;
-      lastMouse.y = my;
-    }
-  });
-
-  // Pointer Move Trigger
-  canvas.addEventListener('pointermove', e => {
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-    currentMouse.x = mx;
-    currentMouse.y = my;
-
-    if (activePill && activePill.isDragged) {
-      activePill.x = mx - dragOffset.x;
-      activePill.y = my - dragOffset.y;
-      
-      // Calculate immediate velocity on drag fling
-      activePill.vx = mx - lastMouse.x;
-      activePill.vy = my - lastMouse.y;
-
-      lastMouse.x = mx;
-      lastMouse.y = my;
-    }
-  });
-
-  // Pointer Up Trigger
-  window.addEventListener('pointerup', () => {
-    if (activePill) {
-      activePill.isDragged = false;
-      activePill = null;
-    }
-  });
-
-  // Gravity Toggle controller
-  if (gravityToggleBtn) {
-    gravityToggleBtn.addEventListener('click', () => {
-      activeGravity = !activeGravity;
-      if (activeGravity) {
-        gravityY = 0.4;
-        gravityToggleBtn.textContent = 'ACTIVE-G';
-      } else {
-        gravityY = 0;
-        gravityToggleBtn.textContent = 'LOW-DRIFT';
-        // Give a slight random lift upward when turning gravity off
-        pills.forEach(p => {
-          p.vy = (Math.random() - 0.5) * 5;
-          p.vx = (Math.random() - 0.5) * 5;
-        });
-      }
-    });
-  }
-
-  // Rigid Body capsule render
-  function drawPill(p) {
-    ctx.save();
-    
-    // Smooth pill boundary container shadow
-    ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
-    ctx.shadowBlur = 10;
-    ctx.shadowOffsetY = 4;
-
-    // Outer capsule background
-    ctx.fillStyle = '#ffffff';
-    ctx.strokeStyle = p.isDragged ? '#6366f1' : '#e2e8f0';
-    ctx.lineWidth = p.isDragged ? 1.5 : 1;
-    
-    // Draw capsule rounded path shape
-    ctx.beginPath();
-    ctx.roundRect(p.x - p.width / 2, p.y - p.height / 2, p.width, p.height, p.radius);
-    ctx.fill();
-    ctx.stroke();
-
-    // Small active system bullet
-    ctx.shadowBlur = 0;
-    ctx.shadowOffsetY = 0;
-    ctx.fillStyle = p.isDragged ? '#6366f1' : '#10b981';
-    ctx.beginPath();
-    ctx.arc(p.x - p.width / 2 + 16, p.y, 3.5, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Capsule Label text
-    ctx.fillStyle = '#475569';
-    ctx.font = 'bold 11px monospace';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(p.label, p.x - p.width / 2 + 28, p.y);
-
-    ctx.restore();
-  }
-
-  // Handle capsule collisions and viewport bounces
-  function updatePhysics() {
-    totalKineticEnergy = 0;
-
-    for (let i = 0; i < pills.length; i++) {
-      const p = pills[i];
-
-      if (!p.isDragged) {
-        // Apply gravity and drag velocities
-        p.vy += gravityY;
-        p.vx *= friction;
-        p.vy *= friction;
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Viewport boundaries checks with elastic rebound bounces
-        const halfW = p.width / 2;
-        const halfH = p.height / 2;
-
-        // Left/Right walls
-        if (p.x - halfW < 0) {
-          p.x = halfW;
-          p.vx = -p.vx * 0.6;
-        } else if (p.x + halfW > width) {
-          p.x = width - halfW;
-          p.vx = -p.vx * 0.6;
-        }
-
-        // Top/Bottom walls
-        if (p.y - halfH < 0) {
-          p.y = halfH;
-          p.vy = -p.vy * 0.6;
-        } else if (p.y + halfH > height) {
-          p.y = height - halfH;
-          p.vy = -p.vy * 0.6;
-          // Apply extra ground friction in active gravity mode
-          if (activeGravity) p.vx *= 0.9;
-        }
-      }
-
-      // Sum active velocities for Telekinetic Energy monitor
-      totalKineticEnergy += Math.hypot(p.vx, p.vy);
-
-      // Capsule to capsule collisions checks
-      for (let j = i + 1; j < pills.length; j++) {
-        const other = pills[j];
-        
-        const dx = other.x - p.x;
-        const dy = other.y - p.y;
-        const distance = Math.hypot(dx, dy);
-
-        // Simple approximate collision bounding cylinder overlapping check
-        const minDist = (p.width + other.width) / 4 + 10; 
-        
-        if (distance < minDist && distance > 0) {
-          // Push overlapping pills away from centers
-          const overlap = minDist - distance;
-          const normalX = dx / distance;
-          const normalY = dy / distance;
-
-          // Shift positions
-          if (!p.isDragged) {
-            p.x -= normalX * overlap * 0.5;
-            p.y -= normalY * overlap * 0.5;
-          }
-          if (!other.isDragged) {
-            other.x += normalX * overlap * 0.5;
-            other.y += normalY * overlap * 0.5;
-          }
-
-          // Calculate elastic impact vector calculations
-          const kx = p.vx - other.vx;
-          const ky = p.vy - other.vy;
-          const pSpeed = kx * normalX + ky * normalY;
-
-          if (pSpeed > 0) {
-            const impulse = (2 * pSpeed) / (p.mass + other.mass);
-            if (!p.isDragged) {
-              p.vx -= impulse * other.mass * normalX * 0.8;
-              p.vy -= impulse * other.mass * normalY * 0.8;
-            }
-            if (!other.isDragged) {
-              other.vx += impulse * p.mass * normalX * 0.8;
-              other.vy += impulse * p.mass * normalY * 0.8;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Core drawing animation loop
-  function loop() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Run physics frames
-    updatePhysics();
-
-    // Render capsules
-    pills.forEach(drawPill);
-
-    // Update Telemetry logs display HUD
-    const gravityValue = gravityY.toFixed(2);
-    const kineticVal = totalKineticEnergy.toFixed(2);
-    telemetryHUD.textContent = `GRAVITY: ${gravityValue} / ACTIVE PILLS: ${pills.length} / KINETIC ENG: ${kineticVal}`;
-
-    requestAnimationFrame(loop);
-  }
-
-  // Init grid setup and run loop
-  initPills();
-  loop();
-});
-</script>
 <!-- END HERO -->
 
 
@@ -2915,76 +2793,36 @@ function e($str) {
   </div>
 </section>
 </div>
-<!-- ── CLIENTS SECTION — Interactive Kinetic Logo Grid ── -->
-<section class="cl" id="clients" aria-labelledby="cl-title">
-  <div class="cl-container">
-    
-    <!-- Header -->
-    <div class="cl-head">
-      <span class="cl-eyebrow">Trusted Partnerships</span>
-      <h2 class="cl-title">Brands we have <span>empowered</span></h2>
-    </div>
-
-    <!-- Kinetic Grid -->
-    <div class="cl-grid" id="clientGrid">
-      <?php foreach ($clients as $index => $c): ?>
-        <div class="cl-card" data-name="<?php echo htmlspecialchars($c['name']); ?>">
-          <img src="<?php echo htmlspecialchars($c['logo']); ?>" alt="<?php echo htmlspecialchars($c['name']); ?>" loading="lazy">
+<!-- ---- PASTE CLIENTS SECTION HERE ---- -->
+<section class="clients-section">
+    <div class="clients-inner">
+        <div class="clients-header">
+            <h2>Clients</h2>
+            <p>Our clients are everything to us; so are we to them.</p>
         </div>
-      <?php endforeach; ?>
-    </div>
 
-    <!-- CTA -->
-    <div class="cl-cta">
-      <a href="<?php echo htmlspecialchars($view_all_url); ?>" class="cl-cta-btn">
-        View all clients
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
+        <div class="clients-grid">
+            <?php foreach ($clients as $client): ?>
+                <div class="client-logo">
+                    <img src="<?php echo htmlspecialchars($client['logo']); ?>"
+                         alt="<?php echo htmlspecialchars($client['name']); ?>"
+                         loading="lazy">
+                </div>
+            <?php endforeach; ?>
+        </div>
 
-  </div>
+        <div class="clients-cta">
+            <a href="<?php echo htmlspecialchars($view_all_url); ?>">
+                View all clients
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.cl-card');
-
-  cards.forEach(card => {
-    // 3D Magnetic cursor tracking
-    card.addEventListener('pointermove', e => {
-      const rect = card.getBoundingClientRect();
-      
-      // Calculate cursor coordinates relative to card center
-      const cardWidth = rect.width;
-      const cardHeight = rect.height;
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      
-      // Convert coordinates to percentages for backing glow gradients
-      const xPercent = (mouseX / cardWidth) * 100;
-      const yPercent = (mouseY / cardHeight) * 100;
-      
-      // Calculate magnetic offset translation values (max 10px shift)
-      const transX = ((mouseX - cardWidth / 2) / (cardWidth / 2)) * 10;
-      const transY = ((mouseY - cardHeight / 2) / (cardHeight / 2)) * 10;
-
-      card.style.setProperty('--mx', `${xPercent}%`);
-      card.style.setProperty('--my', `${yPercent}%`);
-      card.style.setProperty('--tx', `${transX}px`);
-      card.style.setProperty('--ty', `${transY}px`);
-    });
-
-    // Reset translations when mouse exits card
-    card.addEventListener('pointerleave', () => {
-      card.style.setProperty('--tx', '0px');
-      card.style.setProperty('--ty', '0px');
-    });
-  });
-});
-</script>
-<!-- ── END CLIENTS ── -->  
+<!-- ---- END CLIENTS SECTION ---- -->  
 </body>
 </html>
 
