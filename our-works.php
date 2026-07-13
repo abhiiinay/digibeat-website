@@ -693,6 +693,7 @@ $active_page = 'case-studies';
     .cs-drawer__footer .cs-btn-outline { padding: 12px 18px; font-size: 13.5px; }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 <div id="cs-header-wrap"><?php include 'header.php'; ?></div>

@@ -100,145 +100,178 @@ $aboutImage    = 'assets/images/home-about.png';
 $aboutImageAlt = 'The Digibeat team at work';
 
 
+$caseStudiesEyebrow = 'CASE STUDIES';
+$caseStudiesHeadingLead   = 'Our Recent';
+$caseStudiesHeadingScript = 'Works';
+$caseStudiesSubtitle = 'Real results, real stories, real impact. Explore how we help businesses solve challenges and accelerate growth.';
+
+$caseStudies = [
+    [
+        'id'        => 'hulul-kitchen',
+        'industry'  => 'Hospitality & Commercial Equipment',
+        'title'     => 'Hulul Kitchen',
+        'tag'       => 'Hospitality · Equipment',
+        'tagline'   => 'From a local equipment store to a trusted kitchen solutions brand.',
+        'site'      => 'https://www.hululkitchen.sa',
+        'photo'     => 'assets/images/hulul.png',
+        'gallery'   => [
+            'https://picsum.photos/seed/hulul-gallery-1/700/525',
+            'https://picsum.photos/seed/hulul-gallery-2/700/525'
+        ],
+        'challenge' => 'Hulul Kitchen, a supplier of commercial and home kitchen equipment, needed a professional online presence to match the scale of their growing business. Their previous website lacked structure, product clarity, and strong branding — making it hard for customers to browse equipment or understand the range on offer.',
+        'solution'  => [
+            'A dedicated product gallery showcasing kitchen equipment',
+            'Organized equipment categories for easy navigation',
+            'A professional brand-focused design with consistent colors and layout',
+            'A responsive structure for seamless viewing on any device'
+        ],
+        'results'   => [
+            'Stronger digital presence & improved brand perception',
+            'Increased product inquiries through better visibility',
+            'Enhanced customer experience with faster, clearer navigation',
+            'Better engagement from clean presentation & optimized layout'
+        ],
+        'metrics'   => [
+            ['label' => 'SYS.INQ', 'value' => '+45%', 'desc' => 'Increase in B2B inquiries'],
+            ['label' => 'LOAD.SPD', 'value' => '2.4s', 'desc' => 'Average page load time'],
+            ['label' => 'LHGHT.SC', 'value' => '98%', 'desc' => 'Lighthouse performance score']
+        ],
+        'health'    => 98
+    ],
+    [
+        'id'        => 'zeeque-preschool',
+        'industry'  => 'Education & Training',
+        'title'     => 'ZeeQue Preschool',
+        'tag'       => 'Education · Preschool',
+        'tagline'   => 'A delightful and intuitive portal for parents and early learners.',
+        'site'      => 'https://zeeque.in',
+        'photo'     => 'assets/clients/zee.webp',
+        'gallery'   => [
+            'https://picsum.photos/seed/zee-g1/700/525',
+            'https://picsum.photos/seed/zee-g2/700/525'
+        ],
+        'challenge' => 'ZeeQue Preschool wanted to modernize their admissions pipeline and create a warm, engaging website that reflects their child-centric philosophy and makes enrollment simple for parents.',
+        'solution'  => [
+            'A colorful, engaging, and parent-friendly website design',
+            'Integrated online admissions portal and child information forms',
+            'Responsive news and gallery layout showing preschool activities'
+        ],
+        'results'   => [
+            '35% increase in online registration inquiries',
+            'Significantly reduced time spent on manual admission paperwork',
+            'Highly positive feedback from parents on the digital journey'
+        ],
+        'metrics'   => [
+            ['label' => 'SYS.REG', 'value' => '+35%', 'desc' => 'Increase in admissions'],
+            ['label' => 'PPR.RED', 'value' => '-80%', 'desc' => 'Manual processing reduction'],
+            ['label' => 'MOB.TRAF', 'value' => '+60%', 'desc' => 'Mobile parenting traffic']
+        ],
+        'health'    => 95
+    ],
+    [
+        'id'        => 'snims-hospital',
+        'industry'  => 'Healthcare, Hospitals & Wellness',
+        'title'     => 'SNIMS Ernakulam',
+        'tag'       => 'Healthcare · Hospital Portal',
+        'tagline'   => 'Redesigning the digital portal for a premier medical institute.',
+        'site'      => 'https://snims.org',
+        'photo'     => 'assets/clients/bmc.webp',
+        'gallery'   => [
+            'https://picsum.photos/seed/snims-g1/700/525',
+            'https://picsum.photos/seed/snims-g2/700/525'
+        ],
+        'challenge' => 'SNIMS Ernakulam needed a modern, fast, and structured portal for patients, students, and medical professionals to easily access OPD schedules, academic resources, and clinical information.',
+        'solution'  => [
+            'A clean, accessible user interface built for all ages',
+            'Speed-optimized departmental pages and real-time OPD schedule lookup',
+            'Robust portal structure supporting academic news and clinical services'
+        ],
+        'results'   => [
+            'Improved page load performance by over 60%',
+            'Smoother user flow for patients booking appointments or finding clinical hours',
+            'Enhanced digital reputation for the institution'
+        ],
+        'metrics'   => [
+            ['label' => 'PAGE.LOD', 'value' => '-60%', 'desc' => 'Improvement in load times'],
+            ['label' => 'OPD.SRCH', 'value' => '1.5s', 'desc' => 'Instant search query rate'],
+            ['label' => 'PTNT.FLOW', 'value' => '2x', 'desc' => 'Faster appointment bookings']
+        ],
+        'health'    => 99
+    ]
+];
+
 $testimonialsEyebrow = 'TESTIMONIALS';
 $testimonialsHeadingLead   = 'What People';
 $testimonialsHeadingScript = 'Say';
 $testimonialsSubtitle = 'Real feedback from teams we\'ve shipped products with — on the work, the process, and what it\'s like to build together.';
 
+
 $testimonials = [
     [
-        'id'       => 'northwind',
-        'photo'    => '/digibeat/assets/images/br.png',
-        'quote'    => 'Digibeat didn\'t just build what we asked for — they questioned the brief until it was worth building. Launch week was the calmest release we\'ve ever had.',
-        'name'     => 'Amelia Cross',
-        'title'    => 'VP Product, Northwind',
-        'accent'   => 'purple',
-        'tag'      => 'PRODUCT · SAAS',
-        'tagline'  => 'Transforming legacy software into a performant cloud-native workspace.',
-        'video'    => '',
-        'challenge'=> 'Northwind faced scaling bottlenecks, outdated UX flows, and heavy code debt that resulted in customer drop-offs and complex feature releases.',
-        'solution' => [
-            'Conducted a detailed <b>UX mapping audit</b> to streamline friction points',
-            'Implemented a modern component-driven system utilizing <b>Inter & Space Grotesk</b>',
-            'Rebuilt backend integration layers for <b>sub-second API queries</b>'
-        ],
-        'results'  => [
-            'Decreased code release cycle times by over <b>45%</b>',
-            'Increased active user workspace engagement by <b>30%</b>',
-            'Zero critical issues or downtime recorded during release week'
-        ],
-        'metrics'  => [
-            ['val' => '45%', 'lbl' => 'Release Speed'],
-            ['val' => '30%', 'lbl' => 'Engagement'],
-            ['val' => '100%', 'lbl' => 'Release Uptime']
-        ]
+        'id'     => 'dr-alk',
+        'photo'  => '/digibeat/assets/images/',
+        'quote'  => 'We used the services of Digibeat for website development and I\'m really glad with the outcome. They clearly understood what I needed, gave cutting edge suggestions, and delivered high quality service, certainly in time and within our budget. I highly recommend Digibeat Online Solutions to anyone looking for web development services.',
+        'name'   => 'Dr. Abdul Latheef Kiliyanni',
+        'title'  => 'Dr. Alk',
+        'accent' => 'purple',
+        'video'  => '',
+        'site'   => 'https://dralk.com',
     ],
     [
-        'id'       => 'loomstate',
-        'photo'    => '',
-        'quote'    => 'One team, start to finish. No hand-offs, no re-explaining the brief to a new face every two weeks. That alone was worth switching agencies for.',
-        'name'     => 'Daniel Ferreira',
-        'title'    => 'Founder, Loomstate',
-        'accent'   => 'navy',
-        'tag'      => 'COMMERCE · DIGITAL',
-        'tagline'  => 'A cohesive design-to-engineering workflow for a headless e-commerce store.',
-        'video' => 'assets/bg-video.mp4',
-        'challenge'=> 'Loomstate was struggling with traditional agency workflows where key design details and UI logic got lost during the design-to-development hand-off phase.',
-        'solution' => [
-            'Unified designers and developers into a <b>single collaborative squad</b>',
-            'Created a strict <b>Figma-to-Code design token standard</b>',
-            'Deployed a fast headless web layout using modern responsive architectures'
-        ],
-        'results'  => [
-            'Bypassed the usual agency hand-off delays and shipped <b>4 weeks early</b>',
-            'Reduced post-implementation design discrepancies to <b>less than 2%</b>',
-            'Delivered an exceptionally smooth product browsing experience'
-        ],
-        'metrics'  => [
-            ['val' => '4 wks', 'lbl' => 'Ahead of plan'],
-            ['val' => '<2%', 'lbl' => 'UI Deviations'],
-            ['val' => '100%', 'lbl' => 'Unified workflow']
-        ]
+        'id'     => 'mr-ajith',
+        'photo'  => '',
+        'quote'  => 'Very satisfied with the work done by DigiBeat Online Solutions. The team redesigned our website to be faster, mobile-friendly, and more modern. They listened to our requirements, delivered on time, and were very responsive during the process. Highly recommended for reliable web development.',
+        'name'   => 'Mr. Ajith',
+        'title'  => 'Head, IT Department, SNIMS Ernakulam',
+        'accent' => 'navy',
+        'video'  => '',
+        'site'   => 'https://snims.org',
     ],
     [
-        'id'       => 'fielding',
-        'photo'    => 'https://i.pravatar.cc/150?img=47',
-        'quote'    => 'The kind of partner who tells you when your idea is wrong before you spend the budget on it. Our conversion rate is still climbing four months post-launch.',
-        'name'     => 'Priya Nandakumar',
-        'title'    => 'Head of Growth, Fielding & Co.',
-        'accent'   => 'mint',
-        'tag'      => 'GROWTH · OPTIMIZATION',
-        'tagline'  => 'Persistent landing experience optimization and checkout refinement.',
-        'video'    => 'https://assets.mixkit.co/videos/preview/mixkit-business-charts-on-a-tablet-screen-40361-large.mp4',
-        'challenge'=> 'Fielding & Co. was getting high inbound traffic but faced low sign-up rates due to a complex checkout pipeline and lack of page optimization.',
-        'solution' => [
-            'Conducted intensive <b>funnel mapping</b> and user-session testing',
-            'Deployed modular <b>landing page variants</b> built for speed and clarity',
-            'Optimized loading performance and script execution schedules'
-        ],
-        'results'  => [
-            'Increased sign-up conversion rate by <b>2.4x</b> in 60 days',
-            'Maintained steady growth in customer retention metrics',
-            'Achieved a Lighthouse performance rating of <b>98+</b>'
-        ],
-        'metrics'  => [
-            ['val' => '2.4x', 'lbl' => 'Conversion Rate'],
-            ['val' => '98+', 'lbl' => 'Lighthouse score'],
-            ['val' => '60d', 'lbl' => 'Payback window']
-        ]
+        'id'     => 'dr-sameeha',
+        'photo'  => '',
+        'quote'  => 'I\'m truly impressed by the outstanding work done by Digibeat Online Solutions in creating my website. Their team was highly professional, creative, and responsive to every detail I envisioned.',
+        'name'   => 'Dr. Sameeha N',
+        'title'  => 'Chief Consultant, Dr. Sameeha\'s Homoeo Home',
+        'accent' => 'mint',
+        'video'  => '',
+        'site'   => 'https://drsameeha.org',
     ],
-      [
-        'id'       => 'sewq',
-        'photo'    => '/digibeat/assets/images/br.png',
-        'quote'    => 'Digibeat didn\'t just build what we asked for — they questioned the brief until it was worth building. Launch week was the calmest release we\'ve ever had.',
-        'name'     => 'tyr',
-        'title'    => 'VP Product, Northwind',
-        'accent'   => 'purple',
-        'tag'      => 'PRODUCT · SAAS',
-        'tagline'  => 'Transforming legacy software into a performant cloud-native workspace.',
-        'video'    => '',
-        'challenge'=> 'Northwind faced scaling bottlenecks, outdated UX flows, and heavy code debt that resulted in customer drop-offs and complex feature releases.',
-        'solution' => [
-            'Conducted a detailed <b>UX mapping audit</b> to streamline friction points',
-            'Implemented a modern component-driven system utilizing <b>Inter & Space Grotesk</b>',
-            'Rebuilt backend integration layers for <b>sub-second API queries</b>'
-        ],
-        'results'  => [
-            'Decreased code release cycle times by over <b>45%</b>',
-            'Increased active user workspace engagement by <b>30%</b>',
-            'Zero critical issues or downtime recorded during release week'
-        ],
-        'metrics'  => [
-            ['val' => '45%', 'lbl' => 'Release Speed'],
-            ['val' => '30%', 'lbl' => 'Engagement'],
-            ['val' => '100%', 'lbl' => 'Release Uptime']
-        ]
+    [
+        'id'     => 'mr-kamal',
+        'photo'  => '/digibeat/assets/images/',
+        'quote'  => 'Efficient and responsive web support provided by DigiBeat for Baby Memorial Hospital for past many years. Always quick to resolve issues and maintain smooth digital operations.',
+        'name'   => 'Mr. Kamal K',
+        'title'  => 'Senior Manager, Baby Memorial Hospitals',
+        'accent' => 'purple',
+        'video'  => '',
+        'site'   => 'https://babymemorialhospital.in',
     ],
 ];
 
 
 // Add / edit clients here — name is used for the alt text only.
 $clients = [
-    ['name' => 'ZeeQue Preschool',                    'logo' => 'assets/clients/zeeque-preschool.png'],
-    ['name' => 'Markaz',                               'logo' => 'assets/clients/markaz.png'],
-    ['name' => 'Utthan',                                'logo' => 'assets/clients/utthan.png'],
-    ['name' => 'BMH',                                   'logo' => 'assets/clients/bmh.png'],
-    ['name' => 'Edhini Ayurveda',                       'logo' => 'assets/clients/edhini-ayurveda.png'],
-    ['name' => 'ALA BMCON',                             'logo' => 'assets/clients/ala-bmcon.png'],
-    ['name' => 'Dr. Alk',                               'logo' => 'assets/clients/dr-alk.png'],
-    ['name' => 'Prime Ston',                            'logo' => 'assets/clients/prime-ston.png'],
-    ['name' => 'Gulf Decorex',                          'logo' => 'assets/clients/gulf-decorex.png'],
-    ['name' => 'Medichem Disinfectant Industries',      'logo' => 'assets/clients/medichem.png'],
-    ['name' => "Dr. Sameeha's Homoeo Home",             'logo' => 'assets/clients/homoeo-home.png'],
-    ['name' => 'Gurudeva Charitable Trust',             'logo' => 'assets/clients/gurudeva-trust.png'],
-    ['name' => 'Sree Narayana Institute of Medical Sciences', 'logo' => 'assets/clients/sree-narayana-institute.png'],
-    ['name' => 'Hulul Tech',                            'logo' => 'assets/clients/hulul-tech.png'],
-    ['name' => 'Ayyoobi Educity',                       'logo' => 'assets/clients/ayyoobi-educity.png'],
-    ['name' => 'Elite Mission Hospital',                'logo' => 'assets/clients/elite-mission-hospital.png'],
-    ['name' => 'ph7 Indian Organic Spices',             'logo' => 'assets/clients/ph7-spices.png'],
-    ['name' => 'AVP',                                   'logo' => 'assets/clients/avp.png'],
-    ['name' => 'Tree Health Care',                      'logo' => 'assets/clients/tree-healthcare.png'],
-    ['name' => 'Jajini',                      'logo' => 'assets/clients/jajini.png'],
+    ['name' => 'ZeeQue Preschool',                    'logo' => 'assets/clients/zee.webp'],
+    ['name' => 'Markaz',                               'logo' => 'assets/clients/markaz.webp'],
+    ['name' => 'Utthan',                                'logo' => 'assets/clients/utthan.webp'],
+    ['name' => 'BMH',                                   'logo' => 'assets/clients/bmh.webp'],
+    ['name' => 'Edhini Ayurveda',                       'logo' => 'assets/clients/edhini.webp'],
+    ['name' => 'ALA BMCON',                             'logo' => 'assets/clients/bmc.webp'],
+    ['name' => 'Dr. Alk',                               'logo' => 'assets/clients/dralk.webp'],
+    ['name' => 'Prime Ston',                            'logo' => 'assets/clients/prime.webp'],
+    ['name' => 'Gulf Decorex',                          'logo' => 'assets/clients/gulf.webp'],
+    ['name' => 'Medichem Disinfectant Industries',      'logo' => 'assets/clients/medichem.webp'],
+    ['name' => "Dr. Sameeha's Homoeo Home",             'logo' => 'assets/clients/dr sameesha.webp'],
+    ['name' => 'Gurudeva Charitable Trust',             'logo' => 'assets/clients/guru.webp'],
+    ['name' => 'Sree Narayana Institute of Medical Sciences', 'logo' => 'assets/clients/sreen.webp'],
+    ['name' => 'Hulul Tech',                            'logo' => 'assets/clients/hulul.webp'],
+    ['name' => 'Ayyoobi Educity',                       'logo' => 'assets/clients/ayoobi.webp'],
+    ['name' => 'Elite Mission Hospital',                'logo' => 'assets/clients/elite.webp'],
+    ['name' => 'ph7 Indian Organic Spices',             'logo' => 'assets/clients/ph7.webp'],
+    ['name' => 'AVP',                                   'logo' => 'assets/clients/avp.webp'],
+    ['name' => 'Tree Health Care',                      'logo' => 'assets/clients/tree.webp'],
+    ['name' => 'Jajini',                      'logo' => 'assets/clients/jajini.webp'],
 ];
 
  
@@ -780,191 +813,137 @@ $view_all_url = '/clients.php';
       .about-pillar-card__icon-wrapper { transition: none; }
     }
 
-  /* ── CLIENTS SECTION — Interactive Kinetic Logo Grid ── */
+  /* ── CLIENTS SECTION — Clean Minimal Logo Layout ── */
   .cl {
-    background: #080b12;
+    background: #000000;
     color: #fff;
     font-family: 'Inter', sans-serif;
-    padding: 100px 0;
+    padding: 100px 0 80px;
     position: relative;
     overflow: hidden;
-  }
-
-  /* Premium digital grid texture */
-  .cl::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
-    background-size: 32px 32px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.8;
   }
 
   .cl-container {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 60px;
   }
 
-  /* Header area */
+  /* Two-column header */
   .cl-head {
-    margin-bottom: 64px;
-    text-align: center;
-  }
-  .cl-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #818cf8;
-    margin-bottom: 12px;
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 80px;
   }
   .cl-title {
-    font-size: clamp(36px, 4.5vw, 54px);
+    font-size: clamp(52px, 7vw, 90px);
     font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    letter-spacing: -0.04em;
+    line-height: 1.0;
     margin: 0;
+    color: #ffffff;
   }
-  .cl-title span {
-    background: linear-gradient(135deg, #a5b4fc, #6366f1, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .cl-sub {
+    font-size: clamp(16px, 1.8vw, 20px);
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 420px;
   }
 
-  /* Kinetic Logo Grid */
+  /* Logo Grid — full-width logos, no column gap */
   .cl-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-    transition: all 0.3s ease;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 52px;
+    column-gap: 0;
   }
 
   .cl-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    height: 100px;
+    background: transparent;
+    border: none;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 18px 24px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    /* Speed transition for smooth magnetic pull */
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), 
-                background 0.3s ease, 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease,
-                opacity 0.3s ease,
-                filter 0.3s ease;
-    z-index: 1;
-  }
-
-  /* Soft neon backing glow on hover */
-  .cl-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle 80px at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.15), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 0;
+    padding: 0 16px;
+    cursor: default;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .cl-card img {
-    max-width: 90%;
-    max-height: 48px;
+    width: 100%;
+    height: 100%;
+    max-height: 110px;
     object-fit: contain;
-    opacity: 0.5;
+    opacity: 0.9;
     mix-blend-mode: screen;
-    /* Magnetic inner translation variable */
-    transform: translate3d(var(--tx, 0), var(--ty, 0), 0) scale(1);
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-
-  /* Active card highlight details */
-  .cl-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 0 16px rgba(99, 102, 241, 0.1);
-    transform: scale(1.05) translate3d(var(--tx, 0), var(--ty, 0), 0);
-  }
-
-  .cl-card:hover::after {
-    opacity: 1;
+    filter: brightness(1.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
   }
 
   .cl-card:hover img {
     opacity: 1;
-    transform: translate3d(var(--tx, 0), var(--ty, 0), 0) scale(1.06);
+    filter: brightness(1.4);
+    transform: scale(1.04);
   }
 
-  /* CTA Button styling */
+  /* CTA Button */
   .cl-cta {
     display: flex;
     justify-content: center;
-    margin-top: 56px;
+    margin-top: 64px;
   }
   .cl-cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    font-weight: 600;
+    gap: 12px;
+    padding: 16px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    transition: all 0.25s ease;
     letter-spacing: 0.01em;
+    transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+    background: transparent;
   }
   .cl-cta-btn:hover {
-    border-color: #818cf8;
+    border-color: rgba(255, 255, 255, 0.8);
     color: #fff;
-    background: rgba(129, 140, 248, 0.1);
+    background: rgba(255, 255, 255, 0.06);
   }
   .cl-cta-btn svg {
     width: 16px;
     height: 16px;
-    transition: transform 0.2s;
+    stroke: currentColor;
+    transition: transform 0.2s ease;
   }
   .cl-cta-btn:hover svg {
-    transform: translateX(4px);
+    transform: translateX(5px);
   }
 
+  @media (max-width: 1024px) {
+    .cl-grid { grid-template-columns: repeat(4, 1fr); gap: 36px 48px; }
+  }
   @media (max-width: 768px) {
-    .cl-grid {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-    }
-    .cl-card {
-      height: 84px;
-      padding: 12px 16px;
-    }
+    .cl-head { grid-template-columns: 1fr; gap: 24px; }
+    .cl-grid { grid-template-columns: repeat(3, 1fr); gap: 32px 36px; }
+    .cl-container { padding: 0 28px; }
   }
   @media (max-width: 480px) {
-    .cl-container {
-      padding: 0 24px;
-    }
-    .cl-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .cl-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 24px; }
   }
+
   </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 
 <body class="min-h-screen flex flex-col relative overflow-x-hidden" style="background:#ffffff;">
@@ -980,28 +959,81 @@ $view_all_url = '/clients.php';
   .dh {
     font-family: 'Inter', sans-serif;
     background: #ffffff;
-    min-height: 100vh;
+    min-height: calc(100vh - var(--hdr-h, 72px));
+    height: calc(100vh - var(--hdr-h, 72px));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 140px 0 80px;
+    padding: 60px 0 65px;
     text-align: center;
   }
 
-  /* Fullscreen physics sandbox layer */
-  .dh-canvas {
+  /* ── Background decoration elements ── */
+  .dh-bg-visuals {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    pointer-events: none;
     z-index: 1;
-    cursor: grab;
+    overflow: hidden;
   }
-  .dh-canvas:active {
-    cursor: grabbing;
+  
+  .dh-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(15, 23, 42, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.018) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: center center;
+  }
+
+  .dh-bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+    will-change: transform;
+    animation: dh-glow-drift 15s ease-in-out infinite alternate;
+  }
+  .dh-bg-glow-1 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, #6366f1, #818cf8);
+    top: 15%;
+    left: -80px;
+  }
+  .dh-bg-glow-2 {
+    width: 290px;
+    height: 290px;
+    background: radial-gradient(circle, #0ea5e9, #22d3ee);
+    bottom: 15%;
+    right: -80px;
+    animation-delay: -5s;
+  }
+
+  @keyframes dh-glow-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 20px) scale(1.15); }
+  }
+
+  .dh-bg-radar {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+    z-index: 1;
+    animation: dh-radar-spin 25s linear infinite;
+  }
+
+  @keyframes dh-radar-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
   }
 
   .dh-container {
@@ -1013,7 +1045,6 @@ $view_all_url = '/clients.php';
     display: flex;
     flex-direction: column;
     align-items: center;
-    pointer-events: none; /* Let clicks pass through to physics canvas below */
   }
 
   /* Cyber Monospace Header */
@@ -1027,9 +1058,8 @@ $view_all_url = '/clients.php';
     border: 1px solid rgba(99, 102, 241, 0.15);
     padding: 8px 16px;
     border-radius: 6px;
-    margin-bottom: 32px;
+    margin-bottom: 22px;
     font-family: monospace;
-    pointer-events: auto;
   }
 
   /* Massive Epic Typography */
@@ -1039,7 +1069,7 @@ $view_all_url = '/clients.php';
     line-height: 1.0;
     letter-spacing: -0.05em;
     color: #0f172a;
-    margin: 0 0 28px;
+    margin: 0 0 20px;
     text-transform: uppercase;
     user-select: none;
   }
@@ -1056,7 +1086,7 @@ $view_all_url = '/clients.php';
     line-height: 1.65;
     color: #64748b;
     max-width: 580px;
-    margin: 0 0 40px;
+    margin: 0 0 26px;
   }
 
   /* Actions with interactive brackets */
@@ -1066,7 +1096,6 @@ $view_all_url = '/clients.php';
     gap: 28px;
     flex-wrap: wrap;
     justify-content: center;
-    pointer-events: auto;
   }
 
   .dh-action-link {
@@ -1078,7 +1107,7 @@ $view_all_url = '/clients.php';
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
-    font-family: monospace;
+    font-family: var(--font-body), sans-serif;
     position: relative;
     padding: 10px 20px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1116,69 +1145,10 @@ $view_all_url = '/clients.php';
     border-color: #6366f1;
   }
 
-  /* Physics controller toggle */
-  .dh-physics-toggle {
-    position: absolute;
-    top: 140px;
-    right: 40px;
-    z-index: 20;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 12px 18px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: monospace;
-    font-size: 11px;
-    font-weight: 700;
-    color: #475569;
-  }
-
-  .dh-btn-toggle {
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    padding: 6px 12px;
-    border-radius: 6px;
-    color: #0f172a;
-    cursor: pointer;
-    font-weight: 800;
-    transition: all 0.2s ease;
-  }
-  .dh-btn-toggle:hover {
-    background: #6366f1;
-    color: #ffffff;
-    border-color: #6366f1;
-  }
-
-  /* Telemetry Status Bar */
-  .dh-telemetry {
-    position: absolute;
-    bottom: 32px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    font-family: monospace;
-    pointer-events: none;
-  }
-  .dh-telemetry-label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: #94a3b8;
-    text-transform: uppercase;
-  }
-  .dh-stats {
-    font-size: 11px;
-    color: #6366f1;
-  }
-
   @media (max-width: 640px) {
     .dh {
-      padding: 120px 0 60px;
+      height: auto;
+      padding: 120px 0 110px; /* Adjust bottom padding for absolute ticker */
     }
     .dh-container {
       padding: 0 24px;
@@ -1187,18 +1157,70 @@ $view_all_url = '/clients.php';
       flex-direction: column;
       gap: 16px;
     }
-    .dh-physics-toggle {
-      position: static;
-      margin-top: 24px;
-      justify-content: center;
-    }
+  }
+
+  /* ── Infinite Ticker Bar Styles ── */
+  .dh-ticker-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0000ff; /* Electric blue from reference */
+    height: 52px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 20;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dh-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: dh-ticker-scroll 25s linear infinite;
+  }
+
+  .dh-ticker-content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-right: 32px;
+  }
+
+  .dh-ticker-content span {
+    font-family: var(--font-body), sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.12em;
+  }
+
+  .dh-ticker-sep {
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  @keyframes dh-ticker-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
   }
 </style>
 <section class="dh" id="home">
 
-  <!-- Fullscreen Interactive Canvas Sandbox -->
-  <canvas class="dh-canvas" id="sandboxCanvas"></canvas>
-
+  <!-- Tech & Ambient Background Visuals to fill up gaps and add visual interest on mobile -->
+  <div class="dh-bg-visuals" aria-hidden="true">
+    <div class="dh-bg-grid"></div>
+    <div class="dh-bg-glow dh-bg-glow-1"></div>
+    <div class="dh-bg-glow dh-bg-glow-2"></div>
+    <div class="dh-bg-radar">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+        <circle cx="200" cy="200" r="180" stroke="rgba(99, 102, 241, 0.05)" stroke-width="1.5" fill="none" stroke-dasharray="4 8" />
+        <circle cx="200" cy="200" r="130" stroke="rgba(14, 165, 233, 0.06)" stroke-width="1.2" fill="none" />
+        <circle cx="200" cy="200" r="80" stroke="rgba(99, 102, 241, 0.04)" stroke-width="1.5" fill="none" stroke-dasharray="2 4" />
+      </svg>
+    </div>
+  </div>
 
   <div class="dh-container">
     
@@ -1225,326 +1247,33 @@ $view_all_url = '/clients.php';
 
   </div>
 
-  <!-- Real-time Telemetry Monitor -->
-  <div class="dh-telemetry" aria-hidden="true">
-    <span class="dh-telemetry-label">Telemetry Feed</span>
-    <span class="dh-stats" id="telemetryHUD">GRAVITY: 0.00 / ACTIVE PILLS: 11 / KINETIC ENG: 0.00</span>
+  <!-- Moving Infinite Ticker containing Digibeat services -->
+  <div class="dh-ticker-bar">
+    <div class="dh-ticker-track">
+      <div class="dh-ticker-content">
+        <span>Web Development</span> <span class="dh-ticker-sep">•</span>
+        <span>IT Solutions</span> <span class="dh-ticker-sep">•</span>
+        <span>Digital Marketing</span> <span class="dh-ticker-sep">•</span>
+        <span>Branding</span> <span class="dh-ticker-sep">•</span>
+        <span>Web Development</span> <span class="dh-ticker-sep">•</span>
+        <span>IT Solutions</span> <span class="dh-ticker-sep">•</span>
+        <span>Digital Marketing</span> <span class="dh-ticker-sep">•</span>
+        <span>Branding</span> <span class="dh-ticker-sep">•</span>
+      </div>
+      <div class="dh-ticker-content">
+        <span>Web Development</span> <span class="dh-ticker-sep">•</span>
+        <span>IT Solutions</span> <span class="dh-ticker-sep">•</span>
+        <span>Digital Marketing</span> <span class="dh-ticker-sep">•</span>
+        <span>Branding</span> <span class="dh-ticker-sep">•</span>
+        <span>Web Development</span> <span class="dh-ticker-sep">•</span>
+        <span>IT Solutions</span> <span class="dh-ticker-sep">•</span>
+        <span>Digital Marketing</span> <span class="dh-ticker-sep">•</span>
+        <span>Branding</span> <span class="dh-ticker-sep">•</span>
+      </div>
+    </div>
   </div>
 
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('sandboxCanvas');
-  const ctx = canvas.getContext('2d');
-  const telemetryHUD = document.getElementById('telemetryHUD');
-  const gravityToggleBtn = document.getElementById('gravityToggleBtn');
-
-  let width = canvas.width = canvas.offsetWidth || window.innerWidth;
-  let height = canvas.height = canvas.offsetHeight || window.innerHeight;
-
-  let gravityY = 0; // Starts in space-drift mode
-  let friction = 0.98;
-  let activeGravity = false;
-
-  // Sound/Click event telemetry variables
-  let totalKineticEnergy = 0;
-
-  // Rounded Pills metadata structure
-  const pillLabels = [
-    'PHP 8.2', 'Next.js', 'MySQL', 'Cloudflare', 'Strategy', 'UI/UX', 
-    'Awwwards', 'Zero Hand-offs', 'SEO 100', 'Tailwind', 'Creative Code'
-  ];
-  
-  const pills = [];
-
-  // Generate physics capsule nodes
-  function initPills() {
-    pills.length = 0;
-    pillLabels.forEach((label, i) => {
-      // Setup text rendering variables to calculate bounding box size
-      ctx.font = 'bold 11px monospace';
-      const textWidth = ctx.measureText(label).width;
-      const paddingX = 20;
-      const paddingY = 10;
-      const pWidth = textWidth + paddingX * 2;
-      const pHeight = 11 + paddingY * 2;
-
-      // Random viewport initial points
-      pills.push({
-        x: Math.random() * (width - pWidth) + pWidth / 2,
-        y: Math.random() * (height - pHeight) + pHeight / 2,
-        vx: (Math.random() - 0.5) * 4,
-        vy: (Math.random() - 0.5) * 4,
-        width: pWidth,
-        height: pHeight,
-        radius: pHeight / 2,
-        label: label,
-        isDragged: false,
-        mass: pWidth * 0.1 // Mass based on capsule size
-      });
-    });
-  }
-
-  // Trigger double-check dimensions after DOM fully initializes
-  setTimeout(() => {
-    width = canvas.width = canvas.offsetWidth || window.innerWidth;
-    height = canvas.height = canvas.offsetHeight || window.innerHeight;
-    initPills();
-  }, 100);
-
-  // Handle Resize
-  window.addEventListener('resize', () => {
-    width = canvas.width = canvas.offsetWidth || window.innerWidth;
-    height = canvas.height = canvas.offsetHeight || window.innerHeight;
-    pills.forEach(p => {
-      if (p.x - p.width / 2 < 0) p.x = p.width / 2;
-      if (p.x + p.width / 2 > width) p.x = width - p.width / 2;
-      if (p.y - p.height / 2 < 0) p.y = p.height / 2;
-      if (p.y + p.height / 2 > height) p.y = height - p.height / 2;
-    });
-  });
-
-  // Mouse drag coordinates tracking states
-  let dragOffset = { x: 0, y: 0 };
-  let activePill = null;
-  let lastMouse = { x: 0, y: 0 };
-  let currentMouse = { x: 0, y: 0 };
-
-  // Helper check if mouse is inside pill boundaries
-  function getPillAt(mx, my) {
-    for (let i = pills.length - 1; i >= 0; i--) {
-      const p = pills[i];
-      const left = p.x - p.width / 2;
-      const right = p.x + p.width / 2;
-      const top = p.y - p.height / 2;
-      const bottom = p.y + p.height / 2;
-
-      if (mx >= left && mx <= right && my >= top && my <= bottom) {
-        return p;
-      }
-    }
-    return null;
-  }
-
-  // Pointer Down Trigger
-  canvas.addEventListener('pointerdown', e => {
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-
-    const hit = getPillAt(mx, my);
-    if (hit) {
-      activePill = hit;
-      hit.isDragged = true;
-      dragOffset.x = mx - hit.x;
-      dragOffset.y = my - hit.y;
-      lastMouse.x = mx;
-      lastMouse.y = my;
-    }
-  });
-
-  // Pointer Move Trigger
-  canvas.addEventListener('pointermove', e => {
-    const rect = canvas.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-    currentMouse.x = mx;
-    currentMouse.y = my;
-
-    if (activePill && activePill.isDragged) {
-      activePill.x = mx - dragOffset.x;
-      activePill.y = my - dragOffset.y;
-      
-      // Calculate immediate velocity on drag fling
-      activePill.vx = mx - lastMouse.x;
-      activePill.vy = my - lastMouse.y;
-
-      lastMouse.x = mx;
-      lastMouse.y = my;
-    }
-  });
-
-  // Pointer Up Trigger
-  window.addEventListener('pointerup', () => {
-    if (activePill) {
-      activePill.isDragged = false;
-      activePill = null;
-    }
-  });
-
-  // Gravity Toggle controller
-  if (gravityToggleBtn) {
-    gravityToggleBtn.addEventListener('click', () => {
-      activeGravity = !activeGravity;
-      if (activeGravity) {
-        gravityY = 0.4;
-        gravityToggleBtn.textContent = 'ACTIVE-G';
-      } else {
-        gravityY = 0;
-        gravityToggleBtn.textContent = 'LOW-DRIFT';
-        // Give a slight random lift upward when turning gravity off
-        pills.forEach(p => {
-          p.vy = (Math.random() - 0.5) * 5;
-          p.vx = (Math.random() - 0.5) * 5;
-        });
-      }
-    });
-  }
-
-  // Rigid Body capsule render
-  function drawPill(p) {
-    ctx.save();
-    
-    // Smooth pill boundary container shadow
-    ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
-    ctx.shadowBlur = 10;
-    ctx.shadowOffsetY = 4;
-
-    // Outer capsule background
-    ctx.fillStyle = '#ffffff';
-    ctx.strokeStyle = p.isDragged ? '#6366f1' : '#e2e8f0';
-    ctx.lineWidth = p.isDragged ? 1.5 : 1;
-    
-    // Draw capsule rounded path shape
-    ctx.beginPath();
-    ctx.roundRect(p.x - p.width / 2, p.y - p.height / 2, p.width, p.height, p.radius);
-    ctx.fill();
-    ctx.stroke();
-
-    // Small active system bullet
-    ctx.shadowBlur = 0;
-    ctx.shadowOffsetY = 0;
-    ctx.fillStyle = p.isDragged ? '#6366f1' : '#10b981';
-    ctx.beginPath();
-    ctx.arc(p.x - p.width / 2 + 16, p.y, 3.5, 0, Math.PI * 2);
-    ctx.fill();
-
-    // Capsule Label text
-    ctx.fillStyle = '#475569';
-    ctx.font = 'bold 11px monospace';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(p.label, p.x - p.width / 2 + 28, p.y);
-
-    ctx.restore();
-  }
-
-  // Handle capsule collisions and viewport bounces
-  function updatePhysics() {
-    totalKineticEnergy = 0;
-
-    for (let i = 0; i < pills.length; i++) {
-      const p = pills[i];
-
-      if (!p.isDragged) {
-        // Apply gravity and drag velocities
-        p.vy += gravityY;
-        p.vx *= friction;
-        p.vy *= friction;
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Viewport boundaries checks with elastic rebound bounces
-        const halfW = p.width / 2;
-        const halfH = p.height / 2;
-
-        // Left/Right walls
-        if (p.x - halfW < 0) {
-          p.x = halfW;
-          p.vx = -p.vx * 0.6;
-        } else if (p.x + halfW > width) {
-          p.x = width - halfW;
-          p.vx = -p.vx * 0.6;
-        }
-
-        // Top/Bottom walls
-        if (p.y - halfH < 0) {
-          p.y = halfH;
-          p.vy = -p.vy * 0.6;
-        } else if (p.y + halfH > height) {
-          p.y = height - halfH;
-          p.vy = -p.vy * 0.6;
-          // Apply extra ground friction in active gravity mode
-          if (activeGravity) p.vx *= 0.9;
-        }
-      }
-
-      // Sum active velocities for Telekinetic Energy monitor
-      totalKineticEnergy += Math.hypot(p.vx, p.vy);
-
-      // Capsule to capsule collisions checks
-      for (let j = i + 1; j < pills.length; j++) {
-        const other = pills[j];
-        
-        const dx = other.x - p.x;
-        const dy = other.y - p.y;
-        const distance = Math.hypot(dx, dy);
-
-        // Simple approximate collision bounding cylinder overlapping check
-        const minDist = (p.width + other.width) / 4 + 10; 
-        
-        if (distance < minDist && distance > 0) {
-          // Push overlapping pills away from centers
-          const overlap = minDist - distance;
-          const normalX = dx / distance;
-          const normalY = dy / distance;
-
-          // Shift positions
-          if (!p.isDragged) {
-            p.x -= normalX * overlap * 0.5;
-            p.y -= normalY * overlap * 0.5;
-          }
-          if (!other.isDragged) {
-            other.x += normalX * overlap * 0.5;
-            other.y += normalY * overlap * 0.5;
-          }
-
-          // Calculate elastic impact vector calculations
-          const kx = p.vx - other.vx;
-          const ky = p.vy - other.vy;
-          const pSpeed = kx * normalX + ky * normalY;
-
-          if (pSpeed > 0) {
-            const impulse = (2 * pSpeed) / (p.mass + other.mass);
-            if (!p.isDragged) {
-              p.vx -= impulse * other.mass * normalX * 0.8;
-              p.vy -= impulse * other.mass * normalY * 0.8;
-            }
-            if (!other.isDragged) {
-              other.vx += impulse * p.mass * normalX * 0.8;
-              other.vy += impulse * p.mass * normalY * 0.8;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Core drawing animation loop
-  function loop() {
-    ctx.clearRect(0, 0, width, height);
-
-    // Run physics frames
-    updatePhysics();
-
-    // Render capsules
-    pills.forEach(drawPill);
-
-    // Update Telemetry logs display HUD
-    const gravityValue = gravityY.toFixed(2);
-    const kineticVal = totalKineticEnergy.toFixed(2);
-    telemetryHUD.textContent = `GRAVITY: ${gravityValue} / ACTIVE PILLS: ${pills.length} / KINETIC ENG: ${kineticVal}`;
-
-    requestAnimationFrame(loop);
-  }
-
-  // Init grid setup and run loop
-  initPills();
-  loop();
-});
-</script>
 <!-- END HERO -->
 
 
@@ -1897,6 +1626,9 @@ document.addEventListener('DOMContentLoaded', () => {
   font-size: 14.5px;
   line-height: 1.7;
   color: var(--ts-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
     .ts-card--center .ts-card__role { color: rgba(255,255,255,0.55); }
  
@@ -2233,8 +1965,737 @@ document.addEventListener('DOMContentLoaded', () => {
       .ts-drawer { --ts-drawer-pad: 20px; }
       .ts-drawer__footer { flex-wrap: nowrap; }
     }
+
+  /* ============================================================
+     FUTURISTIC WHITE & BLUE CARD SLIDER & CONSOLE DRAWER
+     ============================================================ */
+  .cyber-terminal-cs {
+    --ct-bg-dark: #ffffff;
+    --ct-border: rgba(61, 90, 254, 0.15);
+    --ct-border-glow: rgba(61, 90, 254, 0.35);
+    --ct-neon-cyan: #3d5afe;
+    --ct-neon-purple: #ab44ff;
+    --ct-neon-green: #10b981;
+    --ct-text-primary: #0b1437;
+    --ct-text-muted: #64748b;
+    --ct-font-mono: 'Space Mono', 'JetBrains Mono', monospace;
+    
+    position: relative;
+    background: var(--ct-bg-dark) !important;
+    padding: 120px 0;
+    color: var(--ct-text-primary);
+    overflow: hidden;
+  }
+
+  /* Grid background styling with light blue lines */
+  .cyber-terminal-cs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(61, 90, 254, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 90, 254, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Glowing blobs */
+  .ct-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .ct-bg-glow-1 {
+    background: radial-gradient(circle, var(--ct-neon-cyan), transparent);
+    top: -10%;
+    left: -10%;
+  }
+  .ct-bg-glow-2 {
+    background: radial-gradient(circle, var(--ct-neon-purple), transparent);
+    bottom: -10%;
+    right: -10%;
+  }
+
+  .ct-wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Cybernetic Header */
+  .ct-head {
+    margin-bottom: 72px;
+    position: relative;
+  }
+  .ct-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(61, 90, 254, 0.06);
+    border: 1px solid rgba(61, 90, 254, 0.2);
+    border-radius: 4px;
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    color: var(--ct-neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+  }
+  .ct-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ct-neon-cyan);
+    box-shadow: 0 0 8px var(--ct-neon-cyan);
+    animation: ct-blink 1.5s infinite;
+  }
+  @keyframes ct-blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  .ct-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin: 0 0 20px;
+    color: #3d5afe !important;
+  }
+  .ct-title span {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: #0b1437;
+  }
+  .ct-sub {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ct-text-muted);
+    max-width: 600px;
+    margin: 0;
+  }
+
+  /* Slider Viewport */
+  .cs-cards-viewport {
+    overflow: hidden;
+    margin-bottom: 48px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+  }
+  .cs-cards {
+    display: flex;
+    gap: 32px;
+    transition: transform .5s cubic-bezier(.16,.84,.44,1);
+    background: transparent;
+  }
+
+  /* Cyber card with white background */
+  .cs-card {
+    flex: 0 0 calc((100% - 64px) / 3);
+    background: #ffffff;
+    border: 1px solid var(--ct-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 8px 30px rgba(61, 90, 254, 0.04);
+  }
+  .cs-card:hover {
+    border-color: rgba(61, 90, 254, 0.4);
+    box-shadow: 0 20px 40px rgba(61, 90, 254, 0.1);
+    transform: translateY(-6px);
+  }
+  
+  /* Corner tech brackets on cards */
+  .cs-card__bracket {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid rgba(61, 90, 254, 0.3);
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  .cs-card:hover .cs-card__bracket {
+    border-color: rgba(61, 90, 254, 1);
+    opacity: 1;
+  }
+  .cs-card__bracket-tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+  .cs-card__bracket-tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+  .cs-card__bracket-bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+  .cs-card__bracket-br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+  .cs-card__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f1f5f9;
+    border-bottom: 1px solid var(--ct-border);
+  }
+  .cs-card__media img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.95;
+    transition: transform .5s ease, opacity .5s ease;
+  }
+  .cs-card:hover .cs-card__media img {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  /* Sweeping scanning laser line on hover */
+  .cs-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--ct-neon-cyan), transparent);
+    box-shadow: 0 0 12px var(--ct-neon-cyan);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 11;
+  }
+  .cs-card:hover::after {
+    animation: cs-card-laser 1.5s ease-in-out infinite;
+  }
+  @keyframes cs-card-laser {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .cs-card__body {
+    padding: 26px 28px 30px;
+    position: relative;
+  }
+  .cs-card__name {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ct-text-primary);
+    margin-bottom: 6px;
+  }
+  .cs-card__role {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ct-text-muted);
+    margin-bottom: 20px;
+  }
+  
+  /* Remove extra bottom margin now that metrics bar is removed */
+  .cs-card__role {
+    margin-bottom: 12px;
+  }
+
+  /* View All CTA */
+  .cs-view-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .cs-view-all__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 36px;
+    background: #3d5afe;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 999px;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 24px rgba(61, 90, 254, 0.22);
+  }
+  .cs-view-all__btn svg {
+    width: 18px; height: 18px;
+    stroke: currentColor;
+    transition: transform 0.25s ease;
+  }
+  .cs-view-all__btn:hover {
+    background: #2948e8;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(61, 90, 254, 0.35);
+  }
+  .cs-view-all__btn:hover svg { transform: translateX(4px); }
+
+  @media (max-width: 900px) {
+    .cs-card { flex: 0 0 100%; }
+  }
+
+  /* ============================================================
+     COMMAND CONSOLE DRAWER STYLES
+     ============================================================ */
+  .cs-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1200;
+  }
+  .cs-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+  .cs-drawer {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100%;
+    width: 50%;
+    background: #ffffff;
+    border-left: 1px solid rgba(61, 90, 254, 0.15);
+    z-index: 1201;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -20px 0 60px rgba(15, 23, 42, 0.1), -10px 0 30px rgba(61, 90, 254, 0.03);
+    display: flex;
+    flex-direction: column;
+    color: var(--ct-text-primary);
+  }
+  .cs-drawer.is-open { transform: translateX(0); }
+  
+  /* Glitch transition for drawer content updating */
+  .cs-drawer.glitching .cs-drawer__scroll {
+    animation: ct-screen-glitch 0.25s ease-out;
+  }
+  @keyframes ct-screen-glitch {
+    0% { transform: scale(1); opacity: 0.95; }
+    50% { transform: scale(0.995) skewX(-0.5deg); opacity: 0.95; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .cs-drawer__scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    background: #ffffff;
+    position: relative;
+  }
+
+  .cs-drawer__topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(61, 90, 254, 0.1);
+  }
+
+  .cs-drawer__close {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(61, 90, 254, 0.02);
+    border: 1px solid rgba(61, 90, 254, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ct-text-muted);
+    transition: all 0.3s ease;
+  }
+  .cs-drawer__close svg { width: 18px; height: 18px; stroke: currentColor; }
+  .cs-drawer__close:hover {
+    border-color: #ff3b30;
+    color: #ff3b30;
+    background: rgba(255, 59, 48, 0.05);
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.2);
+    transform: scale(1.05);
+  }
+
+  .cs-drawer__visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: #3d5afe;
+    color: #ffffff;
+    border: none;
+    font-family: var(--ct-font-mono);
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 6px 18px rgba(61, 90, 254, 0.28);
+  }
+  .cs-drawer__visit:hover {
+    background: #2948e8;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(61, 90, 254, 0.42);
+  }
+  .cs-drawer__visit svg { width: 14px; height: 14px; stroke: currentColor; }
+
+  .cs-drawer__progress {
+    position: sticky;
+    top: 76px;
+    z-index: 10;
+    height: 3px;
+    width: 100%;
+    background: rgba(61, 90, 254, 0.06);
+  }
+  .cs-drawer__progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--ct-neon-cyan);
+    box-shadow: 0 0 8px var(--ct-neon-cyan);
+    transition: width 0.1s linear;
+  }
+
+  .cs-drawer__hero {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #f1f5f9;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(61, 90, 254, 0.1);
+  }
+  .cs-drawer__hero img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1; }
+
+  .cs-drawer__body { padding: 36px 40px 40px; }
+  .cs-drawer__tag {
+    display: inline-block;
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ct-neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .cs-drawer__title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(26px, 3.5vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 14px;
+    color: var(--ct-text-primary);
+  }
+  .cs-drawer__tagline {
+    font-size: 16px;
+    color: var(--ct-text-muted);
+    line-height: 1.6;
+    margin: 0 0 32px;
+  }
+
+  /* Metrics grid in drawer */
+  .cs-drawer__metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .cs-drawer__metric-card {
+    background: rgba(61, 90, 254, 0.03);
+    border: 1px solid rgba(61, 90, 254, 0.08);
+    border-radius: 10px;
+    padding: 16px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .cs-drawer__metric-card:hover {
+    border-color: rgba(61, 90, 254, 0.3);
+    background: rgba(61, 90, 254, 0.06);
+  }
+  .cs-drawer__metric-val {
+    font-family: var(--ct-font-mono);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--ct-neon-cyan);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cs-drawer__metric-lbl {
+    font-size: 11px;
+    color: var(--ct-text-muted);
+  }
+
+  .cs-drawer__section { margin-bottom: 34px; }
+  .cs-drawer__section:last-child { margin-bottom: 0; }
+  .cs-drawer__section h4 {
+    font-family: var(--ct-font-mono);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--ct-neon-cyan);
+    margin: 0 0 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cs-drawer__section h4::before { content: '//'; color: var(--ct-neon-cyan); }
+  .cs-drawer__section p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ct-text-muted);
+    margin: 0;
+  }
+  .cs-drawer__section ul {
+    margin: 0; padding-left: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .cs-drawer__section li {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ct-text-muted);
+    position: relative;
+    padding-left: 20px;
+    list-style: none;
+  }
+  .cs-drawer__section li::before {
+    content: '►';
+    position: absolute;
+    left: 0; top: 4px;
+    font-size: 9px;
+    color: var(--ct-neon-cyan);
+  }
+  .cs-drawer__section li b { color: var(--ct-text-primary); font-weight: 700; }
+
+  .cs-drawer__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 34px;
+  }
+  .cs-drawer__gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid rgba(61, 90, 254, 0.1);
+  }
+
+  /* Diagnostics Outcome block */
+  .cs-drawer__diagnostics-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  /* Circular Diagnostic Dial Chart */
+  .cs-drawer__dial-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(61, 90, 254, 0.02);
+    border: 1px solid rgba(61, 90, 254, 0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .cs-drawer__dial-svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+  }
+  .cs-drawer__dial-bg {
+    fill: none;
+    stroke: rgba(61, 90, 254, 0.05);
+    stroke-width: 8;
+  }
+  .cs-drawer__dial-track {
+    fill: none;
+    stroke: var(--ct-neon-cyan);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 251.2; /* 2 * PI * 40 */
+    stroke-dashoffset: 251.2;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .cs-drawer__dial-percent {
+    position: absolute;
+    font-family: var(--ct-font-mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ct-text-primary);
+  }
+  .cs-drawer__dial-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .cs-drawer__dial-lbl {
+    font-family: var(--ct-font-mono);
+    font-size: 9px;
+    color: var(--ct-neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .cs-drawer__contact-text {
+    border-top: 1px dashed rgba(61, 90, 254, 0.15);
+    padding-top: 30px;
+  }
+  .cs-drawer__contact-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ct-text-primary);
+    margin-bottom: 12px;
+  }
+
+  /* Fixed Footer */
+  .cs-drawer__footer {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 40px;
+    background: #ffffff;
+    border-top: 1px solid rgba(61, 90, 254, 0.15);
+  }
+
+  .cs-drawer__talk-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #3d5afe;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--ct-font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 6px 18px rgba(61, 90, 254, 0.28);
+  }
+  .cs-drawer__talk-btn:hover {
+    background: #2948e8;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(61, 90, 254, 0.42);
+  }
+  .cs-drawer__talk-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+
+  .cs-drawer__navgroup {
+    display: flex;
+    border: 1px solid rgba(61, 90, 254, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .cs-drawer__navicon {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: #3d5afe;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: inset 0 0 0 0 rgba(255,255,255,0);
+  }
+  .cs-drawer__navicon:first-child { border-right: 1px solid rgba(255, 255, 255, 0.2); }
+  .cs-drawer__navicon svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.2; }
+  .cs-drawer__navicon:hover:not(:disabled) {
+    background: #2948e8;
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(61, 90, 254, 0.4);
+  }
+  .cs-drawer__navicon:disabled { opacity: 0.35; cursor: not-allowed; background: rgba(61, 90, 254, 0.25); }
+
+  @media (max-width: 991.98px) {
+    .cs-drawer { width: 70%; }
+  }
+  @media (max-width: 767.98px) {
+    .cs-drawer { width: 100%; }
+    .cs-drawer__topbar, .cs-drawer__body, .cs-drawer__footer { padding-left: 24px; padding-right: 24px; }
+  }
+  body.cs-lock { overflow: hidden; }
 </style>
  
+<!-- ================= CASE STUDIES SECTION — FUTURISTIC SLIDER & DRAWER ================= -->
+<section class="cyber-terminal-cs" id="case-studies" aria-labelledby="case-studies-heading" data-purpose="case-studies">
+  <div class="ct-bg-glow ct-bg-glow-1" aria-hidden="true"></div>
+  <div class="ct-bg-glow ct-bg-glow-2" aria-hidden="true"></div>
+
+  <div class="ct-wrap">
+    <!-- Header -->
+    <div class="ct-head">
+      <span class="ct-badge">
+        <?php echo htmlspecialchars($caseStudiesEyebrow); ?>
+      </span>
+      <h2 class="ct-title" id="case-studies-heading">
+        <?php echo htmlspecialchars($caseStudiesHeadingLead); ?> <span><?php echo htmlspecialchars($caseStudiesHeadingScript); ?></span>
+      </h2>
+      <p class="ct-sub"><?php echo htmlspecialchars($caseStudiesSubtitle); ?></p>
+    </div>
+
+    <!-- Slider Viewport -->
+    <div class="cs-cards-viewport">
+      <div class="cs-cards" id="csCardsTrack">
+        <?php foreach ($caseStudies as $i => $cs): ?>
+          <div class="cs-card" data-index="<?php echo $i; ?>" role="button" aria-haspopup="dialog" aria-label="Open <?php echo htmlspecialchars($cs['title']); ?> details">
+            <div class="cs-card__bracket cs-card__bracket-tl"></div>
+            <div class="cs-card__bracket cs-card__bracket-tr"></div>
+            <div class="cs-card__bracket cs-card__bracket-bl"></div>
+            <div class="cs-card__bracket cs-card__bracket-br"></div>
+            
+            <div class="cs-card__media">
+              <img src="<?php echo htmlspecialchars($cs['photo']); ?>" alt="<?php echo htmlspecialchars($cs['title']); ?>" loading="lazy">
+            </div>
+            <div class="cs-card__body">
+              <h3 class="cs-card__name"><?php echo htmlspecialchars($cs['title']); ?></h3>
+              <p class="cs-card__role"><?php echo htmlspecialchars($cs['tagline']); ?></p>
+
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <!-- View All CTA -->
+    <div class="cs-view-all">
+      <a href="case-studies.php" class="cs-view-all__btn">
+        View All Case Studies
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
 <section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading" data-purpose="testimonials">
  
   <div class="ts-bg" aria-hidden="true">
@@ -2303,10 +2764,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <?php endif; ?>
   </div>
   <div class="ts-card__body">
-    <span class="ts-card__tag"><?php echo htmlspecialchars($t['tag']); ?></span>
     <div class="ts-card__name"><?php echo htmlspecialchars($t['name']); ?></div>
     <div class="ts-card__role"><?php echo htmlspecialchars($t['title']); ?></div>
-    <p class="ts-card__desc"><?php echo htmlspecialchars($t['tagline']); ?></p>
+    <div class="ts-card__desc"><?php echo htmlspecialchars($t['quote']); ?></div>
   </div>
 </div>
 <?php endforeach; ?>
@@ -2871,7 +3331,140 @@ function e($str) {
     .hero h1{ font-size:38px; }
     .map-wrap{ height:280px; }
   }
+
+  /* =========================================================================
+     Clients Section Redesign (Matches reference image)
+     ========================================================================= */
+  .cl {
+    background: #000000 !important;
+    padding: 120px 0 !important;
+    color: #ffffff !important;
+    font-family: var(--font-body), sans-serif;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .cl-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  .cl-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 70px;
+  }
+  .cl-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #ffffff !important;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+  .cl-sub {
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 460px;
+    margin: 0;
+  }
+  .cl-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-bottom: 60px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .cl-card {
+    background: #111111;
+    aspect-ratio: 16 / 7;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .cl-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    filter: none;
+    opacity: 1;
+  }
+  .cl-cta {
+    display: flex;
+    justify-content: center;
+  }
+  .cl-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    font-family: var(--font-body), sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  .cl-cta-btn:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .cl-cta-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  .cl-cta-btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 1024px) {
+    .cl-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .cl-head {
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .cl-title {
+      font-size: 40px;
+    }
+    .cl-sub {
+      font-size: 17px;
+    }
+  }
+  @media (max-width: 640px) {
+    .cl-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cl {
+      padding: 80px 0 !important;
+    }
+    .cl-container {
+      padding: 0 24px;
+    }
+  }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 
@@ -2919,16 +3512,16 @@ function e($str) {
 <section class="cl" id="clients" aria-labelledby="cl-title">
   <div class="cl-container">
     
-    <!-- Header -->
+    <!-- Header: two-column layout -->
     <div class="cl-head">
-      <span class="cl-eyebrow">Trusted Partnerships</span>
-      <h2 class="cl-title">Brands we have <span>empowered</span></h2>
+      <h2 class="cl-title" id="cl-title">Clients</h2>
+      <p class="cl-sub">Brands that trust us to build, grow, and transform their digital presence.</p>
     </div>
 
-    <!-- Kinetic Grid -->
+    <!-- Grid -->
     <div class="cl-grid" id="clientGrid">
-      <?php foreach ($clients as $index => $c): ?>
-        <div class="cl-card" data-name="<?php echo htmlspecialchars($c['name']); ?>">
+      <?php foreach ($clients as $c): ?>
+        <div class="cl-card" title="<?php echo htmlspecialchars($c['name']); ?>">
           <img src="<?php echo htmlspecialchars($c['logo']); ?>" alt="<?php echo htmlspecialchars($c['name']); ?>" loading="lazy">
         </div>
       <?php endforeach; ?>
@@ -2937,8 +3530,8 @@ function e($str) {
     <!-- CTA -->
     <div class="cl-cta">
       <a href="<?php echo htmlspecialchars($view_all_url); ?>" class="cl-cta-btn">
-        View all clients
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <span>View all clients</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
@@ -2946,45 +3539,49 @@ function e($str) {
 
   </div>
 </section>
+<!-- ── END CLIENTS ── -->
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.cl-card');
+/* Auto-size client logos: wide logos fill column width, tall logos fill card height */
+(function() {
+  function adjustLogo(img) {
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    var iw = img.naturalWidth;
+    var ih = img.naturalHeight;
+    var ratio = iw / ih;
 
-  cards.forEach(card => {
-    // 3D Magnetic cursor tracking
-    card.addEventListener('pointermove', e => {
-      const rect = card.getBoundingClientRect();
-      
-      // Calculate cursor coordinates relative to card center
-      const cardWidth = rect.width;
-      const cardHeight = rect.height;
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      
-      // Convert coordinates to percentages for backing glow gradients
-      const xPercent = (mouseX / cardWidth) * 100;
-      const yPercent = (mouseY / cardHeight) * 100;
-      
-      // Calculate magnetic offset translation values (max 10px shift)
-      const transX = ((mouseX - cardWidth / 2) / (cardWidth / 2)) * 10;
-      const transY = ((mouseY - cardHeight / 2) / (cardHeight / 2)) * 10;
+    if (ratio >= 1.2) {
+      /* Wide / landscape logo — fill the full column width */
+      img.style.width  = '100%';
+      img.style.height = 'auto';
+      img.style.maxHeight = '110px';
+    } else if (ratio <= 0.85) {
+      /* Tall / portrait logo — fill by height */
+      img.style.height = '110px';
+      img.style.width  = 'auto';
+      img.style.maxWidth = '100%';
+    } else {
+      /* Square-ish logo — fill by width, cap height */
+      img.style.width  = '100%';
+      img.style.height = 'auto';
+      img.style.maxHeight = '110px';
+    }
+    img.style.objectFit = 'contain';
+  }
 
-      card.style.setProperty('--mx', `${xPercent}%`);
-      card.style.setProperty('--my', `${yPercent}%`);
-      card.style.setProperty('--tx', `${transX}px`);
-      card.style.setProperty('--ty', `${transY}px`);
-    });
-
-    // Reset translations when mouse exits card
-    card.addEventListener('pointerleave', () => {
-      card.style.setProperty('--tx', '0px');
-      card.style.setProperty('--ty', '0px');
-    });
+  document.querySelectorAll('.cl-card img').forEach(function(img) {
+    if (img.complete && img.naturalWidth > 0) {
+      adjustLogo(img);
+    } else {
+      img.addEventListener('load', function() { adjustLogo(img); });
+    }
   });
-});
-</script>
-<!-- ── END CLIENTS ── -->  
+
+  window.addEventListener('resize', function() {
+    document.querySelectorAll('.cl-card img').forEach(adjustLogo);
+  });
+})();
+</script>  
 </body>
 </html>
 
@@ -3638,14 +4235,95 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
     })();
   </script>
 
+     <!-- ============ FUTURISTIC TACTICAL DRAWER ============ -->
+     <div class="cs-overlay" id="cs-overlay"></div>
+     <aside class="cs-drawer" id="cs-drawer" role="dialog" aria-modal="true" aria-hidden="true">
+
+       <div class="cs-drawer__scroll" id="cs-drawer-scroll">
+         <div class="cs-drawer__topbar">
+           <a href="#" class="cs-drawer__visit" id="cs-drawer-site" target="_blank" rel="noopener noreferrer">
+             <span>Visit Site</span>
+             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+           </a>
+           <button type="button" class="cs-drawer__close" id="cs-drawer-close" aria-label="Close">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+           </button>
+         </div>
+         <div class="cs-drawer__progress"><div class="cs-drawer__progress-bar" id="cs-drawer-progress-bar"></div></div>
+
+         <div class="cs-drawer__hero">
+           <img id="cs-drawer-hero" src="" alt="">
+         </div>
+
+         <div class="cs-drawer__body">
+           <span class="cs-drawer__tag" id="cs-drawer-tag"></span>
+           <h2 class="cs-drawer__title" id="cs-drawer-title"></h2>
+           <p class="cs-drawer__tagline" id="cs-drawer-tagline"></p>
+
+           <div class="cs-drawer__metrics" id="cs-drawer-metrics"></div>
+
+           <div class="cs-drawer__section">
+             <h4>System Challenge</h4>
+             <p id="cs-drawer-challenge"></p>
+           </div>
+
+           <div class="cs-drawer__section">
+             <h4>Engineered Solution</h4>
+             <ul id="cs-drawer-solution"></ul>
+           </div>
+
+           <div class="cs-drawer__gallery" id="cs-drawer-gallery"></div>
+
+           <div class="cs-drawer__section">
+             <h4>Outcome Diagnostics</h4>
+             <div class="cs-drawer__diagnostics-row">
+               <ul id="cs-drawer-results"></ul>
+               
+               <div class="cs-drawer__dial-box">
+                 <div class="cs-drawer__dial-wrapper">
+                   <svg class="cs-drawer__dial-svg">
+                     <circle class="cs-drawer__dial-bg" cx="50" cy="50" r="40"></circle>
+                     <circle class="cs-drawer__dial-track" id="cs-drawer-dial-track" cx="50" cy="50" r="40"></circle>
+                   </svg>
+                   <div class="cs-drawer__dial-percent" id="cs-drawer-dial-percent">0%</div>
+                 </div>
+                 <span class="cs-drawer__dial-lbl">SYSTEM OPTIMIZATION</span>
+               </div>
+             </div>
+           </div>
+
+           <div class="cs-drawer__section cs-drawer__contact-text">
+             <h3>Would you like to know more about the project?</h3>
+             <p>To find out more about our work or any of our other case studies, get in touch. Mail us on <b>hello@digibeat.com</b> or call <b>+91 480 2733 555</b>.</p>
+           </div>
+         </div>
+       </div>
+
+       <div class="cs-drawer__footer">
+         <a href="contact.php" class="cs-drawer__talk-btn">
+           Let's talk
+           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+         </a>
+         <div class="cs-drawer__navgroup">
+           <button type="button" class="cs-drawer__navicon" id="cs-drawer-prev" aria-label="Previous case study">
+             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+           </button>
+           <button type="button" class="cs-drawer__navicon" id="cs-drawer-next" aria-label="Next case study">
+             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+           </button>
+         </div>
+       </div>
+
+     </aside>
+
   <!-- ============ TESTIMONIAL VIDEO DRAWER (SLIDER) ============ -->
   <div class="ts-overlay" id="ts-overlay"></div>
   <aside class="ts-drawer" id="ts-drawer" role="dialog" aria-modal="true" aria-hidden="true">
 
   <div class="ts-drawer__scroll" id="ts-drawer-scroll">
     <div class="ts-drawer__topbar">
-      <a href="contact.php" class="ts-drawer__visit" id="ts-drawer-site">
-        <span>Get in Touch</span>
+      <a href="#" class="ts-drawer__visit" id="ts-drawer-site" target="_blank" rel="noopener noreferrer">
+        <span>Visit Site</span>
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
       <button type="button" class="ts-drawer__close" id="ts-drawer-close" aria-label="Close">
@@ -3838,6 +4516,7 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
       var drawerQuote = document.getElementById('ts-drawer-quote');
       var drawerAuthor = document.getElementById('ts-drawer-author');
       var drawerChallenge = document.getElementById('ts-drawer-challenge');
+      var drawerSite = document.getElementById('ts-drawer-site');
      
       var drawerPrev = document.getElementById('ts-drawer-prev');
       var drawerNext = document.getElementById('ts-drawer-next');
@@ -3893,6 +4572,14 @@ function populateDrawer(data) {
   drawerTitle.textContent = data.name + ' · ' + data.title;
   drawerTagline.textContent = data.tagline;
 
+  if (data.site) {
+    drawerSite.href = data.site;
+    drawerSite.style.display = '';
+  } else {
+    drawerSite.href = '#';
+    drawerSite.style.display = 'none';
+  }
+
  
   drawerQuote.innerHTML = '&ldquo;' + data.quote + '&rdquo;';
   drawerAuthor.textContent = '— ' + data.name + ', ' + data.title;
@@ -3946,6 +4633,282 @@ function populateDrawer(data) {
           drawerNext.disabled = activeIndex === testimonialsData.length - 1;
         });
       }
+
+      /* ===== FUTURISTIC CASE STUDIES ENGINE ===== */
+      (function initFuturisticCaseStudies() {
+        const caseStudies = <?php echo json_encode($caseStudies, JSON_UNESCAPED_SLASHES); ?>;
+        if (!caseStudies || !caseStudies.length) return;
+
+        const overlay = document.getElementById('cs-overlay');
+        const drawer = document.getElementById('cs-drawer');
+        const drawerScroll = document.getElementById('cs-drawer-scroll');
+        
+        // Target elements inside drawer
+        const elHero = document.getElementById('cs-drawer-hero');
+        const elTag = document.getElementById('cs-drawer-tag');
+        const elTitle = document.getElementById('cs-drawer-title');
+        const elTagline = document.getElementById('cs-drawer-tagline');
+        const elMetrics = document.getElementById('cs-drawer-metrics');
+        const elChallenge = document.getElementById('cs-drawer-challenge');
+        const elSolution = document.getElementById('cs-drawer-solution');
+        const elGallery = document.getElementById('cs-drawer-gallery');
+        const elResults = document.getElementById('cs-drawer-results');
+        const elDialTrack = document.getElementById('cs-drawer-dial-track');
+        const elDialPercent = document.getElementById('cs-drawer-dial-percent');
+        const elSite = document.getElementById('cs-drawer-site');
+
+        const drawerPrev = document.getElementById('cs-drawer-prev');
+        const drawerNext = document.getElementById('cs-drawer-next');
+        const progressBar = document.getElementById('cs-drawer-progress-bar');
+
+        let activeIndex = -1;
+
+        // Dial chart animation logic
+        function animateDial(percentValue) {
+          if (!elDialTrack || !elDialPercent) return;
+          const CIRC = 251.2; // 2 * PI * 40
+          // reset first
+          elDialTrack.style.strokeDashoffset = CIRC;
+          elDialPercent.textContent = '0%';
+          
+          setTimeout(() => {
+            const offset = CIRC - (CIRC * percentValue / 100);
+            elDialTrack.style.strokeDashoffset = offset;
+            
+            // animate text counter
+            let start = 0;
+            const duration = 1000;
+            const startTime = performance.now();
+            
+            function updateText(now) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const currentVal = Math.floor(progress * percentValue);
+              elDialPercent.textContent = currentVal + '%';
+              
+              if (progress < 1) {
+                requestAnimationFrame(updateText);
+              } else {
+                elDialPercent.textContent = percentValue + '%';
+              }
+            }
+            requestAnimationFrame(updateText);
+          }, 200);
+        }
+
+        function populateCsDrawer(data) {
+          if (drawerScroll) drawerScroll.scrollTop = 0;
+          if (progressBar) progressBar.style.width = '0%';
+
+          if (elHero) {
+            elHero.src = data.photo;
+            elHero.alt = data.title;
+          }
+
+          if (elTag) elTag.textContent = data.tag;
+          if (elTitle) elTitle.textContent = data.title;
+          if (elTagline) elTagline.textContent = data.tagline;
+
+          // Metrics
+          if (elMetrics && data.metrics) {
+            elMetrics.innerHTML = data.metrics.map(m => `
+              <div class="cs-drawer__metric-card">
+                <span class="cs-drawer__metric-val">${m.value}</span>
+                <span class="cs-drawer__metric-lbl">${m.desc}</span>
+              </div>
+            `).join('');
+          }
+
+          if (elChallenge) elChallenge.textContent = data.challenge;
+
+          if (elSolution && data.solution) {
+            elSolution.innerHTML = data.solution.map(s => `<li>${s}</li>`).join('');
+          }
+
+          // Gallery
+          if (elGallery && data.gallery) {
+            elGallery.innerHTML = data.gallery.map(g => `<img src="${g}" alt="Screenshot" loading="lazy">`).join('');
+            elGallery.style.display = data.gallery.length ? 'grid' : 'none';
+          } else if (elGallery) {
+            elGallery.style.display = 'none';
+          }
+
+          if (elResults && data.results) {
+            elResults.innerHTML = data.results.map(r => `<li>${r}</li>`).join('');
+          }
+
+          if (elSite) {
+            if (data.site) {
+              elSite.href = data.site;
+              elSite.style.display = '';
+            } else {
+              elSite.style.display = 'none';
+            }
+          }
+
+          // Trigger dial animation
+          animateDial(data.health || 95);
+        }
+
+        function openCsDrawer(index) {
+          if (index < 0 || index >= caseStudies.length) return;
+          activeIndex = index;
+          populateCsDrawer(caseStudies[activeIndex]);
+
+          if (drawerPrev) drawerPrev.disabled = activeIndex === 0;
+          if (drawerNext) drawerNext.disabled = activeIndex === caseStudies.length - 1;
+
+          if (overlay) overlay.classList.add('is-open');
+          if (drawer) {
+            drawer.classList.add('is-open');
+            drawer.setAttribute('aria-hidden', 'false');
+          }
+          document.body.classList.add('cs-lock');
+        }
+
+        window.openCsDrawer = openCsDrawer; // Expose globally for clones
+
+        function closeCsDrawer() {
+          if (overlay) overlay.classList.remove('is-open');
+          if (drawer) {
+            drawer.classList.remove('is-open');
+            drawer.setAttribute('aria-hidden', 'true');
+          }
+          document.body.classList.remove('cs-lock');
+        }
+
+        function navigateDrawer(newIndex) {
+          if (newIndex < 0 || newIndex >= caseStudies.length) return;
+          activeIndex = newIndex;
+          
+          if (drawer) drawer.classList.add('glitching');
+          
+          setTimeout(() => {
+            populateCsDrawer(caseStudies[activeIndex]);
+            if (drawerPrev) drawerPrev.disabled = activeIndex === 0;
+            if (drawerNext) drawerNext.disabled = activeIndex === caseStudies.length - 1;
+          }, 100);
+          
+          setTimeout(() => {
+            if (drawer) drawer.classList.remove('glitching');
+          }, 250);
+        }
+
+        // Close listeners
+        const closeBtn = document.getElementById('cs-drawer-close');
+        if (closeBtn) closeBtn.addEventListener('click', closeCsDrawer);
+        if (overlay) overlay.addEventListener('click', closeCsDrawer);
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) closeCsDrawer();
+        });
+
+        // Drawer nav buttons click handlers
+        if (drawerPrev) {
+          drawerPrev.addEventListener('click', () => navigateDrawer(activeIndex - 1));
+        }
+        if (drawerNext) {
+          drawerNext.addEventListener('click', () => navigateDrawer(activeIndex + 1));
+        }
+
+        // Drawer scroll progress indicator
+        if (drawerScroll && progressBar) {
+          drawerScroll.addEventListener('scroll', function () {
+            var max = drawerScroll.scrollHeight - drawerScroll.clientHeight;
+            var pct = max > 0 ? (drawerScroll.scrollTop / max) * 100 : 0;
+            progressBar.style.width = pct + '%';
+          });
+        }
+
+        // Card Slider logic
+        (function initCsCardSlider() {
+          var track = document.getElementById('csCardsTrack');
+          var viewport = track ? track.parentElement : null;
+          var prevBtn = document.getElementById('csPrev');
+          var nextBtn = document.getElementById('csNext');
+          if (!track || !viewport) return;
+
+          var realCards = Array.prototype.slice.call(track.children);
+          var total = realCards.length;
+          if (total === 0) return;
+
+          function visibleCount() {
+            return window.innerWidth <= 900 ? 1 : 3;
+          }
+          var visible = visibleCount();
+
+          function makeClone(card) {
+            var clone = card.cloneNode(true);
+            clone.addEventListener('click', function() {
+              openCsDrawer(parseInt(clone.dataset.index, 10));
+            });
+            return clone;
+          }
+
+          var clonesEnd = realCards.slice(0, visible).map(makeClone);
+          var clonesStart = realCards.slice(-visible).map(makeClone);
+          clonesStart.forEach(function (c) { track.insertBefore(c, track.firstChild); });
+          clonesEnd.forEach(function (c) { track.appendChild(c); });
+
+          var index = visible;
+          var animating = false;
+
+          function cardStep() {
+            var card = track.children[0];
+            var style = getComputedStyle(track);
+            var gap = parseFloat(style.gap || style.columnGap || 0);
+            return card.getBoundingClientRect().width + gap;
+          }
+
+          function setPosition(withTransition) {
+            var step = cardStep();
+            track.style.transition = withTransition ? 'transform .5s cubic-bezier(.16,.84,.44,1)' : 'none';
+            track.style.transform = 'translateX(-' + (index * step) + 'px)';
+          }
+
+          function goTo(newIndex) {
+            if (animating) return;
+            animating = true;
+            index = newIndex;
+            setPosition(true);
+          }
+
+          track.addEventListener('transitionend', function () {
+            animating = false;
+            if (index >= total + visible) {
+              index -= total;
+              setPosition(false);
+            } else if (index < visible) {
+              index += total;
+              setPosition(false);
+            }
+          });
+
+          if (prevBtn) prevBtn.addEventListener('click', function () { goTo(index - 1); resetAuto(); });
+          if (nextBtn) nextBtn.addEventListener('click', function () { goTo(index + 1); resetAuto(); });
+
+          var autoTimer;
+          function resetAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(function () { goTo(index + 1); }, 5000);
+          }
+          resetAuto();
+
+          window.addEventListener('resize', function () {
+            setPosition(false);
+          });
+
+          // Bind card selection
+          realCards.forEach(function(card) {
+            card.addEventListener('click', function() {
+              openCsDrawer(parseInt(card.dataset.index, 10));
+            });
+          });
+
+          setPosition(false);
+        })();
+
+      })();
     });
   </script>
 </body>

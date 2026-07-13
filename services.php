@@ -363,6 +363,7 @@ $active_page = 'services';
     .sv-close { padding: 80px 24px; }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body class="sv-page">
 

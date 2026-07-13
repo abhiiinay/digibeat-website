@@ -419,6 +419,7 @@ $active_page = 'careers';
     }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 <div id="cr-header-wrap"><?php include 'header.php'; ?></div>

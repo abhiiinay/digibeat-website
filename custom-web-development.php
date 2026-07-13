@@ -527,6 +527,7 @@ $active_page = 'services';
     .cwa-cta p { font-size: 14px; }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 <?php include 'header.php'; ?>

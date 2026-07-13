@@ -353,6 +353,7 @@ $founder_social = [
     .founder-badge-logo{height:20px;}
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body style="background:#ffffff !important;">
 <?php include 'header.php'; ?>

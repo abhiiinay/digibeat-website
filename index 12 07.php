@@ -892,6 +892,7 @@ $view_all_url = '/clients.php';
         .clients-grid { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     }
   </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 
 <body class="min-h-screen flex flex-col relative overflow-x-hidden" style="background:#ffffff;">
@@ -2750,6 +2751,7 @@ function e($str) {
     .map-wrap{ height:280px; }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 

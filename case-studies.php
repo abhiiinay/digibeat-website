@@ -120,6 +120,16 @@ $active_page = 'case-studies';
     transition: transform 0.15s ease, background 0.15s ease;
   }
   .cs-btn-primary:hover { background: var(--cs-accent-deep); transform: translateY(-1px); }
+  .cs-btn-primary svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .cs-btn-primary:hover svg {
+    transform: translateX(4px);
+  }
 
   .cs-btn-outline {
     display: inline-flex;
@@ -140,71 +150,201 @@ $active_page = 'case-studies';
   .cs-btn-outline svg { width: 16px; height: 16px; stroke: currentColor; transition: transform 0.15s ease; }
   .cs-btn-outline:hover { border-color: var(--cs-accent); color: var(--cs-accent); gap: 14px; }
 
-  /* ================= HERO ================= */
- .cs-hero {
-    background: #fff;
+  /* ================= HERO — Futuristic HUD Split Layout ================= */
+  .cs-hero {
+    background: #ffffff;
     min-height: calc(100vh - var(--cs-header-h));
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 0;
-}
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+  }
+
+  /* Grid layout inside wrap */
+  .cs-hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cs-hero__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+  }
+
   .cs-hero__eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: var(--cs-accent-soft);
-    color: var(--cs-accent);
-    font-family: var(--font-heading);
-    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background: rgba(61, 90, 254, 0.05);
+    color: #3d5afe;
+    font-family: var(--cs-font-mono, monospace);
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(61, 90, 254, 0.15);
   }
-  .cs-hero__eyebrow svg { width: 14px; height: 14px; stroke: var(--cs-accent); }
+  .cs-hero__eyebrow-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #3d5afe;
+    animation: cs-pulse-dot 1.5s infinite;
+  }
+  @keyframes cs-pulse-dot {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
 
   .cs-hero h1 {
-    font-weight: 800;
-    font-size: clamp(34px, 5.2vw, 56px);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    color: var(--cs-ink);
-    margin: 0 0 22px;
+    font-weight: 900;
+    font-size: clamp(36px, 4.8vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: #0b1437; /* Black base */
+    margin: 0 0 24px;
   }
-  .cs-hero h1 .cs-accent-text { color: var(--cs-accent); }
+  .cs-hero h1 span.blue-text {
+    color: #3d5afe; /* Blue highlight */
+  }
 
   .cs-hero p.cs-hero__sub {
-    color: var(--cs-muted);
+    color: #515b81;
     font-size: 17px;
     line-height: 1.75;
-    max-width: 640px;
-    margin: 0 auto 44px;
+    max-width: 500px;
+    margin: 0 0 40px;
   }
 
-  .cs-stats {
+  .cs-hero__actions {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto 40px;
+    gap: 16px;
   }
-  .cs-stats__item { padding: 0 36px; text-align: center; }
-  .cs-stats__item + .cs-stats__item { border-left: 1px solid var(--cs-line); }
-  .cs-stats__num {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: clamp(26px, 3vw, 34px);
-    font-weight: 800;
-    color: var(--cs-accent);
-    letter-spacing: -0.02em;
-    line-height: 1;
-    margin-bottom: 8px;
+
+  /* Right Side: Futuristic Telemetry Console (White + Blue) */
+  .cs-hero__right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
   }
-  .cs-stats__label { display: block; font-size: 13px; color: var(--cs-muted); font-weight: 500; }
+
+  .cs-hud-console {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border: 1px solid rgba(61, 90, 254, 0.16);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(61, 90, 254, 0.06);
+    position: relative;
+  }
+  .cs-hud-console::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 30px; right: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3d5afe, transparent);
+  }
+
+  /* Console Header */
+  .cs-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px dashed rgba(61, 90, 254, 0.12);
+    padding-bottom: 14px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #3d5afe;
+    letter-spacing: 0.05em;
+  }
+  .cs-hud-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #3d5afe;
+    font-weight: 700;
+  }
+
+  /* Wave Graph */
+  .cs-hud-graph {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 28px;
+    background: rgba(61, 90, 254, 0.01);
+    border: 1px solid rgba(61, 90, 254, 0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cs-hud-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(61, 90, 254, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 90, 254, 0.04) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+
+  /* SVG Wave styling */
+  .cs-hud-svg-wave {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .cs-hud-wave-path {
+    stroke: #3d5afe;
+    stroke-width: 2px;
+    fill: none;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: cs-wave-draw 8s linear infinite;
+  }
+  @keyframes cs-wave-draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Stats Output List */
+  .cs-hud-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cs-hud-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(61, 90, 254, 0.02);
+    border: 1px solid rgba(61, 90, 254, 0.06);
+    border-radius: 8px;
+    font-family: monospace;
+  }
+  .cs-hud-label {
+    color: #515b81;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .cs-hud-value {
+    color: #3d5afe;
+    font-size: 16px;
+    font-weight: 700;
+  }
 
   /* ================= PAGE HEAD (forced white) ================= */
   .cs-page-head-section { background: #ffffff !important; }
@@ -217,6 +357,16 @@ $active_page = 'case-studies';
     flex-wrap: wrap;
     background: #ffffff;
     scroll-margin-top: calc(var(--cs-header-h) + 20px);
+
+    /* Scroll reveal initial state */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .cs-page-head.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
   .cs-page-head__title { display: flex; align-items: baseline; gap: 10px; }
   .cs-page-head h2 {
@@ -310,70 +460,132 @@ $active_page = 'case-studies';
   .cs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px 24px;
+    gap: 28px;
   }
 
+  /* Card — matches index.php case study card style */
   .cs-card {
+    background: #ffffff;
+    border: 1px solid rgba(61, 90, 254, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(61, 90, 254, 0.04);
     display: flex;
     flex-direction: column;
     text-align: left;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
     font-family: var(--font-body);
     color: inherit;
+    padding: 0;
+
+    /* Scroll reveal initial state */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
   }
-  .cs-card__img {
+  .cs-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .cs-card.is-visible:hover {
+    border-color: rgba(61, 90, 254, 0.4);
+    box-shadow: 0 20px 40px rgba(61, 90, 254, 0.12);
+    transform: translateY(-6px);
+  }
+
+  /* Corner tech brackets */
+  .cs-card__bracket {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid rgba(61, 90, 254, 0.3);
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+  .cs-card:hover .cs-card__bracket { border-color: rgba(61, 90, 254, 1); opacity: 1; }
+  .cs-card__bracket-tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+  .cs-card__bracket-tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+  .cs-card__bracket-bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+  .cs-card__bracket-br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+  /* Laser sweep on hover */
+  .cs-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #3d5afe, transparent);
+    box-shadow: 0 0 12px #3d5afe;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 11;
+  }
+  .cs-card:hover::after {
+    animation: cs-card-laser-pg 1.5s ease-in-out infinite;
+  }
+  @keyframes cs-card-laser-pg {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+
+  .cs-card__media {
     position: relative;
-    border-radius: 18px;
-    overflow: hidden;
     aspect-ratio: 4 / 3;
-    background: var(--cs-panel);
-    margin-bottom: 16px;
+    overflow: hidden;
+    background: #f1f5f9;
+    border-bottom: 1px solid rgba(61, 90, 254, 0.08);
+    margin-bottom: 0;
   }
-  .cs-card__img img {
+  .cs-card__media img {
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.45s ease;
+    opacity: 0.95;
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
-  .cs-card:hover .cs-card__img img { transform: scale(1.06); }
+  .cs-card:hover .cs-card__media img { transform: scale(1.05); opacity: 1; }
+
+  .cs-card__body {
+    padding: 24px 26px 28px;
+    position: relative;
+  }
 
   .cs-card__chip {
-    position: absolute;
-    left: 14px; bottom: 14px;
     display: inline-flex;
     align-items: center;
-    padding: 6px 13px;
+    padding: 5px 12px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(6px);
-    font-size: 12px;
+    background: rgba(61, 90, 254, 0.08);
+    font-size: 11px;
     font-weight: 700;
-    color: var(--cs-accent);
+    color: #3d5afe;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
   }
 
-  .cs-card__arrow {
-    position: absolute;
-    right: 14px; bottom: 14px;
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: var(--cs-accent);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-  .cs-card__arrow svg { width: 16px; height: 16px; stroke: #fff; }
-  .cs-card:hover .cs-card__arrow { opacity: 1; transform: translateY(0); }
-
-  .cs-card__title {
+  .cs-card__name {
+    font-family: 'Inter', sans-serif;
     font-size: 19px;
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.35;
-    color: var(--cs-ink);
+    color: #0b1437;
+    margin: 0 0 8px;
+  }
+
+  .cs-card__role {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.55;
     margin: 0;
   }
 
@@ -634,6 +846,9 @@ $active_page = 'case-studies';
 
   /* ================= Responsive ================= */
   @media (max-width: 980px) {
+    .cs-hero__grid { grid-template-columns: 1fr; gap: 48px; }
+    .cs-hero__right { justify-content: center; }
+    .cs-hud-console { max-width: 100%; }
     .cs-grid { grid-template-columns: 1fr 1fr; }
     .cs-drawer { width: 70%; }
   }
@@ -641,8 +856,10 @@ $active_page = 'case-studies';
   @media (max-width: 640px) {
     :root { --cs-drawer-pad: 22px; }
     .cs-wrap { padding: 0 20px; }
-    .cs-hero { padding: 48px 0 40px; }
-    .cs-stats__item { padding: 0 18px; }
+    .cs-hero { padding: 48px 0; }
+    .cs-hero__left { align-items: center; text-align: center; }
+    .cs-hero p.cs-hero__sub { margin-left: auto; margin-right: auto; }
+    .cs-hero__actions { justify-content: center; }
     .cs-page-head { padding: 4px 0 28px; flex-direction: column; align-items: flex-start; }
     .cs-grid { grid-template-columns: 1fr; gap: 32px; }
     .cs-drawer { width: 100%; }
@@ -656,11 +873,12 @@ $active_page = 'case-studies';
 
   @media (max-width: 480px) {
     .cs-wrap { padding: 0 16px; }
-    .cs-hero h1 { font-size: 30px; }
+    .cs-hero h1 { font-size: 32px; }
     .cs-cta { margin: 0 14px; padding: 28px 20px; border-radius: 18px; }
     .cs-drawer__footer .cs-btn-outline { padding: 12px 18px; font-size: 13.5px; }
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 <div id="cs-header-wrap"><?php include 'header.php'; ?></div>
@@ -668,37 +886,61 @@ $active_page = 'case-studies';
 <!-- ============ HERO ============ -->
 <section class="cs-hero">
   <div class="cs-wrap">
-    <div class="cs-hero__eyebrow">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.24 7.76 2.83-2.83"/><path d="M18 12h4"/><path d="m16.24 16.24 2.83 2.83"/><path d="M12 18v4"/><path d="m4.93 19.07 2.83-2.83"/><path d="M2 12h4"/><path d="m4.93 4.93 2.83 2.83"/></svg>
-      Case Studies
-    </div>
-    <h1>Real Results. Real Stories. <span class="cs-accent-text">Real Impact.</span></h1>
-    <p class="cs-hero__sub">
-      At Digibeat, every project is a partnership — and every partnership
-      tells a story. Explore how our strategies, designs, and solutions
-      help businesses overcome challenges, accelerate growth, and build
-      stronger digital experiences.
-    </p>
+    <div class="cs-hero__grid">
+      <!-- Left typographics -->
+      <div class="cs-hero__left">
+        <div class="cs-hero__eyebrow">
+          <span class="cs-hero__eyebrow-dot"></span>
+          DATA STREAM // ACTIVE STATE
+        </div>
+        <h1>Precision <span class="blue-text">Logic</span>.<br>Proven <span class="blue-text">Performance</span>.</h1>
+        <p class="cs-hero__sub">
+          At Digibeat, every project is a partnership. Explore how our strategies, designs, and solutions help businesses overcome challenges, accelerate growth, and build elite digital experiences.
+        </p>
+        <div class="cs-hero__actions">
+          <button type="button" class="cs-btn-outline" id="cs-scroll-list" style="border-color: #3d5afe; color: #3d5afe;">
+            Explore Case Studies
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
 
-    <div class="cs-stats">
-      <div class="cs-stats__item">
-        <span class="cs-stats__num">50+</span>
-        <span class="cs-stats__label">Projects delivered</span>
-      </div>
-      <div class="cs-stats__item">
-        <span class="cs-stats__num">98%</span>
-        <span class="cs-stats__label">Client satisfaction</span>
-      </div>
-      <div class="cs-stats__item">
-        <span class="cs-stats__num">12+</span>
-        <span class="cs-stats__label">Industries served</span>
+      <!-- Right HUD console -->
+      <div class="cs-hero__right">
+        <div class="cs-hud-console">
+          <div class="cs-hud-header">
+            <span>SYS: TELEMETRY</span>
+            <div class="cs-hud-status">
+              <span class="cs-hero__eyebrow-dot"></span>
+              ONLINE
+            </div>
+          </div>
+          
+          <div class="cs-hud-graph">
+            <div class="cs-hud-grid"></div>
+            <!-- Interactive live wave -->
+            <svg class="cs-hud-svg-wave" viewBox="0 0 400 80">
+              <path class="cs-hud-wave-path" d="M 0,40 C 50,20 100,60 150,40 C 200,20 250,60 300,40 C 350,20 400,40 450,40" />
+            </svg>
+          </div>
+
+          <div class="cs-hud-metrics">
+            <div class="cs-hud-row">
+              <span class="cs-hud-label">Projects Delivered</span>
+              <span class="cs-hud-value">50+</span>
+            </div>
+            <div class="cs-hud-row">
+              <span class="cs-hud-label">Client Satisfaction</span>
+              <span class="cs-hud-value">98%</span>
+            </div>
+            <div class="cs-hud-row">
+              <span class="cs-hud-label">Industries Served</span>
+              <span class="cs-hud-value">12+</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <button type="button" class="cs-btn-outline" id="cs-scroll-list">
-      Explore case studies
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </button>
   </div>
 </section>
 
@@ -921,18 +1163,35 @@ $active_page = 'case-studies';
     }
 
     grid.innerHTML = filtered.map(function (cs) {
-      return '<button type="button" class="cs-card" data-id="' + cs.id + '">' +
-        '<span class="cs-card__img">' +
+      return '<button type="button" class="cs-card" data-id="' + cs.id + '" aria-haspopup="dialog" aria-label="Open ' + cs.title + ' details">' +
+        '<div class="cs-card__bracket cs-card__bracket-tl"></div>' +
+        '<div class="cs-card__bracket cs-card__bracket-tr"></div>' +
+        '<div class="cs-card__bracket cs-card__bracket-bl"></div>' +
+        '<div class="cs-card__bracket cs-card__bracket-br"></div>' +
+        '<div class="cs-card__media">' +
           '<img src="' + cs.cardImage + '" alt="' + cs.title + '" loading="lazy">' +
+        '</div>' +
+        '<div class="cs-card__body">' +
           '<span class="cs-card__chip">' + cs.tag + '</span>' +
-          '<span class="cs-card__arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>' +
-        '</span>' +
-        '<span class="cs-card__title">' + cs.title + '</span>' +
-        '</button>';
+          '<h3 class="cs-card__name">' + cs.title + '</h3>' +
+          '<p class="cs-card__role">' + cs.tagline + '</p>' +
+        '</div>' +
+      '</button>';
     }).join('');
 
-    grid.querySelectorAll('.cs-card').forEach(function (card) {
+    var cards = grid.querySelectorAll('.cs-card');
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    cards.forEach(function (card) {
       card.addEventListener('click', function () { openDrawer(card.getAttribute('data-id')); });
+      revealObserver.observe(card);
     });
   }
 
@@ -1055,6 +1314,20 @@ $active_page = 'case-studies';
   buildFilterPanel('cs-industry-panel', 'industry', state.industries, 'cs-industry-count');
   wireDropdown('cs-filter-industry');
   render();
+
+  // Scroll reveal for page head
+  var pageHead = document.getElementById('cs-list');
+  if (pageHead) {
+    var headObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          headObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    headObserver.observe(pageHead);
+  }
 
   /* -------------------- header height sync -------------------- */
   var headerWrap = document.getElementById('cs-header-wrap');

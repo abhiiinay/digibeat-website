@@ -254,6 +254,7 @@ $ctaLabel    = 'Get Started';
       min-height: 100svh;
     }
   </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body class="min-h-screen flex flex-col relative overflow-x-hidden bg-[#0e0e14]">
 

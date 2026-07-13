@@ -653,6 +653,7 @@ function render_icon($name) {
     color: var(--text-primary) !important;
   }
 </style>
+  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 <?php include 'header.php'; ?>
