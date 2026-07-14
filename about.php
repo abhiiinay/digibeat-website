@@ -152,7 +152,7 @@ $founder_social = [
   }
   a{color:inherit;}
   img{display:block;max-width:100%;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .wrap{max-width:1180px;margin:0 auto;padding-left:32px;padding-right:32px;}
 
   :focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
 
@@ -163,7 +163,7 @@ $founder_social = [
   }
 
   /* ---------- HERO ---------- */
-  .hero{padding:96px 0 64px;}
+  .hero{padding-top:96px; padding-bottom:64px;}
   .eyebrow{
     font-family:var(--mono);font-size:12.5px;font-weight:500;
     letter-spacing:.14em;text-transform:uppercase;color:var(--blue);
@@ -214,7 +214,7 @@ $founder_social = [
   }
 
   /* ---------- PILLAR CARDS ---------- */
-  .pillars{padding:24px 0 80px;}
+  .pillars{padding-top:24px; padding-bottom:80px;}
   .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
   @media (max-width:900px){ .pillar-grid{grid-template-columns:1fr 1fr;} }
   @media (max-width:640px){ .pillar-grid{grid-template-columns:1fr;} }
@@ -236,21 +236,24 @@ $founder_social = [
   .pillar-body p{margin:0;color:var(--ink-soft);font-size:15px;}
 
   /* ---------- VALUES ---------- */
-  .values{padding:80px 0;}
+  .values{padding-top:80px; padding-bottom:80px;}
   .values-head{max-width:56ch;margin-bottom:40px;}
   .values-head .eyebrow{margin-bottom:14px;}
   .values-head h2{font-size:30px;font-weight:600;margin:0 0 10px;}
   .values-head p{color:var(--ink-soft);margin:0;font-size:15.5px;}
   .values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   @media (max-width:900px){ .values-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:480px){ .values-grid{grid-template-columns:1fr;} }
+  @media (max-width:480px){
+    .values-grid{grid-template-columns:1fr; gap:16px; background:transparent; border:none; overflow:visible;}
+    .value-card{border:1px solid var(--line); border-radius:var(--radius);}
+  }
   .value-card{background:var(--paper);padding:28px 24px;}
   .value-glyph{font-family:var(--mono);color:var(--blue);font-size:13px;margin-bottom:14px;}
   .value-card h3{font-size:17px;margin:0 0 8px;font-weight:600;}
   .value-card p{margin:0;color:var(--ink-soft);font-size:14px;}
 
   /* ---------- FOUNDER ---------- */
-  .founder{padding:40px 0 100px;}
+  .founder{padding-top:40px; padding-bottom:100px;}
   .founder-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start;}
   @media (max-width:900px){ .founder-grid{grid-template-columns:1fr;gap:36px;} }
 
@@ -315,30 +318,30 @@ $founder_social = [
 
   /* ---------- RESPONSIVE: TABLET ---------- */
   @media (max-width:960px){
-    .wrap{padding:0 24px;}
-    .hero{padding:72px 0 48px;}
+    .wrap{padding-left:24px; padding-right:24px;}
+    .hero{padding-top:72px; padding-bottom:48px;}
     .cta{margin:0 24px 72px;padding:44px 36px;}
   }
 
   /* ---------- RESPONSIVE: MOBILE ---------- */
   @media (max-width:600px){
-    .wrap{padding:0 20px;}
-    .hero{padding:56px 0 36px;}
+    .wrap{padding-left:20px; padding-right:20px;}
+    .hero{padding-top:56px; padding-bottom:36px;}
     .hero-grid{gap:36px;}
     .hero-sub{font-size:15.5px;max-width:none;}
     .console{padding:18px 16px 16px;font-size:12.5px;}
 
-    .pillars{padding:16px 0 56px;}
+    .pillars{padding-top:16px; padding-bottom:56px;}
     .pillar-grid{gap:20px;}
     .pillar-body{padding:18px 18px 22px;}
     .pillar-body h3{font-size:19px;}
 
-    .values{padding:56px 0;}
+    .values{padding-top:56px; padding-bottom:56px;}
     .values-head{margin-bottom:28px;}
     .values-head h2{font-size:25px;}
     .value-card{padding:22px 18px;}
 
-    .founder{padding:24px 0 72px;}
+    .founder{padding-top:24px; padding-bottom:72px;}
     .founder-name{font-size:25px;}
     .founder-quote{font-size:18px;padding-left:18px;margin-bottom:28px;}
 
