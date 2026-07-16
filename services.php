@@ -407,7 +407,7 @@ $active_page = 'services';
     </div>
 
     <div class="sv-list reveal reveal-stagger">
-      <a href="/services/brand-consulting.php" class="sv-service">
+      <a href="/digibeat/services/branding.php#brand-consulting" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Brand Consulting</h3>
@@ -415,7 +415,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/logo-design.php" class="sv-service">
+      <a href="/digibeat/services/branding.php#logo-design" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Logo Design</h3>
@@ -423,7 +423,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/product-design.php" class="sv-service">
+      <a href="/digibeat/services/branding.php#product-design" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Industrial / Product Design</h3>
@@ -431,7 +431,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/graphic-design.php" class="sv-service">
+      <a href="/digibeat/services/branding.php#graphic-design" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Graphic Design</h3>
@@ -458,7 +458,7 @@ $active_page = 'services';
     </div>
 
     <div class="sv-list reveal reveal-stagger">
-      <a href="/services/ui-ux.php" class="sv-service">
+      <a href="/digibeat/services/it-solutions.php#web-hosting" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Web Hosting</h3>
@@ -466,7 +466,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/website-design.php" class="sv-service">
+      <a href="/digibeat/services/it-solutions.php#business-email" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Business Email Services</h3>

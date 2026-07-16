@@ -412,7 +412,7 @@ function db_is_active($page, $active) {
 <header class="db-header">
   <div class="db-header__inner">
 
-    <a href="index" class="db-logo" aria-label="Digibeat home">
+    <a href="/digibeat/index.php" class="db-logo" aria-label="Digibeat home">
       <img src="/digibeat/assets/logoff.png" alt="Digibeat" class="db-logo__img">
     </a>
 
@@ -421,7 +421,7 @@ function db_is_active($page, $active) {
       <ul>
 
         <li class="db-nav__item" data-menu="services">
-          <a href="services" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
+          <a href="/digibeat/services.php" class="db-nav__link<?php echo db_is_active('services', $active_page); ?>">
             Services
             <svg class="db-nav__caret" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -429,21 +429,21 @@ function db_is_active($page, $active) {
           <div class="db-mega">
             <div class="db-mega__intro">
               <h3>Building Strong<br>Capabilities to<br>Empower Your<br>Brand</h3>
-              <a href="services">Go to overview →</a>
+              <a href="/digibeat/services.php">Go to overview →</a>
             </div>
 
             <div class="db-mega__col">
-              <h4>Branding <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></h4>
+              <h4><a href="/digibeat/services/branding.php" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Branding <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></h4>
               <ul>
-                <li><a href="/services/brand-consulting.php">Brand Consulting</a></li>
-                <li><a href="/services/logo-design.php">Logo Design</a></li>
-                <li><a href="/services/product-design.php">Industrial / Product Design</a></li>
-                <li><a href="/services/graphic-design.php">Graphic Design</a></li>
+                <li><a href="/digibeat/services/branding.php#brand-consulting">Brand Consulting</a></li>
+                <li><a href="/digibeat/services/branding.php#logo-design">Logo Design</a></li>
+                <li><a href="/digibeat/services/branding.php#product-design">Industrial / Product Design</a></li>
+                <li><a href="/digibeat/services/branding.php#graphic-design">Graphic Design</a></li>
               </ul>
-              <h4 style="margin-top:28px;">IT Solutions <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></h4>
+              <h4 style="margin-top:28px;"><a href="/digibeat/services/it-solutions.php" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">IT Solutions <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></h4>
               <ul>
-                <li><a href="/services/ui-ux.php">Web Hosting</a></li>
-                <li><a href="/services/website-design.php">Business Email Services</a></li>
+                <li><a href="/digibeat/services/it-solutions.php#web-hosting">Web Hosting</a></li>
+                <li><a href="/digibeat/services/it-solutions.php#business-email">Business Email Services</a></li>
               </ul>
             </div>
 
@@ -471,16 +471,16 @@ function db_is_active($page, $active) {
         </li>
 
         <li class="db-nav__item">
-          <a href="/digibeat/our-works" class="db-nav__link<?php echo db_is_active('our-works', $active_page); ?>">Our Works</a>
+          <a href="/digibeat/our-works.php" class="db-nav__link<?php echo db_is_active('our-works', $active_page); ?>">Our Works</a>
         </li>
         <li class="db-nav__item">
-          <a href="/digibeat/industries" class="db-nav__link<?php echo db_is_active('industries', $active_page); ?>">Industries</a>
+          <a href="/digibeat/industries.php" class="db-nav__link<?php echo db_is_active('industries', $active_page); ?>">Industries</a>
         </li>
         <li class="db-nav__item">
-          <a href="/digibeat/about" class="db-nav__link<?php echo db_is_active('about', $active_page); ?>">About</a>
+          <a href="/digibeat/about.php" class="db-nav__link<?php echo db_is_active('about', $active_page); ?>">About</a>
         </li>
         <li class="db-nav__item">
-          <a href="/digibeat/careers" class="db-nav__link<?php echo db_is_active('careers', $active_page); ?>">Careers</a>
+          <a href="/digibeat/careers.php" class="db-nav__link<?php echo db_is_active('careers', $active_page); ?>">Careers</a>
         </li>
       </ul>
 
@@ -497,7 +497,7 @@ function db_is_active($page, $active) {
             <span>hello@digibeat.com</span>
           </a>
         </div>
-        <a href="/digibeat/contact" class="db-mobile-cta">Let's Work Together</a>
+        <a href="/digibeat/contact.php" class="db-mobile-cta">Let's Work Together</a>
         <div class="db-mobile-socials">
           <a href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -520,7 +520,7 @@ function db_is_active($page, $active) {
       <button class="db-icon-btn" aria-label="Search">
         <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       </button>
-      <a href="/digibeat/contact" class="db-cta<?php echo db_is_active('contact', $active_page); ?>">Contact</a>
+      <a href="/digibeat/contact.php" class="db-cta<?php echo db_is_active('contact', $active_page); ?>">Contact</a>
       <!-- Burger — only shown on mobile via CSS -->
       <button class="db-icon-btn db-burger" aria-label="Open menu" id="db-burger-btn">
         <span class="burger-bar line-1"></span>
