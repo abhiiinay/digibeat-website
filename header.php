@@ -448,7 +448,7 @@ function db_is_active($page, $active) {
             </div>
 
             <div class="db-mega__col">
-              <h4>Web Development</h4>
+              <h4><a href="/digibeat/services/webdevelopment.php" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Web Development <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></h4>
               <ul>
                 <li><a href="/digibeat/services/custom-web-development">Custom Web Application</a></li>
                 <li><a href="/digibeat/services/web-development.php?service=web-design-service">Web Design Service</a></li>
@@ -458,13 +458,13 @@ function db_is_active($page, $active) {
             </div>
 
             <div class="db-mega__col">
-              <h4>Digital Marketing <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></h4>
+              <h4><a href="/digibeat/services/digital-marketing.php" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Digital Marketing <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a></h4>
               <ul>
-                <li><a href="/services/seo.php">Search Engine Optimisation</a></li>
-                <li><a href="/services/social-media.php">Social Media Marketing</a></li>
-                <li><a href="/services/content-marketing.php">Content Marketing</a></li>
-                <li><a href="/services/marketing-automation.php">Online Reputation Management</a></li>
-                <li><a href="/services/analytics.php">Analytics</a></li>
+                <li><a href="/digibeat/services/digital-marketing.php#seo">Search Engine Optimisation</a></li>
+                <li><a href="/digibeat/services/digital-marketing.php#social-media">Social Media Marketing</a></li>
+                <li><a href="/digibeat/services/digital-marketing.php#content-marketing">Content Marketing</a></li>
+                <li><a href="/digibeat/services/digital-marketing.php#reputation">Online Reputation Management</a></li>
+                <li><a href="/digibeat/services/digital-marketing.php#reputation">Analytics</a></li>
               </ul>
             </div>
           </div>

@@ -326,33 +326,33 @@
       <div class="ft-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="about.php">About</a></li>
-          <li><a href="services.php">Services</a></li>
-          <li><a href="industries.php">Industries</a></li>
-          <li><a href="case-studies.php">Works</a></li>
-          <li><a href="careers.php">Careers</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="/digibeat/about.php">About</a></li>
+          <li><a href="/digibeat/services.php">Services</a></li>
+          <li><a href="/digibeat/industries.php">Industries</a></li>
+          <li><a href="/digibeat/case-studies.php">Works</a></li>
+          <li><a href="/digibeat/careers.php">Careers</a></li>
+          <li><a href="/digibeat/contact.php">Contact</a></li>
         </ul>
       </div>
 
       <div class="ft-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.php#branding">Branding</a></li>
-          <li><a href="services.php#experience-design">Experience Design</a></li>
-          <li><a href="services.php#technology">Technology</a></li>
-          <li><a href="services.php#marketing">Digital Marketing</a></li>
+          <li><a href="/digibeat/services/branding.php">Branding</a></li>
+          <li><a href="/digibeat/services.php#experience-design">Experience Design</a></li>
+          <li><a href="/digibeat/services/it-solutions.php">IT Solutions</a></li>
+          <li><a href="/digibeat/services.php#marketing">Digital Marketing</a></li>
         </ul>
       </div>
 
       <div class="ft-col">
         <h4>Other</h4>
         <ul>
-          <li><a href="blog.php">Blogs</a></li>
-          <li><a href="testimonials.php">Testimonials</a></li>
-          <li><a href="clients.php">Our Clients</a></li>
+          <li><a href="/digibeat/blog.php">Blogs</a></li>
+          <li><a href="/digibeat/testimonials.php">Testimonials</a></li>
+          <li><a href="/digibeat/clients.php">Our Clients</a></li>
           <li><a href="/digibeat/assets/files/digibeat-brochure.pdf" download>Download Brochure</a></li>
-          <li><a href="sitemap.php">Sitemap</a></li>
+          <li><a href="/digibeat/sitemap.php">Sitemap</a></li>
         </ul>
       </div>
 
@@ -381,9 +381,9 @@
     <div class="ft-bottom">
       <p>&copy; <span id="ft-year"><?php echo date('Y'); ?></span> Digibeat. All rights reserved.</p>
       <div class="ft-legal">
-        <a href="privacy-policy.php">Privacy Policy</a>
-        <a href="terms.php">Terms of Service</a>
-        <a href="sitemap.php">Sitemap</a>
+        <a href="/digibeat/privacy-policy.php">Privacy Policy</a>
+        <a href="/digibeat/terms.php">Terms of Service</a>
+        <a href="/digibeat/sitemap.php">Sitemap</a>
       </div>
     </div>
 

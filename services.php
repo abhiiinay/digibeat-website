@@ -493,7 +493,7 @@ $active_page = 'services';
     </div>
 
     <div class="sv-list reveal reveal-stagger">
-      <a href="custom-web-development" class="sv-service">
+      <a href="/digibeat/services/custom-web-development.php" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Custom Web Application</h3>
@@ -501,7 +501,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/devops.php" class="sv-service">
+      <a href="/digibeat/services/web-development.php?service=web-design-service" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Web Design Service</h3>
@@ -509,7 +509,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/data-analytics.php" class="sv-service">
+      <a href="/digibeat/services/ecommerce-solutions.php" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>E-commerce Solutions</h3>
@@ -517,7 +517,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/web-development.php" class="sv-service">
+      <a href="/digibeat/services/website-development.php" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Website Development</h3>
@@ -544,7 +544,7 @@ $active_page = 'services';
     </div>
 
     <div class="sv-list reveal reveal-stagger">
-      <a href="/services/seo.php" class="sv-service">
+      <a href="/digibeat/services/digital-marketing.php#seo" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Search Engine Optimisation</h3>
@@ -552,7 +552,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/social-media.php" class="sv-service">
+      <a href="/digibeat/services/digital-marketing.php#social-media" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Social Media Marketing</h3>
@@ -560,7 +560,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/content-marketing.php" class="sv-service">
+      <a href="/digibeat/services/digital-marketing.php#content-marketing" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Content Marketing</h3>
@@ -568,7 +568,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/marketing-automation.php" class="sv-service">
+      <a href="/digibeat/services/digital-marketing.php#reputation" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Online Reputation Management</h3>
@@ -576,7 +576,7 @@ $active_page = 'services';
         </span>
         <svg class="sv-service__arrow" width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="/services/analytics.php" class="sv-service">
+      <a href="/digibeat/services/digital-marketing.php#reputation" class="sv-service">
         <span class="sv-service__rule"></span>
         <span class="sv-service__body">
           <h3>Analytics</h3>
