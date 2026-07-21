@@ -49,33 +49,61 @@ $services = [
 
 // Capabilities cards content — "Why Choose Us" copy.
 // Kept separate from $services so the orbit navigator above is unaffected.
-$capabilities = [
+$services_grid = [
     [
-        'title' => 'Modern And Responsive Websites',
-        'desc'  => 'We craft visually appealing, mobile-friendly websites that adapt seamlessly to any device, ensuring a smooth and engaging user experience.',
-        'icon'  => '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9s1.3-6.5 3.8-9z"/>',
+        'title' => 'Web Design (UI/UX)',
+        'desc'  => 'Website Design — Figma, Adobe XD',
+        'icon'  => '<path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+        'link'  => 'services/web-design',
     ],
     [
-        'title' => 'SEO And Performance-Focused Strategies',
-        'desc'  => 'Our websites are built with speed, optimization, and visibility in mind—helping your brand rank higher and attract the right audience.',
-        'icon'  => '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+        'title' => 'Web Development',
+        'desc'  => 'Frontend (Bootstrap, HTML/CSS/JS, React JS) + Backend (Laravel, Node JS)',
+        'icon'  => '<path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/>',
+        'link'  => 'services/web-dev',
     ],
     [
-        'title' => 'Transparent Process And Timely Delivery',
-        'desc'  => 'From concept to launch, we keep you informed every step of the way, delivering quality work within deadlines without hidden surprises.',
-        'icon'  => '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
+        'title' => 'WordPress Development',
+        'desc'  => 'Theme-based builds, HTML-to-WordPress conversion',
+        'icon'  => '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M21 9H3M21 15H3M12 3v18"/>',
+        'link'  => 'services/wordpress',
     ],
     [
-        'title' => 'Ongoing Support And Maintenance',
-        'desc'  => "We don't just build and leave — our team provides continuous updates, security checks, and technical support to keep your website running smoothly.",
-        'icon'  => '<path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>',
+        'title' => 'E-commerce Solutions',
+        'desc'  => 'WooCommerce & Shopify store setup',
+        'icon'  => '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/>',
+        'link'  => 'services/ecommerce',
+    ],
+    [
+        'title' => 'Mobile App Development',
+        'desc'  => 'Outsourced/partner delivery',
+        'icon'  => '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>',
+        'link'  => 'services/mobile-apps',
+    ],
+    [
+        'title' => 'Digital Marketing',
+        'desc'  => 'SEO, Google Ads, Social Media Marketing',
+        'icon'  => '<path d="M23 6 13.5 15.5 8.5 10.5 1 18M17 6h6v6"/>',
+        'link'  => 'services/digital-marketing',
+    ],
+    [
+        'title' => 'Social Media & Content',
+        'desc'  => 'Social Media Management, Graphic Design (Canva/Photoshop/Illustrator), Video Editing',
+        'icon'  => '<path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+        'link'  => 'services/social-media',
+    ],
+    [
+        'title' => 'IT & Business Infrastructure',
+        'desc'  => 'Hosting Support (cPanel, Reseller, Cloud), Email Setup (Google Workspace, Outlook)',
+        'icon'  => '<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/>',
+        'link'  => 'services/it-infrastructure',
     ],
 ];
 
 $siteName    = 'Digibeat';
-$pageTitle   = 'Digibeat | Next-Gen Intelligence';
+$pageTitle   = 'Digibeat';
 $year        = date('Y');
-$badgeText   = 'Next-Gen Intelligence';
+$badgeText   = '';
 $heroHeading = 'Ideas. Engineered.<br/>Growth. Delivered.';
 $heroSub     = 'We architect premium digital experiences that scale. From neural-driven strategies to high-end aesthetic engineering.';
 $ctaLabel    = '';
@@ -107,96 +135,149 @@ $caseStudiesSubtitle = 'Real results, real stories, real impact. Explore how we 
 
 $caseStudies = [
     [
-        'id'        => 'hulul-kitchen',
-        'industry'  => 'Hospitality & Commercial Equipment',
-        'title'     => 'Hulul Kitchen',
-        'tag'       => 'Hospitality · Equipment',
-        'tagline'   => 'From a local equipment store to a trusted kitchen solutions brand.',
-        'site'      => 'https://www.hululkitchen.sa',
-        'photo'     => 'assets/images/hulul.png',
-        'gallery'   => [
-            'https://picsum.photos/seed/hulul-gallery-1/700/525',
-            'https://picsum.photos/seed/hulul-gallery-2/700/525'
+        'id'           => 'hulul-kitchen',
+        'industry'     => 'Hospitality & Commercial Equipment',
+        'title'        => 'Hulul Kitchen',
+        'tag'          => 'E-commerce · Equipment',
+        'tagline'      => 'From a local equipment store to a trusted kitchen solutions brand.',
+        'site'         => 'https://www.hululkitchen.sa',
+        'photo'        => 'assets/images/hulul-cardd.webp',
+        'cardImage'    => 'assets/images/hulul-cardd.webp',
+        'heroImage'    => 'assets/images/hulul-case.webp',
+        'gallery'      => [
+            'assets/images/hulul-prod.webp',
+            'assets/images/hulul-serv.webp'
         ],
-        'challenge' => 'Hulul Kitchen, a supplier of commercial and home kitchen equipment, needed a professional online presence to match the scale of their growing business. Their previous website lacked structure, product clarity, and strong branding — making it hard for customers to browse equipment or understand the range on offer.',
-        'solution'  => [
-            'A dedicated product gallery showcasing kitchen equipment',
-            'Organized equipment categories for easy navigation',
-            'A professional brand-focused design with consistent colors and layout',
-            'A responsive structure for seamless viewing on any device'
+        'challenge'    => 'Hulul Kitchen, a supplier of commercial and home kitchen equipment, needed a professional online presence to match the scale of their growing business. Their previous website lacked structure, product clarity, and strong branding — making it hard for customers to browse equipment or understand the range on offer.',
+        'solution'     => [
+            'A dedicated <b>product gallery</b> showcasing kitchen equipment',
+            'Organized <b>equipment categories</b> for easy navigation',
+            'A professional <b>brand-focused design</b> with consistent colors and layout',
+            'A <b>responsive structure</b> for seamless viewing on any device'
         ],
-        'results'   => [
-            'Stronger digital presence & improved brand perception',
+        'results'      => [
+            'Stronger digital presence &amp; improved brand perception',
             'Increased product inquiries through better visibility',
             'Enhanced customer experience with faster, clearer navigation',
-            'Better engagement from clean presentation & optimized layout'
-        ],
-        'metrics'   => [
-            ['label' => 'SYS.INQ', 'value' => '+45%', 'desc' => 'Increase in B2B inquiries'],
-            ['label' => 'LOAD.SPD', 'value' => '2.4s', 'desc' => 'Average page load time'],
-            ['label' => 'LHGHT.SC', 'value' => '98%', 'desc' => 'Lighthouse performance score']
-        ],
-        'health'    => 98
+            'Better engagement from clean presentation &amp; optimized layout'
+        ]
     ],
     [
-        'id'        => 'zeeque-preschool',
-        'industry'  => 'Education & Training',
-        'title'     => 'ZeeQue Preschool',
-        'tag'       => 'Education · Preschool',
-        'tagline'   => 'A delightful and intuitive portal for parents and early learners.',
-        'site'      => 'https://zeeque.in',
-        'photo'     => 'assets/clients/zee.webp',
-        'gallery'   => [
-            'https://picsum.photos/seed/zee-g1/700/525',
-            'https://picsum.photos/seed/zee-g2/700/525'
+        'id'           => 'snims-hospital',
+        'industry'     => 'Healthcare, Hospitals & Wellness',
+        'title'        => 'SNIMS Hospital',
+        'subtitle'     => 'Website Development | Kerala, India | Healthcare & Medical College',
+        'tag'          => 'Healthcare · Medical College Hospital',
+        'tagline'      => 'Turning a complex multi-specialty institution into a simple, fast digital front door.',
+        'site'         => 'https://snims.org',
+        'photo'        => 'assets/images/sreena.webp',
+        'cardImage'    => 'assets/images/sreena.webp',
+        'heroImage'    => 'assets/images/snims.webp',
+        'gallery'      => [
+            'assets/images/snimsdr.webp',
+            'assets/images/snimsdp.webp'
         ],
-        'challenge' => 'ZeeQue Preschool wanted to modernize their admissions pipeline and create a warm, engaging website that reflects their child-centric philosophy and makes enrollment simple for parents.',
-        'solution'  => [
-            'A colorful, engaging, and parent-friendly website design',
-            'Integrated online admissions portal and child information forms',
-            'Responsive news and gallery layout showing preschool activities'
+        'intro'        => 'SNIMS (Sree Narayana Institute of Medical Sciences) is a multi-specialty medical college hospital in Ernakulam, Kerala, running 25+ departments across super-specialities and specialities. DigiBeat built their website from the ground up — engineered to handle a large doctor directory, appointment bookings, and multiple linked institutions (medical college, nursing college, careers portal) under one connected digital ecosystem.',
+        'sections'     => [
+            [
+                'heading' => 'Built for a Hospital That Never Stops Running',
+                'body'    => 'A hospital website isn\'t a brochure — it\'s the first point of contact for someone trying to find the right doctor, book an appointment, or reach emergency care. We designed SNIMS\'s site around that reality: fast search, clear department navigation, and zero friction between a visitor and a confirmed appointment.'
+            ],
+            [
+                'heading' => 'Turning a Complex Institution into a Simple Digital Front Door',
+                'body'    => 'SNIMS runs across multiple linked platforms — the main hospital site, a medical college, a nursing college, a careers portal, and election micro-sites for governance. We built the core WordPress site to tie all of it together cleanly, without making visitors feel lost between subdomains.'
+            ]
         ],
-        'results'   => [
-            '35% increase in online registration inquiries',
-            'Significantly reduced time spent on manual admission paperwork',
-            'Highly positive feedback from parents on the digital journey'
+        'requirements' => [
+            'A fast, searchable way to find doctors by specialty or name across 25+ departments',
+            'A frictionless appointment booking flow that reduces phone-call dependency',
+            'A structure that could host and link a medical college, nursing college, and careers portal without confusing visitors',
+            'Fast load times on both mobile and desktop — critical for anxious visitors searching in urgent situations',
+            'A credible, trustworthy design befitting a medical college hospital'
         ],
-        'metrics'   => [
-            ['label' => 'SYS.REG', 'value' => '+35%', 'desc' => 'Increase in admissions'],
-            ['label' => 'PPR.RED', 'value' => '-80%', 'desc' => 'Manual processing reduction'],
-            ['label' => 'MOB.TRAF', 'value' => '+60%', 'desc' => 'Mobile parenting traffic']
+        'solution'     => [
+            'A <b>"Find Doctor" system</b> with dual search — by speciality and by doctor name — across 150+ doctor profiles',
+            'An <b>integrated online appointment booking system</b>, replacing reliance on phone-only bookings',
+            '<b>25+ dedicated department pages</b> covering super-specialities (Cardiology, Neurology, Neurosurgery, Nephrology, Gastroenterology) and specialities (General Medicine, Paediatrics, Orthopaedics, and more)',
+            '<b>WhatsApp click-to-chat</b> integration for instant patient queries',
+            'A <b>connected multi-portal structure</b> linking the medical college, nursing college, careers, and GCT election portals under one brand experience',
+            'A <b>blog and news module</b> to keep patients updated on hospital programmes and outreach camps',
+            '<b>Multi-location contact &amp; Google Maps integration</b> for easy navigation to the facility',
+            'Performance-first WordPress build with <b>image optimisation &amp; server-side caching</b> for fast load times on any device'
         ],
-        'health'    => 95
+        'technologies' => 'Built on WordPress with a performance-first approach — optimised theme architecture, custom post types for doctor and department management, and caching/image optimisation tuned specifically for PageSpeed performance on both mobile and desktop.',
+        'stats'        => [
+            ['value' => '90+',    'label' => 'Google PageSpeed score, mobile & desktop'],
+            ['value' => '10,000+', 'label' => 'Website visitors in the first 28 days post-launch'],
+            ['value' => '150+',   'label' => 'Appointment bookings generated through the website every month']
+        ],
+        'results'      => [
+            '<b>90+</b> Google PageSpeed score on both mobile and desktop',
+            '<b>10,000+</b> website visitors in the first 28 days post-launch',
+            '<b>150+</b> appointment bookings generated through the website every month',
+            'Zero friction between a visitor and a confirmed appointment — fast search, clear navigation',
+            'All linked institutions (medical college, nursing college, careers) unified under one seamless brand'
+        ]
     ],
     [
-        'id'        => 'snims-hospital',
-        'industry'  => 'Healthcare, Hospitals & Wellness',
-        'title'     => 'SNIMS Ernakulam',
-        'tag'       => 'Healthcare · Hospital Portal',
-        'tagline'   => 'Redesigning the digital portal for a premier medical institute.',
-        'site'      => 'https://snims.org',
-        'photo'     => 'assets/clients/bmc.webp',
-        'gallery'   => [
-            'https://picsum.photos/seed/snims-g1/700/525',
-            'https://picsum.photos/seed/snims-g2/700/525'
+        'id'           => 'elite-mission-hospital',
+        'industry'     => 'Healthcare, Hospitals & Wellness',
+        'title'        => 'Elite Mission Hospital',
+        'subtitle'     => 'Website Development | Thrissur, Kerala | Multi-Specialty Hospital',
+        'tag'          => 'Healthcare · Multi-Specialty Hospital',
+        'tagline'      => 'Organising 30+ specialities and 80+ doctors into a website a patient can navigate in seconds.',
+        'site'         => 'https://elitemissionhospital.com',
+        'photo'        => 'assets/images/elite.webp',
+        'cardImage'    => 'assets/images/elite.webp',
+        'heroImage'    => 'assets/images/elitee.webp',
+        'gallery'      => [  
+            'assets/images/elitedr.webp',
+            'assets/images/elitesp.webp'
         ],
-        'challenge' => 'SNIMS Ernakulam needed a modern, fast, and structured portal for patients, students, and medical professionals to easily access OPD schedules, academic resources, and clinical information.',
-        'solution'  => [
-            'A clean, accessible user interface built for all ages',
-            'Speed-optimized departmental pages and real-time OPD schedule lookup',
-            'Robust portal structure supporting academic news and clinical services'
+        'intro'        => 'Elite Mission Hospital has been serving Thrissur and central Kerala since 1979 — today running 30+ specialities, 80+ consulting doctors, and NABH-accredited care. A hospital with this much depth needed a website that could organise all of it without overwhelming the patient trying to find one doctor, one department, one answer. DigiBeat built that site from the ground up on WordPress.',
+        'sections'     => [
+            [
+                'heading' => 'A Legacy Hospital Needed a Website That Matched Its Scale',
+                'body'    => 'Elite Mission isn\'t a single-department clinic — it\'s a full-scale multi-specialty hospital with an academy, a nursing college, international patient services, and a hospital-wide accreditation story (NABH, ISO 9001:2015) to tell. The challenge wasn\'t just building pages — it was structuring 30+ specialities and 80+ doctor profiles so a first-time visitor could still find what they need in seconds.'
+            ],
+            [
+                'heading' => 'Structure Over Clutter',
+                'body'    => 'The real engineering problem on a hospital this size isn\'t the number of pages — it\'s making sure none of them feel buried. We built the navigation and speciality architecture specifically so a patient landing on any page is never more than two clicks from booking an appointment or finding the right doctor.'
+            ]
         ],
-        'results'   => [
-            'Improved page load performance by over 60%',
-            'Smoother user flow for patients booking appointments or finding clinical hours',
-            'Enhanced digital reputation for the institution'
+        'requirements' => [
+            'Organise 30+ medical specialities and subspecialities into a navigable structure without a cluttered menu',
+            'Give every doctor a discoverable, searchable profile — by name and by speciality',
+            'Build a dedicated appointment and enquiry flow to reduce dependency on phone bookings',
+            'Present accreditation and credibility signals (NABH, ISO, Intertek) prominently for trust-building',
+            'Support an active content engine — blog and health guides — for ongoing SEO and patient education',
+            'Link satellite services (International Patients, Health Packages, Careers, Elite Academy) under one cohesive experience'
         ],
-        'metrics'   => [
-            ['label' => 'PAGE.LOD', 'value' => '-60%', 'desc' => 'Improvement in load times'],
-            ['label' => 'OPD.SRCH', 'value' => '1.5s', 'desc' => 'Instant search query rate'],
-            ['label' => 'PTNT.FLOW', 'value' => '2x', 'desc' => 'Faster appointment bookings']
+        'solution'     => [
+            'A <b>structured speciality architecture</b> covering 30+ departments — from Cardiology and Neurosurgery to Rheumatology and Clinical Psychology — each with its own dedicated page',
+            'A searchable <b>"Find Your Doctor" system</b> spanning 80+ doctor profiles, filterable by name and speciality',
+            'A dedicated <b>"Get an Appointment" flow</b> alongside a "Make an Enquiry" path for non-urgent queries',
+            'A <b>Health Care Packages module</b> for pre-priced checkup bundles — a conversion path most competitor hospital sites skip entirely',
+            '<b>Accreditation and credibility placement</b> (NABH, ISO 9001:2015, Intertek) built into the homepage and About section',
+            'A <b>content-ready blog architecture</b> already publishing patient-education articles on a consistent schedule',
+            '<b>International Patient and Health Insurance sections</b> tailored to two distinct visitor intents',
+            '<b>WhatsApp click-to-chat, video testimonials, and multi-line contact routing</b> (general enquiry vs. doctor\'s booking) for faster patient response',
+            'Integrated satellite links to <b>Elite Academy and the hospital\'s careers portal</b>, kept visually consistent with the core brand'
         ],
-        'health'    => 99
+        'technologies' => 'Built on WordPress with a custom speciality/doctor content structure, optimised for scale across 30+ department pages and 80+ profiles, with a content architecture designed to support ongoing blog publishing and SEO growth.',
+        'stats'        => [
+            ['value' => '30+',  'label' => 'Medical specialities & subspecialities, each with a dedicated page'],
+            ['value' => '80+',  'label' => 'Doctor profiles, searchable by name and speciality'],
+            ['value' => '1979', 'label' => 'Year established — a legacy hospital with a modern digital presence']
+        ],
+        'results'      => [
+            'A patient can find any doctor or department in <b>two clicks or fewer</b> from any page',
+            '<b>30+ speciality pages</b> live at launch — each optimised for search and patient discovery',
+            '<b>80+ doctor profiles</b> fully searchable by name and speciality',
+            'Appointment and enquiry flows live and generating bookings at launch',
+            'NABH, ISO 9001:2015, and Intertek accreditations prominently communicated for instant trust',
+            'International Patient and Health Package sections serving two high-intent visitor segments'
+        ]
     ]
 ];
 
@@ -209,7 +290,7 @@ $testimonialsSubtitle = 'Real feedback from teams we\'ve shipped products with �
 $testimonials = [
     [
         'id'     => 'dr-alk',
-        'photo'  => '/digibeat/assets/images/',
+        'photo'  => 'assets/images/dra.webp',
         'quote'  => 'We used the services of Digibeat for website development and I\'m really glad with the outcome. They clearly understood what I needed, gave cutting edge suggestions, and delivered high quality service, certainly in time and within our budget. I highly recommend Digibeat Online Solutions to anyone looking for web development services.',
         'name'   => 'Dr. Abdul Latheef Kiliyanni',
         'title'  => 'Dr. Alk',
@@ -219,7 +300,7 @@ $testimonials = [
     ],
     [
         'id'     => 'mr-ajith',
-        'photo'  => '',
+        'photo'  => '/assets/images/ajith.webp',
         'quote'  => 'Very satisfied with the work done by DigiBeat Online Solutions. The team redesigned our website to be faster, mobile-friendly, and more modern. They listened to our requirements, delivered on time, and were very responsive during the process. Highly recommended for reliable web development.',
         'name'   => 'Mr. Ajith',
         'title'  => 'Head, IT Department, SNIMS Ernakulam',
@@ -229,17 +310,17 @@ $testimonials = [
     ],
     [
         'id'     => 'dr-sameeha',
-        'photo'  => '',
+        'photo'  => 'assets/images/drs.webp',
         'quote'  => 'I\'m truly impressed by the outstanding work done by Digibeat Online Solutions in creating my website. Their team was highly professional, creative, and responsive to every detail I envisioned.',
         'name'   => 'Dr. Sameeha N',
         'title'  => 'Chief Consultant, Dr. Sameeha\'s Homoeo Home',
         'accent' => 'mint',
         'video'  => '',
-        'site'   => 'https://drsameeha.org',
+        'site'   => 'https://drsameeha.com',
     ],
     [
         'id'     => 'mr-kamal',
-        'photo'  => '/digibeat/assets/images/',
+        'photo'  => 'assets/images/kamal.webp',
         'quote'  => 'Efficient and responsive web support provided by DigiBeat for Baby Memorial Hospital for past many years. Always quick to resolve issues and maintain smooth digital operations.',
         'name'   => 'Mr. Kamal K',
         'title'  => 'Senior Manager, Baby Memorial Hospitals',
@@ -276,7 +357,7 @@ $clients = [
 
  
 // Change this to your real "view all" page.
-$view_all_url = '/clients.php';
+$view_all_url = '/';
 
 
 
@@ -448,14 +529,14 @@ $view_all_url = '/clients.php';
       padding:180px 0 80px;
       background:#000000;
     }
-    .strata-services#capabilities{
+    .strata-services#services-grid{
       padding:100px 0 140px;
       background:#ffffff;
     }
-    .strata-services#capabilities h2.big{
+    .strata-services#services-grid h2.big{
       color:#111827;
     }
-    .strata-services#capabilities .svc-grid{
+    .strata-services#services-grid .svc-grid{
       background:rgba(0,0,0,0.08);
       border-color:rgba(0,0,0,0.08);
     }
@@ -517,6 +598,9 @@ $view_all_url = '/clients.php';
     .strata-services .svc-card{
       background:#000;padding:44px 30px;position:relative;overflow:hidden;
       transition:transform .5s var(--st-ease),background .5s var(--st-ease);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .strata-services .svc-card::before{
       content:'';position:absolute;inset:0;
@@ -528,7 +612,46 @@ $view_all_url = '/clients.php';
     .strata-services .svc-num{font-family:var(--st-mono);font-size:12px;color:var(--st-gray-dim);}
     .strata-services .svc-icon{width:36px;height:36px;margin:24px 0;stroke:#fff;fill:none;stroke-width:1.1;}
     .strata-services .svc-card h3{font-family:var(--st-display);font-size:20px;font-weight:600;margin-bottom:12px;color:#fff;}
-    .strata-services .svc-card p{color:var(--st-gray-dim);font-size:14px;line-height:1.7;font-family:var(--st-body);}
+    .strata-services .svc-card p{
+      color:var(--st-gray-dim);font-size:14px;line-height:1.7;font-family:var(--st-body);
+      flex-grow: 1;
+      margin-bottom: 24px;
+    }
+    .strata-services .svc-card-btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--st-mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--st-gray);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 18px;
+      border-radius: 8px;
+      width: max-content;
+      transition: all 0.3s var(--st-ease);
+      text-decoration: none;
+      z-index: 10;
+    }
+    .strata-services .svc-card-btn svg{
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      transition: transform 0.3s var(--st-ease);
+    }
+    .strata-services .svc-card:hover .svc-card-btn{
+      color: #ffffff;
+      border-color: var(--st-accent);
+      background: rgba(77, 127, 255, 0.08);
+      box-shadow: 0 0 15px rgba(77, 127, 255, 0.15);
+    }
+    .strata-services .svc-card-btn:hover svg{
+      transform: translateX(4px);
+    }
     @media (max-width:900px){.strata-services .svc-grid{grid-template-columns:1fr;}}
 
     /* ============================================================
@@ -943,7 +1066,7 @@ $view_all_url = '/clients.php';
   }
 
   </style>
-  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
+  <link rel="icon" type="image/png" href="/assets/images/logo-footer.png?v=2">
 </head>
 
 <body class="min-h-screen flex flex-col relative overflow-x-hidden" style="background:#ffffff;">
@@ -1253,12 +1376,15 @@ $view_all_url = '/clients.php';
       padding: 32px 0 64px !important; /* Extremely tight padding to fit HUD box */
     }
     .dh-container {
+      width: 100%;
       padding: 0 16px;
       margin-top: -8px;
     }
     .dh-hud-box {
+      width: 100%;
+      max-width: 100%;
       position: relative;
-      padding: 36px 20px;
+      padding: 44px 20px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(99, 102, 241, 0.08);
       border-radius: 16px;
@@ -1270,34 +1396,59 @@ $view_all_url = '/clients.php';
     }
     .dh-console-log {
       display: inline-flex;
+      max-width: 100%;
+      padding: 10px 16px;
+      margin-bottom: 16px;
     }
     .dh-h1 {
+      font-size: clamp(28px, 7.5vw, 44px);
+      line-height: 1.35;
+      letter-spacing: -0.03em;
       margin-bottom: 12px;
+      max-width: 100%;
     }
     .dh-eyebrow {
-      margin-bottom: 14px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
     }
     .dh-sub {
-      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      max-width: 100%;
     }
     .dh-telemetry-metrics {
-      display: inline-flex;
-      gap: 10px;
-      padding: 6px 12px;
-      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 12px;
+      padding: 10px 20px;
+      margin-bottom: 18px;
+      max-width: 100%;
+    }
+    .dh-metric-divider {
+      display: none;
     }
     .dh-metric-item {
       font-size: 9.5px;
     }
     .dh-actions {
       flex-direction: column;
+      align-items: center;
       gap: 12px;
       width: 100%;
     }
     .dh-actions .dh-action-link {
-      width: 100%;
+      width: auto;
+      min-width: 200px;
       text-align: center;
       justify-content: center;
+      padding: 14px 24px;
     }
   }
 
@@ -1414,10 +1565,10 @@ $view_all_url = '/clients.php';
 
       <!-- Dynamic Actions -->
       <div class="dh-actions">
-        <a href="/digibeat/contact" class="dh-action-link">
+        <a href="/contact" class="dh-action-link">
           Start Project
         </a>
-        <a href="/digibeat/our-works" class="dh-action-link">
+        <a href="/our-works" class="dh-action-link">
           Explore Work
         </a>
       </div>
@@ -1496,19 +1647,25 @@ $view_all_url = '/clients.php';
 </div>
 </section>
 
-<section class="strata-services strata-capabilities" id="capabilities" data-purpose="capabilities">
+<section class="strata-services strata-services-grid" id="services-grid" data-purpose="services-grid">
 <div class="wrap">
 <div class="section-head">
-<div class="tag">Capabilities</div>
+<div class="tag">Services</div>
 <h2 class="big reveal">Built to be used, not just admired.</h2>
 </div>
 <div class="svc-grid">
-<?php foreach ($capabilities as $i => $c): ?>
+<?php foreach ($services_grid as $i => $c): ?>
 <div class="svc-card" data-tilt>
 <div class="svc-num"><?php echo str_pad($i + 1, 2, '0', STR_PAD_LEFT); ?></div>
 <svg class="svc-icon" viewbox="0 0 24 24"><?php echo $c['icon']; ?></svg>
 <h3><?php echo htmlspecialchars($c['title']); ?></h3>
 <p><?php echo htmlspecialchars($c['desc']); ?></p>
+<a href="<?php echo htmlspecialchars($c['link']); ?>" class="svc-card-btn">
+  <span>View Details</span>
+  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+  </svg>
+</a>
 </div>
 <?php endforeach; ?>
 </div>
@@ -1789,7 +1946,7 @@ $view_all_url = '/clients.php';
 
 .ts-card__name {
   font-family: var(--ts-display);
-  font-size: 20px; font-weight: 700;
+  font-size: 20px; font-weight: 400;
   color: var(--ts-navy);
   margin-bottom: 4px;
 }
@@ -1804,7 +1961,9 @@ $view_all_url = '/clients.php';
   font-size: 14.5px;
   line-height: 1.7;
   color: var(--ts-body);
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -2293,6 +2452,10 @@ $view_all_url = '/clients.php';
     cursor: pointer;
     transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
     box-shadow: 0 8px 30px rgba(61, 90, 254, 0.04);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
   }
   .cs-card:hover {
     border-color: rgba(61, 90, 254, 0.4);
@@ -2621,47 +2784,142 @@ $view_all_url = '/clients.php';
     color: var(--ct-text-muted);
   }
 
-  .cs-drawer__section { margin-bottom: 34px; }
+  .cs-drawer__section { margin-bottom: 28px; }
   .cs-drawer__section:last-child { margin-bottom: 0; }
   .cs-drawer__section h4 {
-    font-family: var(--ct-font-mono);
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--ct-neon-cyan);
-    margin: 0 0 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ct-text-primary);
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    font-family: inherit;
   }
-  .cs-drawer__section h4::before { content: '//'; color: var(--ct-neon-cyan); }
+  .cs-drawer__section h4::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 20px;
+    background: #3d5afe;
+    border-radius: 99px;
+    flex-shrink: 0;
+  }
+  .cs-drawer__section h4::after { display: none; }
+
   .cs-drawer__section p {
     font-size: 15px;
     line-height: 1.75;
     color: var(--ct-text-muted);
     margin: 0;
   }
+
   .cs-drawer__section ul {
-    margin: 0; padding-left: 0;
-    display: flex; flex-direction: column; gap: 10px;
-  }
-  .cs-drawer__section li {
-    font-size: 15px;
-    line-height: 1.65;
-    color: var(--ct-text-muted);
-    position: relative;
-    padding-left: 20px;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 4px;
     list-style: none;
   }
+  .cs-drawer__section li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ct-text-muted);
+    padding: 6px 0;
+    position: static;
+  }
   .cs-drawer__section li::before {
-    content: '►';
-    position: absolute;
-    left: 0; top: 4px;
-    font-size: 9px;
-    color: var(--ct-neon-cyan);
+    content: '•';
+    font-size: 16px;
+    font-weight: 700;
+    color: #3d5afe;
+    flex-shrink: 0;
+    position: static;
+    left: auto; top: auto;
+    width: auto; height: auto;
+    background: none; border: none; border-radius: 0;
+    box-shadow: none; margin-top: -2px; display: inline;
   }
   .cs-drawer__section li b { color: var(--ct-text-primary); font-weight: 700; }
+
+  /* ---- Drawer rich-content additions ---- */
+  .cs-drawer__subtitle {
+    font-size: 12px;
+    color: #3d5afe;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 4px 0 20px;
+  }
+  .cs-drawer__intro {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ct-text-muted);
+    margin: 0 0 28px;
+    border-left: 3px solid #3d5afe;
+    padding-left: 16px;
+  }
+  .cs-drawer__narrative {
+    margin-bottom: 22px;
+    padding: 18px 20px;
+    background: rgba(61,90,254,0.03);
+    border-radius: 10px;
+    border-left: 3px solid rgba(61,90,254,0.3);
+  }
+  .cs-drawer__narrative h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ct-text-primary);
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+  .cs-drawer__narrative p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--ct-text-muted);
+    margin: 0;
+  }
+  .cs-drawer__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .cs-drawer__stat {
+    background: rgba(61,90,254,0.05);
+    border: 1px solid rgba(61,90,254,0.12);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+  }
+  .cs-drawer__stat-value {
+    font-family: var(--ct-font-mono);
+    font-size: 24px;
+    font-weight: 800;
+    color: #3d5afe;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .cs-drawer__stat-label {
+    font-size: 11px;
+    color: var(--ct-text-muted);
+    line-height: 1.4;
+  }
+  .cs-drawer__tech-block {
+    background: rgba(61,90,254,0.03);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--ct-text-muted);
+  }
+  @media (max-width: 640px) {
+    .cs-drawer__stats { grid-template-columns: 1fr 1fr; }
+  }
 
   .cs-drawer__gallery {
     display: grid;
@@ -2844,7 +3102,7 @@ $view_all_url = '/clients.php';
     <div class="cs-cards-viewport">
       <div class="cs-cards" id="csCardsTrack">
         <?php foreach ($caseStudies as $i => $cs): ?>
-          <div class="cs-card" data-index="<?php echo $i; ?>" role="button" aria-haspopup="dialog" aria-label="Open <?php echo htmlspecialchars($cs['title']); ?> details">
+          <a href="/case-studies/<?php echo htmlspecialchars($cs['id']); ?>" class="cs-card" data-index="<?php echo $i; ?>" aria-label="Open <?php echo htmlspecialchars($cs['title']); ?> details">
             <div class="cs-card__bracket cs-card__bracket-tl"></div>
             <div class="cs-card__bracket cs-card__bracket-tr"></div>
             <div class="cs-card__bracket cs-card__bracket-bl"></div>
@@ -2856,9 +3114,8 @@ $view_all_url = '/clients.php';
             <div class="cs-card__body">
               <h3 class="cs-card__name"><?php echo htmlspecialchars($cs['title']); ?></h3>
               <p class="cs-card__role"><?php echo htmlspecialchars($cs['tagline']); ?></p>
-
             </div>
-          </div>
+          </a>
         <?php endforeach; ?>
       </div>
     </div>
@@ -2874,7 +3131,7 @@ $view_all_url = '/clients.php';
   </div>
 </section>
 
-<section class="testimonials-section" id="testimonials" aria-labelledby="testimonials-heading" data-purpose="testimonials">
+<section class="testimonials-section" id="testi" aria-labelledby="testimonials-heading" data-purpose="testimonials">
  
   <div class="ts-bg" aria-hidden="true">
     <span class="ts-bg__rings ts-bg__rings--tr"></span>
@@ -3506,6 +3763,12 @@ function e($str) {
 
   @media (max-width: 980px){
     .hero{ grid-template-columns:1fr; padding:70px 24px; }
+    .hero > div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
     .hero h1{ font-size:38px; }
     .map-wrap{ height:280px; }
   }
@@ -3565,21 +3828,26 @@ function e($str) {
   }
   .cl-card {
     background: #111111;
-    aspect-ratio: 16 / 7;
+    height: auto !important;
+    aspect-ratio: 16 / 8 !important;
     border-right: 1px solid rgba(255,255,255,0.1);
     border-bottom: 1px solid rgba(255,255,255,0.1);
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 12px !important;
+    box-sizing: border-box !important;
   }
   .cl-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+    margin: 0 auto !important;
     filter: none;
     opacity: 1;
   }
@@ -3642,7 +3910,7 @@ function e($str) {
     }
   }
 </style>
-  <link rel="icon" type="image/png" href="/digibeat/assets/images/logo-footer.png?v=2">
+  <link rel="icon" type="image/png" href="/assets/images/logo-footer.png?v=2">
 </head>
 <body>
 
@@ -3700,7 +3968,22 @@ function e($str) {
     <div class="cl-grid" id="clientGrid">
       <?php foreach ($clients as $c): ?>
         <div class="cl-card" title="<?php echo htmlspecialchars($c['name']); ?>">
-          <img src="<?php echo htmlspecialchars($c['logo']); ?>" alt="<?php echo htmlspecialchars($c['name']); ?>" loading="lazy">
+          <?php
+            $filename = basename($c['logo']);
+            $img_style = '';
+            if ($filename === 'zee.webp') {
+                // Keep ZeeQue at its natural size
+                $img_style = '';
+            } elseif ($filename === 'sreen.webp') {
+                $img_style = ' style="transform: scale(1.65);"';
+            } elseif ($filename === 'guru.webp') {
+                $img_style = ' style="transform: scale(1.55);"';
+            } else {
+                // Scale up all other logos to look visually larger
+                $img_style = ' style="transform: scale(1.25);"';
+            }
+          ?>
+          <img src="<?php echo htmlspecialchars($c['logo']); ?>" alt="<?php echo htmlspecialchars($c['name']); ?>" loading="lazy"<?php echo $img_style; ?>>
         </div>
       <?php endforeach; ?>
     </div>
@@ -3720,7 +4003,8 @@ function e($str) {
 <!-- ── END CLIENTS ── -->
 
 <script>
-/* Auto-size client logos: wide logos fill column width, tall logos fill card height */
+/* JS auto-sizing disabled in favor of clean universal CSS scaling and centering */
+/*
 (function() {
   function adjustLogo(img) {
     if (!img.naturalWidth || !img.naturalHeight) return;
@@ -3729,17 +4013,14 @@ function e($str) {
     var ratio = iw / ih;
 
     if (ratio >= 1.2) {
-      /* Wide / landscape logo — fill the full column width */
       img.style.width  = '100%';
       img.style.height = 'auto';
       img.style.maxHeight = '110px';
     } else if (ratio <= 0.85) {
-      /* Tall / portrait logo — fill by height */
       img.style.height = '110px';
       img.style.width  = 'auto';
       img.style.maxWidth = '100%';
     } else {
-      /* Square-ish logo — fill by width, cap height */
       img.style.width  = '100%';
       img.style.height = 'auto';
       img.style.maxHeight = '110px';
@@ -3759,6 +4040,7 @@ function e($str) {
     document.querySelectorAll('.cl-card img').forEach(adjustLogo);
   });
 })();
+*/
 </script>  
 </body>
 </html>
@@ -4413,86 +4695,7 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
     })();
   </script>
 
-     <!-- ============ FUTURISTIC TACTICAL DRAWER ============ -->
-     <div class="cs-overlay" id="cs-overlay"></div>
-     <aside class="cs-drawer" id="cs-drawer" role="dialog" aria-modal="true" aria-hidden="true">
-
-       <div class="cs-drawer__scroll" id="cs-drawer-scroll">
-         <div class="cs-drawer__topbar">
-           <a href="#" class="cs-drawer__visit" id="cs-drawer-site" target="_blank" rel="noopener noreferrer">
-             <span>Visit Site</span>
-             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-           </a>
-           <button type="button" class="cs-drawer__close" id="cs-drawer-close" aria-label="Close">
-             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-           </button>
-         </div>
-         <div class="cs-drawer__progress"><div class="cs-drawer__progress-bar" id="cs-drawer-progress-bar"></div></div>
-
-         <div class="cs-drawer__hero">
-           <img id="cs-drawer-hero" src="" alt="">
-         </div>
-
-         <div class="cs-drawer__body">
-           <span class="cs-drawer__tag" id="cs-drawer-tag"></span>
-           <h2 class="cs-drawer__title" id="cs-drawer-title"></h2>
-           <p class="cs-drawer__tagline" id="cs-drawer-tagline"></p>
-
-           <div class="cs-drawer__metrics" id="cs-drawer-metrics"></div>
-
-           <div class="cs-drawer__section">
-             <h4>System Challenge</h4>
-             <p id="cs-drawer-challenge"></p>
-           </div>
-
-           <div class="cs-drawer__section">
-             <h4>Engineered Solution</h4>
-             <ul id="cs-drawer-solution"></ul>
-           </div>
-
-           <div class="cs-drawer__gallery" id="cs-drawer-gallery"></div>
-
-           <div class="cs-drawer__section">
-             <h4>Outcome Diagnostics</h4>
-             <div class="cs-drawer__diagnostics-row">
-               <ul id="cs-drawer-results"></ul>
-               
-               <div class="cs-drawer__dial-box">
-                 <div class="cs-drawer__dial-wrapper">
-                   <svg class="cs-drawer__dial-svg">
-                     <circle class="cs-drawer__dial-bg" cx="50" cy="50" r="40"></circle>
-                     <circle class="cs-drawer__dial-track" id="cs-drawer-dial-track" cx="50" cy="50" r="40"></circle>
-                   </svg>
-                   <div class="cs-drawer__dial-percent" id="cs-drawer-dial-percent">0%</div>
-                 </div>
-                 <span class="cs-drawer__dial-lbl">SYSTEM OPTIMIZATION</span>
-               </div>
-             </div>
-           </div>
-
-           <div class="cs-drawer__section cs-drawer__contact-text">
-             <h3>Would you like to know more about the project?</h3>
-             <p>To find out more about our work or any of our other case studies, get in touch. Mail us on <b>hello@digibeat.com</b> or call <b>+91 480 2733 555</b>.</p>
-           </div>
-         </div>
-       </div>
-
-       <div class="cs-drawer__footer">
-         <a href="contact.php" class="cs-drawer__talk-btn">
-           Let's talk
-           <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-         </a>
-         <div class="cs-drawer__navgroup">
-           <button type="button" class="cs-drawer__navicon" id="cs-drawer-prev" aria-label="Previous case study">
-             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-           </button>
-           <button type="button" class="cs-drawer__navicon" id="cs-drawer-next" aria-label="Next case study">
-             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-           </button>
-         </div>
-       </div>
-
-     </aside>
+     <!-- Case Studies Drawer UI Removed -->
 
   <!-- ============ TESTIMONIAL VIDEO DRAWER (SLIDER) ============ -->
   <div class="ts-overlay" id="ts-overlay"></div>
@@ -4533,10 +4736,7 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
         <div class="ts-drawer__quote-author" id="ts-drawer-author"></div>
       </div>
 
-      <div class="ts-drawer__section">
-        <h4>The Challenge</h4>
-        <p id="ts-drawer-challenge"></p>
-      </div>
+
 
     
       </div>
@@ -4562,7 +4762,7 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var section = document.getElementById('testimonials');
+      var section = document.getElementById('testi');
       if (!section) return;
 
       var testimonialsData = <?php echo json_encode($testimonials); ?>;
@@ -4693,7 +4893,7 @@ color2: i % 3 === 0 ? 'rgba(14, 165, 233, 0.85)' : (i % 3 === 1 ? 'rgba(6, 182, 
       var drawerTagline = document.getElementById('ts-drawer-tagline');
       var drawerQuote = document.getElementById('ts-drawer-quote');
       var drawerAuthor = document.getElementById('ts-drawer-author');
-      var drawerChallenge = document.getElementById('ts-drawer-challenge');
+
       var drawerSite = document.getElementById('ts-drawer-site');
      
       var drawerPrev = document.getElementById('ts-drawer-prev');
@@ -4762,7 +4962,7 @@ function populateDrawer(data) {
   drawerQuote.innerHTML = '&ldquo;' + data.quote + '&rdquo;';
   drawerAuthor.textContent = '— ' + data.name + ', ' + data.title;
 
-  drawerChallenge.textContent = data.challenge;
+
 
 }
 
@@ -4812,191 +5012,38 @@ function populateDrawer(data) {
         });
       }
 
+      // Smooth scroll to testimonials and clean URL query parameter
+      document.querySelectorAll('.ft-testimonials-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var target = document.getElementById('testi');
+          if (target) {
+            var isHomepage = window.location.pathname.indexOf('index.php') !== -1 || 
+                             window.location.pathname === '/' || 
+                             window.location.pathname === '/';
+            if (isHomepage) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('scroll') === 'testi') {
+        var target = document.getElementById('testi');
+        if (target) {
+          setTimeout(function() {
+            target.scrollIntoView({ behavior: 'smooth' });
+            // Clean the URL bar parameter without reloading
+            history.replaceState(null, '', window.location.pathname);
+          }, 300);
+        }
+      }
+
       /* ===== FUTURISTIC CASE STUDIES ENGINE ===== */
       (function initFuturisticCaseStudies() {
         const caseStudies = <?php echo json_encode($caseStudies, JSON_UNESCAPED_SLASHES); ?>;
         if (!caseStudies || !caseStudies.length) return;
-
-        const overlay = document.getElementById('cs-overlay');
-        const drawer = document.getElementById('cs-drawer');
-        const drawerScroll = document.getElementById('cs-drawer-scroll');
-        
-        // Target elements inside drawer
-        const elHero = document.getElementById('cs-drawer-hero');
-        const elTag = document.getElementById('cs-drawer-tag');
-        const elTitle = document.getElementById('cs-drawer-title');
-        const elTagline = document.getElementById('cs-drawer-tagline');
-        const elMetrics = document.getElementById('cs-drawer-metrics');
-        const elChallenge = document.getElementById('cs-drawer-challenge');
-        const elSolution = document.getElementById('cs-drawer-solution');
-        const elGallery = document.getElementById('cs-drawer-gallery');
-        const elResults = document.getElementById('cs-drawer-results');
-        const elDialTrack = document.getElementById('cs-drawer-dial-track');
-        const elDialPercent = document.getElementById('cs-drawer-dial-percent');
-        const elSite = document.getElementById('cs-drawer-site');
-
-        const drawerPrev = document.getElementById('cs-drawer-prev');
-        const drawerNext = document.getElementById('cs-drawer-next');
-        const progressBar = document.getElementById('cs-drawer-progress-bar');
-
-        let activeIndex = -1;
-
-        // Dial chart animation logic
-        function animateDial(percentValue) {
-          if (!elDialTrack || !elDialPercent) return;
-          const CIRC = 251.2; // 2 * PI * 40
-          // reset first
-          elDialTrack.style.strokeDashoffset = CIRC;
-          elDialPercent.textContent = '0%';
-          
-          setTimeout(() => {
-            const offset = CIRC - (CIRC * percentValue / 100);
-            elDialTrack.style.strokeDashoffset = offset;
-            
-            // animate text counter
-            let start = 0;
-            const duration = 1000;
-            const startTime = performance.now();
-            
-            function updateText(now) {
-              const elapsed = now - startTime;
-              const progress = Math.min(elapsed / duration, 1);
-              const currentVal = Math.floor(progress * percentValue);
-              elDialPercent.textContent = currentVal + '%';
-              
-              if (progress < 1) {
-                requestAnimationFrame(updateText);
-              } else {
-                elDialPercent.textContent = percentValue + '%';
-              }
-            }
-            requestAnimationFrame(updateText);
-          }, 200);
-        }
-
-        function populateCsDrawer(data) {
-          if (drawerScroll) drawerScroll.scrollTop = 0;
-          if (progressBar) progressBar.style.width = '0%';
-
-          if (elHero) {
-            elHero.src = data.photo;
-            elHero.alt = data.title;
-          }
-
-          if (elTag) elTag.textContent = data.tag;
-          if (elTitle) elTitle.textContent = data.title;
-          if (elTagline) elTagline.textContent = data.tagline;
-
-          // Metrics
-          if (elMetrics && data.metrics) {
-            elMetrics.innerHTML = data.metrics.map(m => `
-              <div class="cs-drawer__metric-card">
-                <span class="cs-drawer__metric-val">${m.value}</span>
-                <span class="cs-drawer__metric-lbl">${m.desc}</span>
-              </div>
-            `).join('');
-          }
-
-          if (elChallenge) elChallenge.textContent = data.challenge;
-
-          if (elSolution && data.solution) {
-            elSolution.innerHTML = data.solution.map(s => `<li>${s}</li>`).join('');
-          }
-
-          // Gallery
-          if (elGallery && data.gallery) {
-            elGallery.innerHTML = data.gallery.map(g => `<img src="${g}" alt="Screenshot" loading="lazy">`).join('');
-            elGallery.style.display = data.gallery.length ? 'grid' : 'none';
-          } else if (elGallery) {
-            elGallery.style.display = 'none';
-          }
-
-          if (elResults && data.results) {
-            elResults.innerHTML = data.results.map(r => `<li>${r}</li>`).join('');
-          }
-
-          if (elSite) {
-            if (data.site) {
-              elSite.href = data.site;
-              elSite.style.display = '';
-            } else {
-              elSite.style.display = 'none';
-            }
-          }
-
-          // Trigger dial animation
-          animateDial(data.health || 95);
-        }
-
-        function openCsDrawer(index) {
-          if (index < 0 || index >= caseStudies.length) return;
-          activeIndex = index;
-          populateCsDrawer(caseStudies[activeIndex]);
-
-          if (drawerPrev) drawerPrev.disabled = activeIndex === 0;
-          if (drawerNext) drawerNext.disabled = activeIndex === caseStudies.length - 1;
-
-          if (overlay) overlay.classList.add('is-open');
-          if (drawer) {
-            drawer.classList.add('is-open');
-            drawer.setAttribute('aria-hidden', 'false');
-          }
-          document.body.classList.add('cs-lock');
-        }
-
-        window.openCsDrawer = openCsDrawer; // Expose globally for clones
-
-        function closeCsDrawer() {
-          if (overlay) overlay.classList.remove('is-open');
-          if (drawer) {
-            drawer.classList.remove('is-open');
-            drawer.setAttribute('aria-hidden', 'true');
-          }
-          document.body.classList.remove('cs-lock');
-        }
-
-        function navigateDrawer(newIndex) {
-          if (newIndex < 0 || newIndex >= caseStudies.length) return;
-          activeIndex = newIndex;
-          
-          if (drawer) drawer.classList.add('glitching');
-          
-          setTimeout(() => {
-            populateCsDrawer(caseStudies[activeIndex]);
-            if (drawerPrev) drawerPrev.disabled = activeIndex === 0;
-            if (drawerNext) drawerNext.disabled = activeIndex === caseStudies.length - 1;
-          }, 100);
-          
-          setTimeout(() => {
-            if (drawer) drawer.classList.remove('glitching');
-          }, 250);
-        }
-
-        // Close listeners
-        const closeBtn = document.getElementById('cs-drawer-close');
-        if (closeBtn) closeBtn.addEventListener('click', closeCsDrawer);
-        if (overlay) overlay.addEventListener('click', closeCsDrawer);
-
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) closeCsDrawer();
-        });
-
-        // Drawer nav buttons click handlers
-        if (drawerPrev) {
-          drawerPrev.addEventListener('click', () => navigateDrawer(activeIndex - 1));
-        }
-        if (drawerNext) {
-          drawerNext.addEventListener('click', () => navigateDrawer(activeIndex + 1));
-        }
-
-        // Drawer scroll progress indicator
-        if (drawerScroll && progressBar) {
-          drawerScroll.addEventListener('scroll', function () {
-            var max = drawerScroll.scrollHeight - drawerScroll.clientHeight;
-            var pct = max > 0 ? (drawerScroll.scrollTop / max) * 100 : 0;
-            progressBar.style.width = pct + '%';
-          });
-        }
 
         // Card Slider logic
         (function initCsCardSlider() {
@@ -5017,9 +5064,6 @@ function populateDrawer(data) {
 
           function makeClone(card) {
             var clone = card.cloneNode(true);
-            clone.addEventListener('click', function() {
-              openCsDrawer(parseInt(clone.dataset.index, 10));
-            });
             return clone;
           }
 
@@ -5076,12 +5120,7 @@ function populateDrawer(data) {
             setPosition(false);
           });
 
-          // Bind card selection
-          realCards.forEach(function(card) {
-            card.addEventListener('click', function() {
-              openCsDrawer(parseInt(card.dataset.index, 10));
-            });
-          });
+          // Cards now navigate directly via href link anchors, no click handler binding needed.
 
           setPosition(false);
         })();
@@ -5115,7 +5154,7 @@ function populateDrawer(data) {
               speed = 2200; // Wait at the end of phrase
               isDeleting = true;
             } else if (isDeleting && charIdx === 0) {
-              isDeleting = false;
+              isDeleting = false; 
               idx = (idx + 1) % logs.length;
               speed = 400; // Wait before typing next phrase
             }

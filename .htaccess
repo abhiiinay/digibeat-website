@@ -1,0 +1,19 @@
+# Disable MultiViews to avoid conflicts with our custom routing
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /digibeat/
+
+# Route services/<key> to services-detail.php?service=<key>
+RewriteRule ^services/(web-design|web-dev|wordpress|ecommerce|mobile-apps|digital-marketing|social-media|it-infrastructure)/?$ services-detail.php?service=$1 [L,QSA]
+
+# Route case-studies/<id> to case-studies-detail.php?id=<id>
+RewriteRule ^case-studies/([a-zA-Z0-9_-]+)/?$ case-studies-detail.php?id=$1 [L,QSA]
+
+# Rewrite case-studies to case-studies.php
+RewriteRule ^case-studies/?$ case-studies.php [L]
+
+# For any other extensionless URL, check if its .php file exists and rewrite to it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/digibeat/$1.php -f
+RewriteRule ^(.*?)/?$ $1.php [L]

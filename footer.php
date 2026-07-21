@@ -339,9 +339,9 @@
         <h4>Services</h4>
         <ul>
           <li><a href="/digibeat/services/branding.php">Branding</a></li>
-          <li><a href="/digibeat/services.php#experience-design">Experience Design</a></li>
+          <li><a href="/digibeat/services/webdevelopment">web Development</a></li>
           <li><a href="/digibeat/services/it-solutions.php">IT Solutions</a></li>
-          <li><a href="/digibeat/services.php#marketing">Digital Marketing</a></li>
+          <li><a href="/digibeat/services/digital">Digital Marketing</a></li>
         </ul>
       </div>
 

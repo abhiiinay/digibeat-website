@@ -97,7 +97,7 @@ $active_page = 'services';
     box-shadow: 0 0 10px var(--brand-accent-glow);
   }
 
-  /* Global Rule: ALL section headers must be blue */
+  /* Global Rule: ALL section headers must be black base, spans highlighted in blue */
   .brand-heading-lg,
   .brand-lab__header h2,
   .services-section__title h2,
@@ -106,6 +106,16 @@ $active_page = 'services';
   .brand-process__step h4,
   .brand-cta-card h2,
   .lab-info h3 {
+    color: var(--brand-ink) !important;
+  }
+  .brand-heading-lg span,
+  .brand-lab__header h2 span,
+  .services-section__title h2 span,
+  .brand-service-item h3 span,
+  .brand-process__head h2 span,
+  .brand-process__step h4 span,
+  .brand-cta-card h2 span,
+  .lab-info h3 span {
     color: var(--brand-accent-2) !important;
   }
 
@@ -116,9 +126,6 @@ $active_page = 'services';
     font-weight: 700;
     margin: 0 0 24px;
     letter-spacing: -0.02em;
-  }
-  .brand-heading-lg span {
-    color: var(--brand-accent);
   }
 
   .brand-lead {
@@ -990,7 +997,7 @@ $active_page = 'services';
                 <line x1="12" y1="22.08" x2="12" y2="12"/>
               </svg>
             </div>
-            <h3>Brand Consulting</h3>
+            <h3>Brand <span>Consulting</span></h3>
             <p>
               We craft core positioning, custom brand nomenclature, tone guidelines, and message blueprints. 
               We clarify why your business stands out, transforming ambiguous values into sharp verbal structures.
@@ -1036,7 +1043,7 @@ $active_page = 'services';
                 <path d="m10 15 5-3-5-3v6Z"/>
               </svg>
             </div>
-            <h3>Logo Design</h3>
+            <h3>Logo <span>Design</span></h3>
             <p>
               We design premium marks, emblems, and visual assets built to scale flawlessly from small favicons to massive digital displays, while expressing the core energy of your identity.
             </p>
@@ -1082,7 +1089,7 @@ $active_page = 'services';
                 <polyline points="12 12.01 12 6.81"/>
               </svg>
             </div>
-            <h3>Industrial &amp; Product Design</h3>
+            <h3>Industrial &amp; <span>Product Design</span></h3>
             <p>
               We shape physical product conceptualization, hardware casing styling, packaging architecture, and mechanical engineering blueprints, aligning high physical touchpoints with digital style guides.
             </p>
@@ -1128,7 +1135,7 @@ $active_page = 'services';
                 <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
               </svg>
             </div>
-            <h3>Graphic Design</h3>
+            <h3>Graphic <span>Design</span></h3>
             <p>
               We develop editorial brochures, print and outdoor materials, marketing campaign graphics, and digital assets. We ensure absolute visual consistency across both online screens and physical paper.
             </p>
@@ -1172,7 +1179,7 @@ $active_page = 'services';
     <div class="brand-container">
       <div class="brand-process__head">
         <span class="brand-eyebrow"><span class="brand-dot"></span> Roadmap</span>
-        <h2>How we build it</h2>
+        <h2>How we <span>build it</span></h2>
         <p>A rigorous, collaborative pathway from research to asset deployment.</p>
       </div>
 
@@ -1182,28 +1189,28 @@ $active_page = 'services';
         <div class="brand-process__step">
           <div class="brand-process__dot"></div>
           <div class="brand-process__num">Phase 01</div>
-          <h4>Strategic Genesis</h4>
+          <h4>Strategic <span>Genesis</span></h4>
           <p>We analyze market position, competitors, and defining target attributes to map out the brand blueprint.</p>
         </div>
 
         <div class="brand-process__step">
           <div class="brand-process__dot"></div>
           <div class="brand-process__num">Phase 02</div>
-          <h4>Visual Engineering</h4>
+          <h4>Visual <span>Engineering</span></h4>
           <p>We render multiple vector identity paths, typography grids, and color schemes under real conditions.</p>
         </div>
 
         <div class="brand-process__step">
           <div class="brand-process__dot"></div>
           <div class="brand-process__num">Phase 03</div>
-          <h4>Collateral Expansion</h4>
+          <h4>Collateral <span>Expansion</span></h4>
           <p>We map guidelines to mockups, stationery, web designs, packaging prototypes, and corporate literature.</p>
         </div>
 
         <div class="brand-process__step">
           <div class="brand-process__dot"></div>
           <div class="brand-process__num">Phase 04</div>
-          <h4>Style Engine Launch</h4>
+          <h4>Style Engine <span>Launch</span></h4>
           <p>We deliver organized vector directories, guidelines sheets, and web assets ready for the team to deploy.</p>
         </div>
       </div>
@@ -1214,7 +1221,7 @@ $active_page = 'services';
   <section class="brand-cta-block">
     <div class="brand-container">
       <div class="brand-cta-card">
-        <h2>Forge your new trajectory.</h2>
+        <h2>Forge your new <span>trajectory</span>.</h2>
         <p>
           Let's shape the visual codes that command authority in your space. Partner with Digibeat to engineer a modern, iconic brand.
         </p>

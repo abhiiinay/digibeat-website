@@ -87,13 +87,21 @@ $active_page = 'services';
     box-shadow: 0 0 10px var(--it-accent-glow);
   }
 
-  /* Global Rule: ALL section headers must be blue */
+  /* Global Rule: ALL section headers must be black base, spans highlighted in blue */
   .it-heading-lg,
   .it-services-section h2,
   .it-service-item h3,
   .it-process__head h2,
   .it-process__step h4,
   .it-cta-card h2 {
+    color: var(--it-ink) !important;
+  }
+  .it-heading-lg span,
+  .it-services-section h2 span,
+  .it-service-item h3 span,
+  .it-process__head h2 span,
+  .it-process__step h4 span,
+  .it-cta-card h2 span {
     color: var(--it-accent) !important;
   }
 
@@ -104,9 +112,6 @@ $active_page = 'services';
     font-weight: 700;
     margin: 0 0 24px;
     letter-spacing: -0.02em;
-  }
-  .it-heading-lg span {
-    color: var(--it-accent);
   }
 
   .it-lead {
@@ -632,7 +637,7 @@ $active_page = 'services';
     <div class="it-container">
       <div class="services-section__title">
         <span class="it-eyebrow"><span class="it-dot"></span> Core Infrastructure</span>
-        <h2>High-availability systems built to perform.</h2>
+        <h2>High-availability systems <span>built to perform</span>.</h2>
       </div>
 
       <div class="it-services-grid">
@@ -646,7 +651,7 @@ $active_page = 'services';
                 <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
               </svg>
             </div>
-            <h3>Web Hosting</h3>
+            <h3>Web <span>Hosting</span></h3>
             <p>
               Power your online apps with high-speed SSD servers, managed databases, 
               automated backups, and guaranteed uptime, completely supervised by our engineering team.
@@ -681,7 +686,7 @@ $active_page = 'services';
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
             </div>
-            <h3>Business Email Services</h3>
+            <h3>Business <span>Email Services</span></h3>
             <p>
               Command professional credibility with custom domain business email setups, 
               protected by modern spam filters and high-availability exchange networks.
@@ -715,7 +720,7 @@ $active_page = 'services';
     <div class="it-container">
       <div class="it-process__head">
         <span class="it-eyebrow"><span class="it-dot"></span> Roadmap</span>
-        <h2>How we build it</h2>
+        <h2>How we <span>build it</span></h2>
         <p>A rigorous, collaborative pathway from research to asset deployment.</p>
       </div>
 
@@ -725,28 +730,28 @@ $active_page = 'services';
         <div class="it-process__step">
           <div class="it-process__dot"></div>
           <div class="it-process__num">Phase 01</div>
-          <h4>Infrastructure Audit</h4>
+          <h4>Infrastructure <span>Audit</span></h4>
           <p>We evaluate your current hosting setup, traffic requirements, and email channels to identify bottlenecks.</p>
         </div>
 
         <div class="it-process__step">
           <div class="it-process__dot"></div>
           <div class="it-process__num">Phase 02</div>
-          <h4>Architecture Design</h4>
+          <h4>Architecture <span>Design</span></h4>
           <p>We plan custom cloud routing, configure virtual namespaces, and outline secure exchange boundaries.</p>
         </div>
 
         <div class="it-process__step">
           <div class="it-process__dot"></div>
           <div class="it-process__num">Phase 03</div>
-          <h4>Migration &amp; Setup</h4>
+          <h4>Migration <span>&amp; Setup</span></h4>
           <p>We transfer files and configure MX/SPF records with minimal offline transitions, fully testing mail flow.</p>
         </div>
 
         <div class="it-process__step">
           <div class="it-process__dot"></div>
           <div class="it-process__num">Phase 04</div>
-          <h4>Continuous Monitoring</h4>
+          <h4>Continuous <span>Monitoring</span></h4>
           <p>We activate live uptime tracking, backup engines, and security alerts to ensure continuous execution.</p>
         </div>
       </div>
@@ -757,7 +762,7 @@ $active_page = 'services';
   <section class="it-cta-block">
     <div class="it-container">
       <div class="it-cta-card">
-        <h2>Secure your infrastructure.</h2>
+        <h2>Secure your <span>infrastructure</span>.</h2>
         <p>
           Let's setup the high-speed server structures and professional exchange nodes that run your corporate operations.
         </p>
